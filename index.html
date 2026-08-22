@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Aitherium ecosystem — take one brick</title>
+<meta name="description" content="Small, single-purpose tools for building with coding
+agents. Each one works alone. Take the one you need.">
+<style>
+:root{--bg:#0b0d10;--fg:#e6e9ef;--dim:#9aa4b2;--line:#1e242c;--acc:#7cc4ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:1080px;margin:0 auto;padding:3rem 1.25rem 5rem}
+h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 .5rem;letter-spacing:-.02em}
+.lede{color:var(--dim);font-size:1.1rem;max-width:60ch;margin:0 0 2.5rem}
+h2{margin:2.5rem 0 1rem;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;
+color:var(--dim);border-bottom:1px solid var(--line);padding-bottom:.5rem}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{border:1px solid var(--line);border-radius:10px;padding:1.1rem;background:#0f1318}
+.card.pending{opacity:.62}
+.card.set{background:#0d1720;border-color:#1b2b3a}
+.members a{display:inline-block;margin:.15rem .35rem .15rem 0;
+padding:.1rem .5rem;border:1px solid var(--line);border-radius:99px;
+font-size:.8rem;text-decoration:none}
+.card h3{margin:0 0 .4rem;font-size:1.05rem}
+.card h3 a{color:var(--acc);text-decoration:none}
+.card h3 a:hover{text-decoration:underline}
+.card h3 em{color:var(--dim);font-style:normal;font-size:.78rem;font-weight:400}
+.tag{margin:.2rem 0 .6rem;font-size:.93rem}
+.why{color:var(--dim);font-size:.88rem;margin:.4rem 0 .7rem}
+.adopt{font-size:.88rem;margin:.4rem 0 .7rem}
+.adopt strong{color:var(--fg)}
+pre{background:#080a0d;border:1px solid var(--line);border-radius:6px;padding:.55rem .7rem;
+margin:0;overflow-x:auto;font-size:.82rem;color:var(--dim)}
+footer{margin-top:3.5rem;color:var(--dim);font-size:.85rem;
+border-top:1px solid var(--line);padding-top:1.25rem}
+a{color:var(--acc)}
+</style></head><body><main>
+<h1>Take one brick.</h1>
+<p class="lede">These are small, single-purpose tools for building with coding agents.
+Every one of them works on its own, with whatever you already use. There is no platform to
+adopt and no order to learn them in — find the problem you actually have, take that one,
+and ignore the rest.</p>
+<h2>Sets &mdash; suggested builds</h2>
+<div class="grid">
+  <article class="card set"><h3>The bare agent VM<em> &middot; some pieces missing</em></h3><p class="tag">awnix already carries the capabilities; adding an agent is three lines in a Dockerfile, and your skills and credentials layer on top of that. The point of the order is that the guarantees live in the base, so swapping the agent keeps them.</p><p class="members"><a href="#awnix">awnix</a> <a href="#awdk">awdk</a> <a href="#awskills">awskills</a> <a href="#awkno">awkno</a></p></article>
+  <article class="card set"><h3>Senses<em> &middot; not yet</em></h3><p class="tag">What an agent needs to perceive things outside its own process — search and pages.</p><p class="members"><a href="#awfind">awfind</a> <a href="#awbrowse">awbrowse</a> <a href="#awdk">awdk</a></p></article>
+  <article class="card set"><h3>Provenance<em> &middot; some pieces missing</em></h3><p class="tag">Prove what an artifact is, who acted on it, and that nothing was quietly removed from the record.</p><p class="members"><a href="#awseal">awseal</a> <a href="#awshare">awshare</a> <a href="#awdit">awdit</a> <a href="#awbac">awbac</a></p></article>
+  <article class="card set"><h3>Many agents, one repo<em> &middot; works today</em></h3><p class="tag">Several agents editing one codebase without sweeping each other's work or re-deriving what the last one already learned.</p><p class="members"><a href="#awgit">awgit</a> <a href="#awgraph">awgraph</a> <a href="#awrelay">awrelay</a> <a href="#awm">awm</a></p></article>
+  <article class="card set"><h3>The front door<em> &middot; some pieces missing</em></h3><p class="tag">Who may come in at all, before anything asks who they are: a human check whose verdict is bound to one door and one use, the identity it names, the authority it feeds, and a record of every refusal. Named because the four already existed as four separate answers to one question a stranger asks first.</p><p class="members"><a href="#awnboard">awnboard</a> <a href="#awnest">awnest</a> <a href="#awiam">awiam</a> <a href="#awbac">awbac</a> <a href="#awdit">awdit</a></p></article>
+  <article class="card set"><h3>Identity, authority, and the record<em> &middot; some pieces missing</em></h3><p class="tag">The three questions every access decision needs answered separately: who is this caller, what may they do, and what did they actually do. Kept apart on purpose -- one component that answers all three is one component that can quietly answer all three wrongly.</p><p class="members"><a href="#awiam">awiam</a> <a href="#awbac">awbac</a> <a href="#awdit">awdit</a></p></article>
+  <article class="card set"><h3>One surface — agent panels, not hand-built UIs<em> &middot; not yet</em></h3><p class="tag">OWNER DECISION 2026-08-19, recorded because it was made in a transcript and would otherwise be re-litigated: stop hand-maintaining a web UI per app. The Living Desktop is the shell; an "app" is a dynamic agent panel rendered from a tool result (awkit), scoped by the identity plane, driven by intent rather than clicking. veil/portal keep serving pages and APIs where genuinely needed -- the UI, widgets and apps are what collapses, not the hosting. WHY, measured that day on ONE tenant: 18 apps listed and 0 deployed; AitherOne showing "Service Unavailable" while healthy, because all 11 of its GET routes require a body and answer 422 to every caller alive; 189 catalogue routes against 105 registered panels; and 2 of 6 declared panels were ids with NO component -- rendering nothing, with no error, no boundary and no log line. Every one of those is the same shape: declared in one place, not real in another, and nothing comparing the two. THE TRAP THIS MUST NOT INHERIT, stated here so the stack is judged on it: collapsing six surfaces into one does not fix that shape, it reduces how many places it can happen. A panel spec a renderer cannot honour is a stale component one layer up. The parity gate (RB001-RB005's shape: producer ids == renderer ids, asserted by something that fails) comes FIRST, or this becomes the seventh island. DONE means: one previously-broken app rebuilt as an agent panel end to end with real scope and real data; the entitlement plane answering once instead of a catalogue and a backend disagreeing; and surfaces retired by the EC009 ratchet, one at a time, each with its consumers moved in the same commit -- never by decree.</p><p class="members"><a href="#awkit">awkit</a> <a href="#awdk">awdk</a> <a href="#awnode">awnode</a> <a href="#awiam">awiam</a> <a href="#awbac">awbac</a></p></article>
+  <article class="card set"><h3>The reasoning loop<em> &middot; not yet</em></h3><p class="tag">The thinking core, kept apart from the senses and the hands on purpose. A hard question becomes a session with phases you can inspect (awreason); a failure inside it becomes ranked hypotheses with a falsifying check for each (awprism); and the check is actually RUN against live state rather than recalled (awrepl). Those three are the loop. It composes with `agent-senses` for what is outside the process and with `shared-worktree` for what is in the codebase — which is why neither set is repeated here.</p><p class="members"><a href="#awreason">awreason</a> <a href="#awprism">awprism</a> <a href="#awrepl">awrepl</a> <a href="#awrecurse">awrecurse</a></p></article>
+  <article class="card set"><h3>Research you can check<em> &middot; some pieces missing</em></h3><p class="tag">A research question answered against real sources, where the report names what it read (awresearch), the sources are found and actually opened rather than hallucinated (awfind, awbrowse), and what was learned survives the session (awm). The one failure this set exists for is the plausible document: fluent, well-formed, citing pages nobody fetched.</p><p class="members"><a href="#awresearch">awresearch</a> <a href="#awfind">awfind</a> <a href="#awbrowse">awbrowse</a> <a href="#awm">awm</a></p></article>
+</div>
+<h2>Runtimes</h2>
+<div class="grid">
+  <article id="awdk" class="card">
+    <h3><a href="https://aitherium.github.io/awdk/">awdk</a><em></em></h3>
+    <p class="tag">Build AI agent fleets — 3 lines, any backend, local or cloud.</p>
+    <p class="why">Running one agent is easy and running fifty is a different job: budgets, retries, which model, whose machine. Most frameworks make you adopt their whole world to find out.</p>
+    <p class="adopt"><strong>Start here:</strong> Point it at a backend you already pay for and run one agent loop.</p>
+    <pre>pip install awdk</pre>
+  </article>
+  <article id="awnet" class="card pending">
+    <h3><span>awnet</span><em> · not published yet</em></h3>
+    <p class="tag">The agentic web — agents host a mesh, and agents join one.</p>
+    <p class="why">Agents are islands. Every deployment reinvents how a peer is found, addressed and trusted, so two agents on two machines cost more to introduce than either cost to build — and the answers (port forwards, a VPN per pair, public IPs, a broker somebody has to run) all become permanent maintenance.</p>
+    <p class="adopt"><strong>Start here:</strong> Host a mesh on one machine and join it from another.</p>
+    <pre>pip install awnet</pre>
+  </article>
+  <article id="awnode" class="card">
+    <h3><a href="https://aitherium.github.io/awnode/">awnode</a><em></em></h3>
+    <p class="tag">A lightweight local gateway — bridges your apps to the AI backends you chose.</p>
+    <p class="why">Every app hardcodes a different provider SDK, so switching backends means editing every app.</p>
+    <p class="adopt"><strong>Start here:</strong> Run it once and point one app at it instead of a vendor URL.</p>
+    <pre>pip install awnode</pre>
+  </article>
+  <article id="awrun" class="card">
+    <h3><a href="https://aitherium.github.io/awrun/">awrun</a><em></em></h3>
+    <p class="tag">A priority-aware queue and dispatcher for agentic runs and ad-hoc CI builds.</p>
+    <p class="why">A shared runner pool serves whoever asked first, so an urgent one-line fix waits behind a queue of speculative work — and the only lever anyone has is asking people to stop pushing.</p>
+    <p class="adopt"><strong>Start here:</strong> Queue two runs at different priorities and watch the urgent one overtake.</p>
+    <pre>pip install awrun</pre>
+  </article>
+</div>
+<h2>Tools</h2>
+<div class="grid">
+  <article id="AitherConnect" class="card">
+    <h3><a href="https://aitherium.github.io/AitherConnect/">AitherConnect</a><em></em></h3>
+    <p class="tag">Browser extension — federated AI search, page context, and the Living OS overlay.</p>
+    <p class="why">Your agent cannot see the page you are looking at, so you paste it in by hand.</p>
+    <p class="adopt"><strong>Start here:</strong> Install it and ask an agent about the tab you are on.</p>
+    <pre>load unpacked — see the repo</pre>
+  </article>
+  <article id="aitherkvcache" class="card">
+    <h3><a href="https://aitherium.github.io/aitherkvcache/">aitherkvcache</a><em></em></h3>
+    <p class="tag">Near-optimal KV cache quantization for LLM inference — sub-byte compression.</p>
+    <p class="why">KV cache, not weights, is what runs a GPU out of room during real serving, and it grows with every token of every concurrent request.</p>
+    <p class="adopt"><strong>Start here:</strong> Quantize the cache on one model you already serve and measure the headroom.</p>
+    <pre>pip install aither-kvcache</pre>
+  </article>
+  <article id="awarena" class="card pending">
+    <h3><span>awarena</span><em> · planned</em></h3>
+    <p class="tag">Put two agents head to head and get a verdict you can check.</p>
+    <p class="why">Everyone claims their agent is better and nobody can settle it. The comparisons that exist are a screenshot of two chats, or a leaderboard whose numbers arrived from somewhere nobody can name -- so "which of these is actually better at this" stays an argument. And the moment a result is worth something, the vote is worth gaming: an audience score with no check on who is voting is a bot flood with extra steps, and a verdict nobody signed can be edited afterwards by whoever owns the database.</p>
+    <p class="adopt"><strong>Start here:</strong> Run one judged head-to-head between two agents and read the scored verdict.</p>
+    <pre>pip install awarena</pre>
+  </article>
+  <article id="awbac" class="card pending">
+    <h3><span>awbac</span><em> · not published yet</em></h3>
+    <p class="tag">Role-based access control that fails closed and explains itself.</p>
+    <p class="why">Most authz answers "no" without saying why, so every denial becomes a debugging session — and the ones that fail OPEN never announce themselves at all.</p>
+    <p class="adopt"><strong>Start here:</strong> Gate one endpoint and read the explanation it gives for a denial.</p>
+    <pre>pip install awbac</pre>
+  </article>
+  <article id="awbrowse" class="card">
+    <h3><a href="https://aitherium.github.io/awbrowse/">awbrowse</a><em></em></h3>
+    <p class="tag">A portable browser client — navigate, console, network, DOM, screenshot.</p>
+    <p class="why">Handing an agent a screenshot makes it read a picture of text; handing it raw DOM makes it read a megabyte of markup. Neither of those is the page.</p>
+    <p class="adopt"><strong>Start here:</strong> Drive one page and get back what is on it in a form worth reasoning about.</p>
+    <pre>pip install awbrowse</pre>
+  </article>
+  <article id="awdit" class="card pending">
+    <h3><span>awdit</span><em> · not published yet</em></h3>
+    <p class="tag">An append-only audit trail whose gaps are DETECTABLE.</p>
+    <p class="why">An audit log you can silently delete from is decoration. Most are. The property that matters is not "it records" but "a missing record is visible".</p>
+    <p class="adopt"><strong>Start here:</strong> Write one sensitive action to it and then try to remove the record.</p>
+    <pre>pip install awdit</pre>
+  </article>
+  <article id="awfind" class="card">
+    <h3><a href="https://aitherium.github.io/awfind/">awfind</a><em></em></h3>
+    <p class="tag">A portable search client — query, results, ranking.</p>
+    <p class="why">An agent with no search guesses from training data; an agent handed a raw web API gets ten blue links and burns its context reading them.</p>
+    <p class="adopt"><strong>Start here:</strong> Ask one question and get ranked answers back instead of a page of results.</p>
+    <pre>pip install awfind</pre>
+  </article>
+  <article id="awgit" class="card">
+    <h3><a href="https://aitherium.github.io/awgit/">awgit</a><em></em></h3>
+    <p class="tag">Semantic version control on top of git — edit-ops and leases.</p>
+    <p class="why">Several agents editing one worktree silently sweep each other's work; a diff tells you WHAT changed but not who meant it or whether they were mid-edit.</p>
+    <p class="adopt"><strong>Start here:</strong> Take a lease on a file before you edit it in a shared checkout.</p>
+    <pre>pip install awgit</pre>
+  </article>
+  <article id="awgraph" class="card">
+    <h3><a href="https://aitherium.github.io/awgraph/">awgraph</a><em></em></h3>
+    <p class="tag">A semantic code graph for agents — AST + tree-sitter, call graphs.</p>
+    <p class="why">"Who calls this?" answered by grep is a guess. Agents burn enormous context re-reading files to rebuild a graph the parser already knows.</p>
+    <p class="adopt"><strong>Start here:</strong> Index one repo and ask it who calls one function.</p>
+    <pre>pip install awgraph</pre>
+  </article>
+  <article id="awiam" class="card pending">
+    <h3><span>awiam</span><em> · not published yet</em></h3>
+    <p class="tag">Who is this caller? A directory and session store that fails honestly.</p>
+    <p class="why">Deactivation that takes effect "eventually" is not deactivation, and a store that cannot be read reports zero users — which every caller reads as "nobody is authorised" or, worse, as an empty directory to helpfully repopulate.</p>
+    <p class="adopt"><strong>Start here:</strong> Deactivate one session and watch it stop working immediately.</p>
+    <pre>pip install awiam</pre>
+  </article>
+  <article id="awkit" class="card pending">
+    <h3><span>awkit</span><em> · planned</em></h3>
+    <p class="tag">Render an agent panel from a tool result — one component, any React app.</p>
+    <p class="why">Every agent surface re-implements the same panel by hand, so each one rots separately: a catalogue lists an app the renderer cannot draw, a tab is declared with an id no component answers to, and nothing compares the two. Measured 2026-08-19 on ONE tenant: 18 apps listed and 0 deployed, and 2 of 6 declared panels were ids with no component — they rendered NOTHING, with no error, no boundary and no log line, which is indistinguishable from a feature nobody wanted.</p>
+    <p class="adopt"><strong>Start here:</strong> Point it at one MCP tool result and get a panel you can put in your own page.</p>
+    <pre>npm i @aitherium/awkit</pre>
+  </article>
+  <article id="awkno" class="card">
+    <h3><a href="https://aitherium.github.io/awkno/">awkno</a><em></em></h3>
+    <p class="tag">The man page for the Aither World — every brick, stack and law, offline.</p>
+    <p class="why">The family is only useful if you can find it. Its registry lives in one yaml in one monorepo and the laws live in a public skills pack, so a stranger with a terminal and no browser can reach neither — which makes "what exists and what should this talk to" a question asked of a person instead of a tool.</p>
+    <p class="adopt"><strong>Start here:</strong> Ask it what a brick does and get the answer with your network cable out.</p>
+    <pre>pip install awkno</pre>
+  </article>
+  <article id="awm" class="card">
+    <h3><a href="https://aitherium.github.io/awm/">awm</a><em></em></h3>
+    <p class="tag">A portable, scoped agent memory.</p>
+    <p class="why">An agent that forgets everything between sessions re-derives the same facts forever; one that remembers everything globally leaks context across projects.</p>
+    <p class="adopt"><strong>Start here:</strong> Give one agent a memory scoped to one project and watch it stop re-asking.</p>
+    <pre>pip install awm</pre>
+  </article>
+  <article id="awmail" class="card">
+    <h3><a href="https://aitherium.github.io/awmail/">awmail</a><em></em></h3>
+    <p class="tag">Give an agent an email address — send, and actually receive.</p>
+    <p class="why">An agent that cannot send email cannot finish most real errands: it drafts the invitation, the receipt, the reply, and then hands a human a block of text to paste somewhere. The usual fix is a transactional provider, which means a domain, DNS records, a paid account and a warm-up period before the first message — an afternoon of setup to send one email from a mailbox you already own. Receiving is worse: almost nothing gives an agent an inbox, so agents are write-only and cannot close a loop that a person answers by replying.</p>
+    <p class="adopt"><strong>Start here:</strong> Send one email from an agent using a mailbox you already own, in about a minute.</p>
+    <pre>pip install awmail</pre>
+  </article>
+  <article id="awnboard" class="card">
+    <h3><a href="https://aitherium.github.io/awnboard/">awnboard</a><em></em></h3>
+    <p class="tag">A front gate you can put in front of anything, and hand someone the key to.</p>
+    <p class="why">Letting one specific person reach one specific thing is still, in 2026, either a whole identity deployment or a link anyone who sees it can use. So everybody ships the link: an unguessable URL in an email, no expiry, no audience, no record of who walked through it -- and no way to take it back without breaking it for everyone.</p>
+    <p class="adopt"><strong>Start here:</strong> Put a gate in front of one URL and let exactly one person through it with a code you sent them.</p>
+    <pre>pip install awnboard</pre>
+  </article>
+  <article id="awnest" class="card">
+    <h3><a href="https://aitherium.github.io/awnest/">awnest</a><em></em></h3>
+    <p class="tag">Prove there is a human before you let them into the nest.</p>
+    <p class="why">Any surface an agent can use, a bot can flood. CAPTCHA is hostile to the humans it is meant to serve and is beaten by the machines it is meant to stop, so the check has to be something other than a puzzle -- and every check that does exist fails OPEN, because "we could not tell" and "it is fine" reach the caller as the same empty value.</p>
+    <p class="adopt"><strong>Start here:</strong> Gate one action behind a human check and watch an automated caller fail it.</p>
+    <pre>pip install awnest</pre>
+  </article>
+  <article id="awpredict" class="card pending">
+    <h3><span>awpredict</span><em> · not published yet</em></h3>
+    <p class="tag">Predict what your environment does next, and how surprised you were.</p>
+    <p class="why">An agent that cannot anticipate its environment can only react. Every framework that offers this makes you adopt its whole training stack to find out whether a learned model beats the lookup table you already have.</p>
+    <p class="adopt"><strong>Start here:</strong> Wrap an environment you already have and ask it what happens next.</p>
+    <pre>pip install awpredict</pre>
+  </article>
+  <article id="awprism" class="card">
+    <h3><a href="https://aitherium.github.io/awprism/">awprism</a><em></em></h3>
+    <p class="tag">Turn a failure into ranked hypotheses — and say what would confirm each one.</p>
+    <p class="why">Debugging with an agent collapses onto the first plausible story, because nothing forces a second. The cost is not the wrong guess, it is the hours spent proving it — measured repeatedly here, where five hypotheses were spent on a service that was genuinely correct, and where a symptom named the wrong component so consistently that "the symptom names the INNOCENT service" had to be written down as a standing rule.</p>
+    <p class="adopt"><strong>Start here:</strong> Hand it a failure and get back ranked candidate causes, each with the one observation that would rule it in or out.</p>
+    <pre>pip install awprism</pre>
+  </article>
+  <article id="awreason" class="card">
+    <h3><a href="https://aitherium.github.io/awreason/">awreason</a><em></em></h3>
+    <p class="tag">A portable reasoning client — sessions, phases, thoughts, and the chain that produced the answer.</p>
+    <p class="why">An agent that reasoned well and an agent that reasoned badly return the same shape: one paragraph. So a wrong answer is indistinguishable from a right one until it has been acted on, and the only available debugging tool is asking again. The structure exists inside the model turn and is discarded at the boundary, which is why nothing downstream can ever check it.</p>
+    <p class="adopt"><strong>Start here:</strong> Run one hard question as a session you can open up afterwards — the phases, the thoughts, the tool calls — instead of a paragraph you have to take on faith.</p>
+    <pre>pip install awreason</pre>
+  </article>
+  <article id="awrecover" class="card">
+    <h3><a href="https://aitherium.github.io/awrecover/">awrecover</a><em></em></h3>
+    <p class="tag">Labelled snapshots with an all-or-nothing restore.</p>
+    <p class="why">A restore that half-succeeds is worse than one that fails, because you now have a state that never existed.</p>
+    <p class="adopt"><strong>Start here:</strong> Snapshot one directory, break it, restore it, diff it.</p>
+    <pre>pip install awrecover</pre>
+  </article>
+  <article id="awrecurse" class="card">
+    <h3><a href="https://aitherium.github.io/awrecurse/">awrecurse</a><em></em></h3>
+    <p class="tag">Answer a question over a context far larger than the window — recursively, with the trace kept.</p>
+    <p class="why">A context window that overflows does not raise. The middle is dropped, the model answers fluently from the ends, and the reply looks exactly like one drawn from the whole document. The failure is a SILENCE — no error, no truncation warning, no shorter answer — and the only signal is that it is quietly wrong about the part nobody checked.</p>
+    <p class="adopt"><strong>Start here:</strong> Ask a question about a document far bigger than your model's context, and get an answer that names which parts it actually read.</p>
+    <pre>pip install awrecurse</pre>
+  </article>
+  <article id="awrelay" class="card">
+    <h3><a href="https://aitherium.github.io/awrelay/">awrelay</a><em></em></h3>
+    <p class="tag">Portable agent messaging — findings, alerts, coordination.</p>
+    <p class="why">One agent's transcript is invisible to every other agent, so a conclusion reached once gets re-derived by the next session that hits the same symptom.</p>
+    <p class="adopt"><strong>Start here:</strong> Have one agent post a finding to a channel a human can also read.</p>
+    <pre>pip install awrelay</pre>
+  </article>
+  <article id="awrepl" class="card">
+    <h3><a href="https://aitherium.github.io/awrepl/">awrepl</a><em></em></h3>
+    <p class="tag">A REPL an agent can actually use — state that survives between turns.</p>
+    <p class="why">An agent given one-shot shell commands rebuilds its whole world on every call, so it guesses instead of looking — and in a transcript a guess is indistinguishable from a reading. Every variable it wanted is gone the moment the command exits, which is why agents describe state rather than inspect it.</p>
+    <p class="adopt"><strong>Start here:</strong> Give an agent a live session it can keep poking at, so the next question is asked of the object instead of of its own memory.</p>
+    <pre>pip install awrepl</pre>
+  </article>
+  <article id="awresearch" class="card">
+    <h3><a href="https://aitherium.github.io/awresearch/">awresearch</a><em></em></h3>
+    <p class="tag">Ask a research question, get a cited report you can check.</p>
+    <p class="why">An agent asked to research something returns a fluent report whose citations were never read. The failure is not a refusal and not an error — it is a plausible document, which is the most expensive possible output, because checking it costs more than writing it did.</p>
+    <p class="adopt"><strong>Start here:</strong> Ask one question and get back a report where every claim carries the source it came from.</p>
+    <pre>pip install awresearch</pre>
+  </article>
+  <article id="awseal" class="card">
+    <h3><a href="https://aitherium.github.io/awseal/">awseal</a><em></em></h3>
+    <p class="tag">Sign an artifact so a stranger can verify it.</p>
+    <p class="why">"Download this and run it" is a request for trust with nothing behind it.</p>
+    <p class="adopt"><strong>Start here:</strong> Sign one release file and hand someone the verify command.</p>
+    <pre>pip install awseal</pre>
+  </article>
+  <article id="awsh" class="card pending">
+    <h3><span>awsh</span><em> · not published yet</em></h3>
+    <p class="tag">Your terminal answers you -- type a question where a command would go.</p>
+    <p class="why">A shell has exactly one response to a line it does not recognise: command not found. So the moment you want to look something up you leave the terminal for a browser and lose the directory, the environment and the session you were already in -- when everything needed to answer you was right there.</p>
+    <p class="adopt"><strong>Start here:</strong> Type a question at your prompt and get an answer instead of "command not found".</p>
+    <pre>npm i -g @aitherium/shell-cli</pre>
+  </article>
+  <article id="awshare" class="card">
+    <h3><a href="https://aitherium.github.io/awshare/">awshare</a><em></em></h3>
+    <p class="tag">Publish an artifact and fetch it back verified.</p>
+    <p class="why">Publishing is easy; proving the bytes that arrived are the bytes you sent is the part everyone skips.</p>
+    <p class="adopt"><strong>Start here:</strong> Publish one file and fetch it on another machine with verification on.</p>
+    <pre>pip install awshare</pre>
+  </article>
+  <article id="awsync" class="card pending">
+    <h3><span>awsync</span><em> · now part of AitherConnect</em></h3>
+    <p class="tag">Keep one client in step with a platform — and never confuse "cannot tell" with "fine".</p>
+    <p class="why">A deployment that drifts is worse than one that breaks: it is silently out of sync, reporting success while the platform has moved on. Every sync daemon hides this by collapsing network failures into empty results, so "could not tell" reads as "in step".</p>
+    <p class="adopt"><strong>Start here:</strong> Send a heartbeat up and receive pack updates down, and know exactly what changed.</p>
+    <pre>ships inside AitherConnect</pre>
+  </article>
+  <article id="awtunnel" class="card pending">
+    <h3><span>awtunnel</span><em> · not published yet</em></h3>
+    <p class="tag">Reach a service that has no public address.</p>
+    <p class="why">Everything an agent runs is behind NAT on somebody's laptop, and every workaround (a port forward, a public IP, a broker somebody maintains) becomes permanent.</p>
+    <p class="adopt"><strong>Start here:</strong> Expose one local port to one remote caller and take it away again.</p>
+    <pre>pip install awtunnel</pre>
+  </article>
+</div>
+<h2>Knowledge</h2>
+<div class="grid">
+  <article id="AitherZero" class="card">
+    <h3><a href="https://aitherium.github.io/AitherZero/">AitherZero</a><em></em></h3>
+    <p class="tag">PowerShell 7+ automation framework — numbered, self-describing scripts.</p>
+    <p class="why">Ops knowledge lives in people's shell history, so the same recovery gets improvised differently every time it is needed.</p>
+    <p class="adopt"><strong>Start here:</strong> Run one numbered script and read what it says it did.</p>
+    <pre>git clone https://github.com/Aitherium/AitherZero</pre>
+  </article>
+  <article id="awknowledge" class="card">
+    <h3><a href="https://aitherium.github.io/awknowledge/">awknowledge</a><em></em></h3>
+    <p class="tag">How to run a coding agent so the result survives — the laws, with evidence.</p>
+    <p class="why">Everyone learns the same lessons about agent-written code the same expensive way, and writes none of them down where the next person looks.</p>
+    <p class="adopt"><strong>Start here:</strong> Read one law and apply it to the next thing you ship.</p>
+    <pre>read it — https://aitherium.github.io/awskills/codex.html</pre>
+  </article>
+  <article id="awskills" class="card">
+    <h3><a href="https://aitherium.github.io/awskills/">awskills</a><em></em></h3>
+    <p class="tag">Portable agent skills — self-contained procedures an agent loads on demand.</p>
+    <p class="why">Prompt knowledge dies in a transcript. A skill is a procedure written once, in a file, that any agent can load when the situation calls for it.</p>
+    <p class="adopt"><strong>Start here:</strong> Copy one .md into your agent's skills dir and tell it to use that skill.</p>
+    <pre>git clone https://github.com/Aitherium/awskills</pre>
+  </article>
+</div>
+<h2>Bases</h2>
+<div class="grid">
+  <article id="awnix" class="card">
+    <h3><a href="https://aitherium.github.io/awnix/">awnix</a><em></em></h3>
+    <p class="tag">A Linux you can hand to an agent — immutable base, capabilities included.</p>
+    <p class="why">An agent with root on a mutable host eventually produces a machine nobody can reproduce.</p>
+    <p class="adopt"><strong>Start here:</strong> Boot one throwaway box and try to make a change you cannot reproduce.</p>
+    <pre>see the repo — image builder</pre>
+  </article>
+</div>
+<footer>
+Each card's <strong>Start here</strong> is the smallest useful thing that brick does alone —
+if it needed a sibling to be worth trying, it would not be its own repo.
+Anything marked <em>planned</em> or <em>not published yet</em> is listed on purpose:
+a named absence can be chased, a silent one just gets re-forgotten.
+</footer>
+</main><div id="aither-constellation" data-self="hub"></div>
+<script src="aither-constellation.js"></script>
+</body></html>
