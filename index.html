@@ -106,6 +106,13 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Run one judged head-to-head between two agents and read the scored verdict.</p>
     <pre>pip install awarena</pre>
   </article>
+  <article id="awask" class="card pending">
+    <h3><span>awask</span><em> · not published yet</em></h3>
+    <p class="tag">Your agent asks you a question — and acts on your answer.</p>
+    <p class="why">A decision buried in terminal prose is a stream event — it scrolls past, and the agent either stalls waiting for someone who is not reading, or guesses and does days of the wrong work. Every agent framework can print a question; almost none can carry the ANSWER back into the run that asked it, so the human is a bottleneck exactly when they are least able to be one.</p>
+    <p class="adopt"><strong>Start here:</strong> Ask a human a question from a script, and keep working on their answer.</p>
+    <pre>pip install awask</pre>
+  </article>
   <article id="awbac" class="card">
     <h3><a href="https://aitherium.github.io/awbac/">awbac</a><em></em></h3>
     <p class="tag">Role-based access control that fails closed and explains itself.</p>
@@ -126,6 +133,13 @@ and ignore the rest.</p>
     <p class="why">An audit log you can silently delete from is decoration. Most are. The property that matters is not "it records" but "a missing record is visible".</p>
     <p class="adopt"><strong>Start here:</strong> Write one sensitive action to it and then try to remove the record.</p>
     <pre>pip install awdit</pre>
+  </article>
+  <article id="awevolve" class="card pending">
+    <h3><span>awevolve</span><em> · not published yet</em></h3>
+    <p class="tag">Point an agent at a file and a command that scores it, and let it improve.</p>
+    <p class="why">Automated improvement loops fail silently and look identical while doing it. A run that explored honestly and found nothing produces the same logs, the same records and the same stop reason as a run that changed nothing at all -- there is no exception to catch and no failing request, so the loop keeps running and a human periodically concludes the search space is just hard. And the loops that DO work are usually one-shot generators: the model is asked for a candidate, handed no history, and never allowed to test its own idea before committing it.</p>
+    <p class="adopt"><strong>Start here:</strong> Point it at a file and a command that scores that file, and watch an agent improve it -- keeping every version and the score it earned.</p>
+    <pre>pip install awevolve</pre>
   </article>
   <article id="awfind" class="card">
     <h3><a href="https://aitherium.github.io/awfind/">awfind</a><em></em></h3>
