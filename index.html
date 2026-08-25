@@ -43,17 +43,27 @@ and ignore the rest.</p>
 <h2>Sets &mdash; suggested builds</h2>
 <div class="grid">
   <article class="card set"><h3>The bare agent VM<em> &middot; some pieces missing</em></h3><p class="tag">awnix already carries the capabilities; adding an agent is three lines in a Dockerfile, and your skills and credentials layer on top of that. The point of the order is that the guarantees live in the base, so swapping the agent keeps them.</p><p class="members"><a href="#awnix">awnix</a> <a href="#awdk">awdk</a> <a href="#awskills">awskills</a> <a href="#awkno">awkno</a></p></article>
-  <article class="card set"><h3>Senses<em> &middot; not yet</em></h3><p class="tag">What an agent needs to perceive things outside its own process — search and pages.</p><p class="members"><a href="#awfind">awfind</a> <a href="#awbrowse">awbrowse</a> <a href="#awdk">awdk</a></p></article>
+  <article class="card set"><h3>Senses<em> &middot; works today</em></h3><p class="tag">What an agent needs to perceive things outside its own process. Search and pages are the two it has; voice, vision and the screen in front of it are the three it does not, and they are named here so they stop being rediscovered as absences.</p><p class="members"><a href="#awfind">awfind</a> <a href="#awbrowse">awbrowse</a> <a href="#awvoice">awvoice</a> <a href="#awvision">awvision</a> <a href="#awscreen">awscreen</a> <a href="#awdk">awdk</a></p></article>
+  <article class="card set"><h3>Avatar ensemble<em> &middot; not yet</em></h3><p class="tag">Spawn more than one Persona-driven avatar at once, bind each to a distinct awdk agent persona (its own Library/pack, its own model), render them together in one shared scene, and let them hold a live concurrent conversation with each other and the owner -- steered from awsh as the cockpit. Registered 2026-08-24 per EC003: "give an avatar a face and a mind, then let several of them talk" cannot be said without naming the companion, the agent runtime and the shell that steers it, so this is a stack over existing bricks, not a new brick (same reasoning as `awsprite`, which this stack composes with directly).</p><p class="members"><a href="#awdk">awdk</a> <a href="#awsh">awsh</a> <a href="#awvoice">awvoice</a> <a href="#awvision">awvision</a> <a href="#awsprite">awsprite</a></p></article>
   <article class="card set"><h3>Provenance<em> &middot; some pieces missing</em></h3><p class="tag">Prove what an artifact is, who acted on it, and that nothing was quietly removed from the record.</p><p class="members"><a href="#awseal">awseal</a> <a href="#awshare">awshare</a> <a href="#awdit">awdit</a> <a href="#awbac">awbac</a></p></article>
   <article class="card set"><h3>Many agents, one repo<em> &middot; works today</em></h3><p class="tag">Several agents editing one codebase without sweeping each other's work or re-deriving what the last one already learned.</p><p class="members"><a href="#awgit">awgit</a> <a href="#awgraph">awgraph</a> <a href="#awrelay">awrelay</a> <a href="#awm">awm</a></p></article>
   <article class="card set"><h3>The front door<em> &middot; some pieces missing</em></h3><p class="tag">Who may come in at all, before anything asks who they are: a human check whose verdict is bound to one door and one use, the identity it names, the authority it feeds, and a record of every refusal. Named because the four already existed as four separate answers to one question a stranger asks first.</p><p class="members"><a href="#awnboard">awnboard</a> <a href="#awnest">awnest</a> <a href="#awiam">awiam</a> <a href="#awbac">awbac</a> <a href="#awdit">awdit</a></p></article>
   <article class="card set"><h3>Identity, authority, and the record<em> &middot; some pieces missing</em></h3><p class="tag">The three questions every access decision needs answered separately: who is this caller, what may they do, and what did they actually do. Kept apart on purpose -- one component that answers all three is one component that can quietly answer all three wrongly.</p><p class="members"><a href="#awiam">awiam</a> <a href="#awbac">awbac</a> <a href="#awdit">awdit</a></p></article>
   <article class="card set"><h3>One surface — agent panels, not hand-built UIs<em> &middot; not yet</em></h3><p class="tag">OWNER DECISION 2026-08-19, recorded because it was made in a transcript and would otherwise be re-litigated: stop hand-maintaining a web UI per app. The Living Desktop is the shell; an "app" is a dynamic agent panel rendered from a tool result (awkit), scoped by the identity plane, driven by intent rather than clicking. veil/portal keep serving pages and APIs where genuinely needed -- the UI, widgets and apps are what collapses, not the hosting. WHY, measured that day on ONE tenant: 18 apps listed and 0 deployed; AitherOne showing "Service Unavailable" while healthy, because all 11 of its GET routes require a body and answer 422 to every caller alive; 189 catalogue routes against 105 registered panels; and 2 of 6 declared panels were ids with NO component -- rendering nothing, with no error, no boundary and no log line. Every one of those is the same shape: declared in one place, not real in another, and nothing comparing the two. THE TRAP THIS MUST NOT INHERIT, stated here so the stack is judged on it: collapsing six surfaces into one does not fix that shape, it reduces how many places it can happen. A panel spec a renderer cannot honour is a stale component one layer up. The parity gate (RB001-RB005's shape: producer ids == renderer ids, asserted by something that fails) comes FIRST, or this becomes the seventh island. DONE means: one previously-broken app rebuilt as an agent panel end to end with real scope and real data; the entitlement plane answering once instead of a catalogue and a backend disagreeing; and surfaces retired by the EC009 ratchet, one at a time, each with its consumers moved in the same commit -- never by decree.</p><p class="members"><a href="#awkit">awkit</a> <a href="#awdk">awdk</a> <a href="#awnode">awnode</a> <a href="#awiam">awiam</a> <a href="#awbac">awbac</a></p></article>
-  <article class="card set"><h3>The reasoning loop<em> &middot; not yet</em></h3><p class="tag">The thinking core, kept apart from the senses and the hands on purpose. A hard question becomes a session with phases you can inspect (awreason); a failure inside it becomes ranked hypotheses with a falsifying check for each (awprism); and the check is actually RUN against live state rather than recalled (awrepl). Those three are the loop. It composes with `agent-senses` for what is outside the process and with `shared-worktree` for what is in the codebase — which is why neither set is repeated here.</p><p class="members"><a href="#awreason">awreason</a> <a href="#awprism">awprism</a> <a href="#awrepl">awrepl</a> <a href="#awrecurse">awrecurse</a></p></article>
+  <article class="card set"><h3>The reasoning loop<em> &middot; some pieces missing</em></h3><p class="tag">The thinking core, kept apart from the senses and the hands on purpose. A hard question becomes a session with phases you can inspect (awreason); a failure inside it becomes ranked hypotheses with a falsifying check for each (awprism); and the check is actually RUN against live state rather than recalled (awrepl). Those three are the loop. It composes with `agent-senses` for what is outside the process and with `shared-worktree` for what is in the codebase — which is why neither set is repeated here.</p><p class="members"><a href="#awreason">awreason</a> <a href="#awprism">awprism</a> <a href="#awrepl">awrepl</a> <a href="#awrecurse">awrecurse</a></p></article>
   <article class="card set"><h3>Research you can check<em> &middot; some pieces missing</em></h3><p class="tag">A research question answered against real sources, where the report names what it read (awresearch), the sources are found and actually opened rather than hallucinated (awfind, awbrowse), and what was learned survives the session (awm). The one failure this set exists for is the plausible document: fluent, well-formed, citing pages nobody fetched.</p><p class="members"><a href="#awresearch">awresearch</a> <a href="#awfind">awfind</a> <a href="#awbrowse">awbrowse</a> <a href="#awm">awm</a></p></article>
+  <article class="card set"><h3>A pool across your own devices<em> &middot; some pieces missing</em></h3><p class="tag">Owner directive 2026-08-24: someone with a laptop, a desktop and a phone should be able to join their OWN devices into one pool and have a model stay warm and servable across whichever of them is on, without joining the platform's shared AitherNet compute market. Registered here because it does not exist yet, and the three pieces that would compose into it are each individually real: `awnet` is a peer REGISTRY + three-valued TCP reachability check ("is anyone listening") -- explicitly not a VPN and not a placement/pooling primitive, by its own README; `awnode` is the local gateway that would route a request to whichever peer has the model warm; `awdk` is the runtime that would run on each device. None of the three knows about model PLACEMENT or WARM-KEEPING across peers today -- that logic is the actual gap, not the transport (mesh-deploy/WireGuard already exists for that) and not per-node serving (node-bootstrap already detects hardware and stands up a local backend). The closest existing precedent is the platform's own DGX+5090+RTX ggml-RPC pooled-inference stack, run at fleet scale and never packaged as something a customer's own device fleet can stand up for itself. NOT `aithernet-provider` (that joins the PLATFORM's community pool with settlement -- a different shape) and NOT a rename of the fleet's pooled-inference stack (EC003/client-not-lift: that stack is thousands of lines of fleet-specific orchestration; a personal-pool brick would be a small client speaking to whichever peers `awnet` says are reachable, same relationship as `awrelay` to `AitherRelay.py`). SHARPENED 2026-08-24, owner asked to "start serving all of our model stack from the mesh pool for flexibility": the ggml-RPC precedent is NOT a general placement layer and generalising it directly would be the wrong move -- it does TENSOR-LEVEL SPLIT serving for ONE model too large for any single box (DeepSeek-V4-Flash, 97-108 GB, routed experts pinned to the DGX's 121 GB by design), hand-tuned per model (custom RPC server build, per-backend thread counts, a dedicated watchdog/alerting stack -- see `pooled-inference-ops` skill). Bonsai/Qwen3.8/gemma4 do not need splitting, they fit one GPU each; what they need is PLACEMENT (which box, right now) plus WARM/PARK lifecycle across many small models competing for few GPUs -- a different problem the RPC pool was never built to solve. The real placement layer already exists in shape (`AitherCompute`'s `gpu_power_state` -- hot/parked/on_demand, idle-reap) but is currently DEAD fleet-wide (D-2158: no docker socket reachable from its container) -- so today NEITHER the platform's own stack nor a customer's personal pool has a working dynamic-placement layer; the gap is the same gap at two scales.</p><p class="members"><a href="#awnet">awnet</a> <a href="#awnode">awnode</a> <a href="#awdk">awdk</a></p></article>
+  <article class="card set"><h3>Grow a companion in the browser, then take it home<em> &middot; not yet</em></h3><p class="tag">Owner directive 2026-08-24, reinforcing the existing `.PRODUCTS/.SPRITE/` Phase 2/3 roadmap (`AitherOS/dev/prompts/aithersprite-knowledge-companion-program.md`): AitherSprite today is playable but shallow -- flat per-sprite knowledge rows, titles-only in the talk prompt, server-side inference only, and "download it" is a paid pack with no guided path to actually WIRE it to real local tools and data. The directive is four upgrades composed together, and none of the four pieces is new -- the gap is that nothing connects them for this product: teaching should build a real personal knowledge GRAPH (`awgraph` is a CODE graph today -- CodeChunk/CodeGraph/CodeGraphStore -- and `awm` is scoped FACTS, not a traversable graph; a per-user knowledge graph does not exist as a brick yet); the companion should run and be TRAINABLE fully in-browser on `awbonsai`, not only through a server round trip; and graduating a companion should walk the owner through a real self-service CONNECT of `awdk` + `awsh` + `awnode` on their own machine -- the same shape as the `selfhost-bonsai` skill's stranger-to-provider flow, but ending in "your companion can now use your files/tools" instead of "your GPU now serves the mesh". NOT a rewrite of `lib/companion/AitherSprite.py` -- its deterministic engine (needs/mood/evolution, no I/O) is correct and stays the server-authoritative source of truth even for a browser-trained companion, so growth cannot be forged client-side (`security-review-patterns.md` #1: a fail-closed gate is not optional). What changes is WHERE teach/talk execute (in-tab via `awbonsai` when offline or pre-account, server via MicroScheduler when connected) and how knowledge is stored (a graph, not a flat table).</p><p class="members"><a href="#awsprite">awsprite</a> <a href="#awbonsai">awbonsai</a> <a href="#awdk">awdk</a> <a href="#awsh">awsh</a> <a href="#awnode">awnode</a></p></article>
 </div>
 <h2>Runtimes</h2>
 <div class="grid">
+  <article id="awbonsai" class="card pending">
+    <h3><span>awbonsai</span><em> · planned</em></h3>
+    <p class="tag">Run a real model in the visitor's own browser — no server round trip, no upload.</p>
+    <p class="why">Every in-browser LLM demo either phones home for the real answer or downloads a few hundred MB unasked. Getting BOTH right -- genuinely local inference, and a consent gate that runs BEFORE the fetch instead of after -- is the part nobody ships, so most "runs in your browser" claims are marketing for a server call.</p>
+    <p class="adopt"><strong>Start here:</strong> Load one page and get an answer from a model that never left the tab.</p>
+    <pre>npm i @aitherium/portal-kit</pre>
+  </article>
   <article id="awdk" class="card">
     <h3><a href="https://aitherium.github.io/awdk/">awdk</a><em></em></h3>
     <p class="tag">Build AI agent fleets — 3 lines, any backend, local or cloud.</p>
@@ -66,7 +76,7 @@ and ignore the rest.</p>
     <p class="tag">The agentic web — agents host a mesh, and agents join one.</p>
     <p class="why">Agents are islands. Every deployment reinvents how a peer is found, addressed and trusted, so two agents on two machines cost more to introduce than either cost to build — and the answers (port forwards, a VPN per pair, public IPs, a broker somebody has to run) all become permanent maintenance.</p>
     <p class="adopt"><strong>Start here:</strong> Host a mesh on one machine and join it from another.</p>
-    <pre>pip install awnet</pre>
+    <pre>pip install git+https://github.com/Aitherium/awnet.git</pre>
   </article>
   <article id="awnode" class="card">
     <h3><a href="https://aitherium.github.io/awnode/">awnode</a><em></em></h3>
@@ -77,7 +87,7 @@ and ignore the rest.</p>
   </article>
   <article id="awrun" class="card">
     <h3><a href="https://aitherium.github.io/awrun/">awrun</a><em></em></h3>
-    <p class="tag">A priority-aware queue and dispatcher for agentic runs and ad-hoc CI builds.</p>
+    <p class="tag">A priority-aware queue and dispatcher for agentic runs and ad-hoc CI builds. It also judges whether the runner pool is big enough for the queue it is draining, and can ask a host to grow it -- reserving capacity is zero-sum, so a saturated pool needs more of it, not a different share of it.</p>
     <p class="why">A shared runner pool serves whoever asked first, so an urgent one-line fix waits behind a queue of speculative work — and the only lever anyone has is asking people to stop pushing.</p>
     <p class="adopt"><strong>Start here:</strong> Queue two runs at different priorities and watch the urgent one overtake.</p>
     <pre>pip install awrun</pre>
@@ -99,13 +109,6 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Quantize the cache on one model you already serve and measure the headroom.</p>
     <pre>pip install aither-kvcache</pre>
   </article>
-  <article id="awarena" class="card pending">
-    <h3><span>awarena</span><em> · planned</em></h3>
-    <p class="tag">Put two agents head to head and get a verdict you can check.</p>
-    <p class="why">Everyone claims their agent is better and nobody can settle it. The comparisons that exist are a screenshot of two chats, or a leaderboard whose numbers arrived from somewhere nobody can name -- so "which of these is actually better at this" stays an argument. And the moment a result is worth something, the vote is worth gaming: an audience score with no check on who is voting is a bot flood with extra steps, and a verdict nobody signed can be edited afterwards by whoever owns the database.</p>
-    <p class="adopt"><strong>Start here:</strong> Run one judged head-to-head between two agents and read the scored verdict.</p>
-    <pre>pip install awarena</pre>
-  </article>
   <article id="awask" class="card pending">
     <h3><span>awask</span><em> · not published yet</em></h3>
     <p class="tag">Your agent asks you a question — and acts on your answer.</p>
@@ -118,7 +121,14 @@ and ignore the rest.</p>
     <p class="tag">Role-based access control that fails closed and explains itself.</p>
     <p class="why">Most authz answers "no" without saying why, so every denial becomes a debugging session — and the ones that fail OPEN never announce themselves at all.</p>
     <p class="adopt"><strong>Start here:</strong> Gate one endpoint and read the explanation it gives for a denial.</p>
-    <pre>pip install awbac</pre>
+    <pre>pip install git+https://github.com/Aitherium/awbac.git</pre>
+  </article>
+  <article id="awbeads" class="card pending">
+    <h3><span>awbeads</span><em> · not published yet</em></h3>
+    <p class="tag">A spatial canvas for a page — arrange things, connect them, and keep the arrangement.</p>
+    <p class="why">Every product eventually grows a screen where things are placed rather than listed — a board, a map, a graph of what connects to what. That screen is almost always re-implemented per product, and the arrangement lives in component state, so it dies on reload and cannot be exported, reviewed, or moved to another surface. Measured on this tree 2026-08-24, the same hand-vendored tarball appears in three separate product frontends because there was no registered brick to depend on.</p>
+    <p class="adopt"><strong>Start here:</strong> Drop a canvas into one page, arrange two things on it, reload, and find them where you left them.</p>
+    <pre>npm i @aitheros/bead-space</pre>
   </article>
   <article id="awbrowse" class="card">
     <h3><a href="https://aitherium.github.io/awbrowse/">awbrowse</a><em></em></h3>
@@ -132,7 +142,7 @@ and ignore the rest.</p>
     <p class="tag">An append-only audit trail whose gaps are DETECTABLE.</p>
     <p class="why">An audit log you can silently delete from is decoration. Most are. The property that matters is not "it records" but "a missing record is visible".</p>
     <p class="adopt"><strong>Start here:</strong> Write one sensitive action to it and then try to remove the record.</p>
-    <pre>pip install awdit</pre>
+    <pre>pip install git+https://github.com/Aitherium/awdit.git</pre>
   </article>
   <article id="awevolve" class="card pending">
     <h3><span>awevolve</span><em> · not published yet</em></h3>
@@ -167,10 +177,10 @@ and ignore the rest.</p>
     <p class="tag">Who is this caller? A directory and session store that fails honestly.</p>
     <p class="why">Deactivation that takes effect "eventually" is not deactivation, and a store that cannot be read reports zero users — which every caller reads as "nobody is authorised" or, worse, as an empty directory to helpfully repopulate.</p>
     <p class="adopt"><strong>Start here:</strong> Deactivate one session and watch it stop working immediately.</p>
-    <pre>pip install awiam</pre>
+    <pre>pip install git+https://github.com/Aitherium/awiam.git</pre>
   </article>
   <article id="awkit" class="card pending">
-    <h3><span>awkit</span><em> · planned</em></h3>
+    <h3><span>awkit</span><em> · not published yet</em></h3>
     <p class="tag">Render an agent panel from a tool result — one component, any React app.</p>
     <p class="why">Every agent surface re-implements the same panel by hand, so each one rots separately: a catalogue lists an app the renderer cannot draw, a tab is declared with an id no component answers to, and nothing compares the two. Measured 2026-08-19 on ONE tenant: 18 apps listed and 0 deployed, and 2 of 6 declared panels were ids with no component — they rendered NOTHING, with no error, no boundary and no log line, which is indistinguishable from a feature nobody wanted.</p>
     <p class="adopt"><strong>Start here:</strong> Point it at one MCP tool result and get a panel you can put in your own page.</p>
@@ -216,7 +226,7 @@ and ignore the rest.</p>
     <p class="tag">Predict what your environment does next, and how surprised you were.</p>
     <p class="why">An agent that cannot anticipate its environment can only react. Every framework that offers this makes you adopt its whole training stack to find out whether a learned model beats the lookup table you already have.</p>
     <p class="adopt"><strong>Start here:</strong> Wrap an environment you already have and ask it what happens next.</p>
-    <pre>pip install awpredict</pre>
+    <pre>pip install git+https://github.com/Aitherium/awpredict.git</pre>
   </article>
   <article id="awprism" class="card">
     <h3><a href="https://aitherium.github.io/awprism/">awprism</a><em></em></h3>
@@ -237,7 +247,7 @@ and ignore the rest.</p>
     <p class="tag">Labelled snapshots with an all-or-nothing restore.</p>
     <p class="why">A restore that half-succeeds is worse than one that fails, because you now have a state that never existed.</p>
     <p class="adopt"><strong>Start here:</strong> Snapshot one directory, break it, restore it, diff it.</p>
-    <pre>pip install awrecover</pre>
+    <pre>pip install git+https://github.com/Aitherium/awrecover.git</pre>
   </article>
   <article id="awrecurse" class="card">
     <h3><a href="https://aitherium.github.io/awrecurse/">awrecurse</a><em></em></h3>
@@ -253,6 +263,13 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Have one agent post a finding to a channel a human can also read.</p>
     <pre>pip install awrelay</pre>
   </article>
+  <article id="awrena" class="card pending">
+    <h3><span>awrena</span><em> · not published yet</em></h3>
+    <p class="tag">Put two agents head to head and get a verdict you can check.</p>
+    <p class="why">Everyone claims their agent is better and nobody can settle it. The comparisons that exist are a screenshot of two chats, or a leaderboard whose numbers arrived from somewhere nobody can name -- so "which of these is actually better at this" stays an argument. And the moment a result is worth something, the vote is worth gaming: an audience score with no check on who is voting is a bot flood with extra steps, and a verdict nobody signed can be edited afterwards by whoever owns the database.</p>
+    <p class="adopt"><strong>Start here:</strong> Run one judged head-to-head between two agents and read the scored verdict.</p>
+    <pre>pip install awrena</pre>
+  </article>
   <article id="awrepl" class="card">
     <h3><a href="https://aitherium.github.io/awrepl/">awrepl</a><em></em></h3>
     <p class="tag">A REPL an agent can actually use — state that survives between turns.</p>
@@ -265,7 +282,21 @@ and ignore the rest.</p>
     <p class="tag">Ask a research question, get a cited report you can check.</p>
     <p class="why">An agent asked to research something returns a fluent report whose citations were never read. The failure is not a refusal and not an error — it is a plausible document, which is the most expensive possible output, because checking it costs more than writing it did.</p>
     <p class="adopt"><strong>Start here:</strong> Ask one question and get back a report where every claim carries the source it came from.</p>
-    <pre>pip install awresearch</pre>
+    <pre>pip install git+https://github.com/Aitherium/awresearch.git</pre>
+  </article>
+  <article id="awrise" class="card pending">
+    <h3><span>awrise</span><em> · not published yet</em></h3>
+    <p class="tag">Wake an agent on a schedule, let it do one thing, and put it back to sleep.</p>
+    <p class="why">A scheduled agent fails as a SILENCE. A wake that never fired because the host was down, a wake that overlapped the run before it and corrupted shared state, and a wake that hung forever holding its slot are INDISTINGUISHABLE from outside: in every case nothing happened and nothing said so. Cron has no memory -- a missed minute is simply gone -- so "not due yet" and "due, and never ran" read identically, and the operator finds out days later by noticing absent output rather than by being told.</p>
+    <p class="adopt"><strong>Start here:</strong> Wake something on a schedule, let it do one thing, and put it back to sleep.</p>
+    <pre>pip install awrise</pre>
+  </article>
+  <article id="awscreen" class="card pending">
+    <h3><span>awscreen</span><em> · not published yet</em></h3>
+    <p class="tag">See this machine — what is on screen, and where to click it.</p>
+    <p class="why">Automating a desktop means naming things that have no names. Coordinates rot on the next resize, selectors do not exist outside a browser, and the one thing that does not change is what a human would see and point at.</p>
+    <p class="adopt"><strong>Start here:</strong> Find the thing you want to click by describing what it looks like.</p>
+    <pre>pip install awscreen</pre>
   </article>
   <article id="awseal" class="card">
     <h3><a href="https://aitherium.github.io/awseal/">awseal</a><em></em></h3>
@@ -274,12 +305,12 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Sign one release file and hand someone the verify command.</p>
     <pre>pip install awseal</pre>
   </article>
-  <article id="awsh" class="card pending">
-    <h3><span>awsh</span><em> · not published yet</em></h3>
+  <article id="awsh" class="card">
+    <h3><a href="https://aitherium.github.io/awsh/">awsh</a><em></em></h3>
     <p class="tag">Your terminal answers you -- type a question where a command would go.</p>
     <p class="why">A shell has exactly one response to a line it does not recognise: command not found. So the moment you want to look something up you leave the terminal for a browser and lose the directory, the environment and the session you were already in -- when everything needed to answer you was right there.</p>
     <p class="adopt"><strong>Start here:</strong> Type a question at your prompt and get an answer instead of "command not found".</p>
-    <pre>npm i -g awsh</pre>
+    <pre>npm i -g @aitherium/awsh</pre>
   </article>
   <article id="awshare" class="card">
     <h3><a href="https://aitherium.github.io/awshare/">awshare</a><em></em></h3>
@@ -288,19 +319,68 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Publish one file and fetch it on another machine with verification on.</p>
     <pre>pip install awshare</pre>
   </article>
+  <article id="awsprite" class="card pending">
+    <h3><span>awsprite</span><em> · planned</em></h3>
+    <p class="tag">Hatch a companion that grows only from what you teach it, then take it home.</p>
+    <p class="why">A companion that never changes is a toy, and one whose growth you cannot see or edit is a black box. Most "AI pet" products are a chat window with a sprite pasted on top -- nothing you taught it persists, and nothing about how it grew is checkable.</p>
+    <p class="adopt"><strong>Start here:</strong> Hatch a companion, teach it something, and watch what it becomes.</p>
+    <pre>pip install awsprite</pre>
+  </article>
+  <article id="awswarm" class="card pending">
+    <h3><span>awswarm</span><em> · planned</em></h3>
+    <p class="tag">Run one model too big for any single GPU across a pool of small ones.</p>
+    <p class="why">A frontier MoE checkpoint (Kimi K3, ~1.56TB) fits no consumer card, and "rent a bigger box" stops being an option past a certain size. Splitting a model finely enough to run on heterogeneous, unreliable consumer GPUs -- some too small to hold even one full layer -- is a placement and scheduling problem with no shipped general answer. The money-losing failure mode is retrying a fleet acquisition that was never going to complete, because nothing scored the odds before spending on it.</p>
+    <p class="adopt"><strong>Start here:</strong> Feed it one layer's shape and a pool of heterogeneous GPU specs and get back a sub-layer placement plan, plus the probability that plan actually assembles.</p>
+    <pre>pip install awswarm</pre>
+  </article>
   <article id="awsync" class="card pending">
-    <h3><span>awsync</span><em> · now part of AitherConnect</em></h3>
+    <h3><span>awsync</span><em> &middot; merged into AitherConnect</em></h3>
     <p class="tag">Keep one client in step with a platform — and never confuse "cannot tell" with "fine".</p>
     <p class="why">A deployment that drifts is worse than one that breaks: it is silently out of sync, reporting success while the platform has moved on. Every sync daemon hides this by collapsing network failures into empty results, so "could not tell" reads as "in step".</p>
     <p class="adopt"><strong>Start here:</strong> Send a heartbeat up and receive pack updates down, and know exactly what changed.</p>
-    <pre>ships inside AitherConnect</pre>
+    <pre># retired &mdash; use AitherConnect instead</pre>
+  </article>
+  <article id="awtoll" class="card">
+    <h3><a href="https://aitherium.github.io/awtoll/">awtoll</a><em></em></h3>
+    <p class="tag">What every tool call costs you in context, measured from your own transcripts.</p>
+    <p class="why">Every agent stack claims its search/graph/memory tool is cheaper than grepping and re-reading files. Nobody measures it. The claim lives in a README or a code comment, measured once during development and gated by nothing — so a tool can regress into costing MORE than what it replaced and every signal stays green, because a tool that returns less looks identical to a tool that saves you something.</p>
+    <p class="adopt"><strong>Start here:</strong> Point it at your agent transcripts and see what your ten most-used commands cost.</p>
+    <pre>pip install git+https://github.com/Aitherium/awtoll.git</pre>
   </article>
   <article id="awtunnel" class="card">
     <h3><a href="https://aitherium.github.io/awtunnel/">awtunnel</a><em></em></h3>
     <p class="tag">Reach a service that has no public address.</p>
     <p class="why">Everything an agent runs is behind NAT on somebody's laptop, and every workaround (a port forward, a public IP, a broker somebody maintains) becomes permanent.</p>
     <p class="adopt"><strong>Start here:</strong> Expose one local port to one remote caller and take it away again.</p>
-    <pre>pip install awtunnel</pre>
+    <pre>pip install git+https://github.com/Aitherium/awtunnel.git</pre>
+  </article>
+  <article id="awvision" class="card pending">
+    <h3><span>awvision</span><em> · not published yet</em></h3>
+    <p class="tag">See an image — describe it, ask it a question, compare two.</p>
+    <p class="why">An agent handed a screenshot, a scan or a photo has nothing to do with it. The information is right there and the agent is the one participant in the conversation that cannot look at it.</p>
+    <p class="adopt"><strong>Start here:</strong> Ask a question about an image and get an answer.</p>
+    <pre>pip install awvision</pre>
+  </article>
+  <article id="awvoice" class="card pending">
+    <h3><span>awvoice</span><em> · not published yet</em></h3>
+    <p class="tag">Hear and speak — transcribe audio, synthesize a voice.</p>
+    <p class="why">An agent that can only read text is deaf and mute. Every route to fixing that today is a vendor SDK that wants the audio uploaded, an API key, and a per-minute bill -- which rules it out for exactly the recordings people most want transcribed.</p>
+    <p class="adopt"><strong>Start here:</strong> Turn speech into text and text into speech, on a service you host.</p>
+    <pre>pip install awvoice</pre>
+  </article>
+  <article id="awwall" class="card pending">
+    <h3><span>awwall</span><em> · not published yet</em></h3>
+    <p class="tag">Say what a workload may reach, and watch everything else fail closed.</p>
+    <p class="why">Every other gate asks about the CALLER — who they are, what role they hold, whether they are human. Nothing asks what a workload is allowed to REACH. So a service quietly dials whatever its config says, and when that config is stale the failure is a DNS or connect error naming a host with no relationship to the problem — the symptom points at an innocent service. Measured on our own fleet 2026-08-23: 11 registry entries pointed at hosts that did not exist while the real container was running, and every one of those failures named the wrong subsystem.</p>
+    <p class="adopt"><strong>Start here:</strong> Block one outbound host for one workload and watch the call fail closed with the rule that denied it.</p>
+    <pre>pip install awwall</pre>
+  </article>
+  <article id="gobbonet-agentic" class="card">
+    <h3><a href="https://aitherium.github.io/gobbonet-agentic/">gobbonet-agentic</a><em></em></h3>
+    <p class="tag">GobboNet campaigns with a real agent brain — scoped memory, graph recall.</p>
+    <p class="why">Long roleplay campaigns decay: the model loops, forgets what each character knows, and the only fix is a human curating notes by hand. Per-NPC knowledge scoping is exactly the memory-boundary problem agents already have.</p>
+    <p class="adopt"><strong>Start here:</strong> Run one GobboNet campaign where the harness, not the human, keeps the notes.</p>
+    <pre>pip install awdk</pre>
   </article>
 </div>
 <h2>Knowledge</h2>
@@ -317,7 +397,14 @@ and ignore the rest.</p>
     <p class="tag">How to run a coding agent so the result survives — the laws, with evidence.</p>
     <p class="why">Everyone learns the same lessons about agent-written code the same expensive way, and writes none of them down where the next person looks.</p>
     <p class="adopt"><strong>Start here:</strong> Read one law and apply it to the next thing you ship.</p>
-    <pre>read it — https://aitherium.github.io/awskills/codex.html</pre>
+    <pre>read it — https://aitherium.github.io/awknowledge/</pre>
+  </article>
+  <article id="awpack" class="card pending">
+    <h3><span>awpack</span><em> · not published yet</em></h3>
+    <p class="tag">First-party agent packs — the ones we build, versioned and installable on their own.</p>
+    <p class="why">A pack bundled into the SDK inherits the SDK's licence and the SDK's release cadence. That is backwards in both directions: a proprietary pack blocks the SDK's public publish (measured — the adk sync gate aborts on exactly this and names it), and a good pack cannot ship a fix without an SDK release. Packs and the runtime that loads them are different products with different audiences.</p>
+    <p class="adopt"><strong>Start here:</strong> Install one pack and run it. Each carries its own manifest, licence and version, so taking one costs you nothing else.</p>
+    <pre>git clone https://github.com/Aitherium/awpack</pre>
   </article>
   <article id="awskills" class="card">
     <h3><a href="https://aitherium.github.io/awskills/">awskills</a><em></em></h3>
