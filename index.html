@@ -85,6 +85,13 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Run it once and point one app at it instead of a vendor URL.</p>
     <pre>pip install awnode</pre>
   </article>
+  <article id="awpool" class="card pending">
+    <h3><span>awpool</span><em> · planned</em></h3>
+    <p class="tag">The free half of the elastic work pool: dispatches public-safe work onto the free GitHub-hosted runners of the public aw* mirrors, so their idle CI minutes become compute. awrun remains the paid/self-hosted lane; this is its free twin.</p>
+    <p class="why">The monorepo's hosted runners are billing-dead and its self-hosted pool is CPU-bound, while the public mirrors run free hosted CI that only ever executes their own sync and publish lanes. The capacity is real and not pooled: nothing routes monorepo public-safe work to it.</p>
+    <p class="adopt"><strong>Start here:</strong> Dispatch one public-safe job to a public mirror's free runner and watch it execute.</p>
+    <pre>planned -- no package yet (boundary rule set: .AITHERIUM/PUBLIC-RUNNER-BOUNDARY.md)</pre>
+  </article>
   <article id="awrun" class="card">
     <h3><a href="https://aitherium.github.io/awrun/">awrun</a><em></em></h3>
     <p class="tag">A priority-aware queue and dispatcher for agentic runs and ad-hoc CI builds. It also judges whether the runner pool is big enough for the queue it is draining, and can ask a host to grow it -- reserving capacity is zero-sum, so a saturated pool needs more of it, not a different share of it.</p>
