@@ -54,6 +54,8 @@ and ignore the rest.</p>
   <article class="card set"><h3>Research you can check<em> &middot; some pieces missing</em></h3><p class="tag">A research question answered against real sources, where the report names what it read (awresearch), the sources are found and actually opened rather than hallucinated (awfind, awbrowse), and what was learned survives the session (awm). The one failure this set exists for is the plausible document: fluent, well-formed, citing pages nobody fetched.</p><p class="members"><a href="#awresearch">awresearch</a> <a href="#awfind">awfind</a> <a href="#awbrowse">awbrowse</a> <a href="#awm">awm</a></p></article>
   <article class="card set"><h3>A pool across your own devices<em> &middot; some pieces missing</em></h3><p class="tag">Owner directive 2026-08-24: someone with a laptop, a desktop and a phone should be able to join their OWN devices into one pool and have a model stay warm and servable across whichever of them is on, without joining the platform's shared AitherNet compute market. Registered here because it does not exist yet, and the three pieces that would compose into it are each individually real: `awnet` is a peer REGISTRY + three-valued TCP reachability check ("is anyone listening") -- explicitly not a VPN and not a placement/pooling primitive, by its own README; `awnode` is the local gateway that would route a request to whichever peer has the model warm; `awdk` is the runtime that would run on each device. None of the three knows about model PLACEMENT or WARM-KEEPING across peers today -- that logic is the actual gap, not the transport (mesh-deploy/WireGuard already exists for that) and not per-node serving (node-bootstrap already detects hardware and stands up a local backend). The closest existing precedent is the platform's own DGX+5090+RTX ggml-RPC pooled-inference stack, run at fleet scale and never packaged as something a customer's own device fleet can stand up for itself. NOT `aithernet-provider` (that joins the PLATFORM's community pool with settlement -- a different shape) and NOT a rename of the fleet's pooled-inference stack (EC003/client-not-lift: that stack is thousands of lines of fleet-specific orchestration; a personal-pool brick would be a small client speaking to whichever peers `awnet` says are reachable, same relationship as `awrelay` to `AitherRelay.py`). SHARPENED 2026-08-24, owner asked to "start serving all of our model stack from the mesh pool for flexibility": the ggml-RPC precedent is NOT a general placement layer and generalising it directly would be the wrong move -- it does TENSOR-LEVEL SPLIT serving for ONE model too large for any single box (DeepSeek-V4-Flash, 97-108 GB, routed experts pinned to the DGX's 121 GB by design), hand-tuned per model (custom RPC server build, per-backend thread counts, a dedicated watchdog/alerting stack -- see `pooled-inference-ops` skill). Bonsai/Qwen3.8/gemma4 do not need splitting, they fit one GPU each; what they need is PLACEMENT (which box, right now) plus WARM/PARK lifecycle across many small models competing for few GPUs -- a different problem the RPC pool was never built to solve. The real placement layer already exists in shape (`AitherCompute`'s `gpu_power_state` -- hot/parked/on_demand, idle-reap) but is currently DEAD fleet-wide (D-2158: no docker socket reachable from its container) -- so today NEITHER the platform's own stack nor a customer's personal pool has a working dynamic-placement layer; the gap is the same gap at two scales.</p><p class="members"><a href="#awnet">awnet</a> <a href="#awnode">awnode</a> <a href="#awdk">awdk</a></p></article>
   <article class="card set"><h3>Grow a companion in the browser, then take it home<em> &middot; not yet</em></h3><p class="tag">Owner directive 2026-08-24, reinforcing the existing `.PRODUCTS/.SPRITE/` Phase 2/3 roadmap (`AitherOS/dev/prompts/aithersprite-knowledge-companion-program.md`): AitherSprite today is playable but shallow -- flat per-sprite knowledge rows, titles-only in the talk prompt, server-side inference only, and "download it" is a paid pack with no guided path to actually WIRE it to real local tools and data. The directive is four upgrades composed together, and none of the four pieces is new -- the gap is that nothing connects them for this product: teaching should build a real personal knowledge GRAPH (`awgraph` is a CODE graph today -- CodeChunk/CodeGraph/CodeGraphStore -- and `awm` is scoped FACTS, not a traversable graph; a per-user knowledge graph does not exist as a brick yet); the companion should run and be TRAINABLE fully in-browser on `awbonsai`, not only through a server round trip; and graduating a companion should walk the owner through a real self-service CONNECT of `awdk` + `awsh` + `awnode` on their own machine -- the same shape as the `selfhost-bonsai` skill's stranger-to-provider flow, but ending in "your companion can now use your files/tools" instead of "your GPU now serves the mesh". NOT a rewrite of `lib/companion/AitherSprite.py` -- its deterministic engine (needs/mood/evolution, no I/O) is correct and stays the server-authoritative source of truth even for a browser-trained companion, so growth cannot be forged client-side (`security-review-patterns.md` #1: a fail-closed gate is not optional). What changes is WHERE teach/talk execute (in-tab via `awbonsai` when offline or pre-account, server via MicroScheduler when connected) and how knowledge is stored (a graph, not a flat table).</p><p class="members"><a href="#awsprite">awsprite</a> <a href="#awbonsai">awbonsai</a> <a href="#awdk">awdk</a> <a href="#awsh">awsh</a> <a href="#awnode">awnode</a></p></article>
+  <article class="card set"><h3>The inference commons -- pool compute, storage and caches across strangers' nodes<em> &middot; some pieces missing</em></h3><p class="tag">Owner directive 2026-09-01: decentralise storage and inference across the aw* stack so anyone's node can join the mesh, share models and resources, and pool inference -- including cross-model KV-cache sharing across nodes. Registered because each plane is real INSIDE the fleet and absent at the public boundary: the overlay (AitherMesh + Conductor onboarding) is deployed and `awnet` fronts it; `awnode` routes to a warm peer; same-model warm-prefix sharing exists as llamacpp_connector + kv_catalog (Nexus) + Strata as the cold tier; cross-model maps exist as lib/gpu/kvtransfer; `awswarm` holds the sub-layer placement math; `aitherkvcache` quantises the cache; `awrtifact` ships the packs; `awnix` is the box a contributor boots. What no brick does yet is let a STRANGER'S node discover a warm prefix, receive a mapper pack, or get settled for serving -- `awcache` is the first of those three; settlement is the external OmniNode plane described in .AITHEROS/35-OPEN-WEIGHT-FRONTIER-MOE-SERVING.md (Phase 4). Phasing and the measured numbers: .AITHEROS/36-PLAYGROUND-ROULETTE-AND-COMPUTE-COMMONS.md Part D.</p><p class="members"><a href="#awnix">awnix</a> <a href="#awnode">awnode</a> <a href="#awnet">awnet</a> <a href="#awcache">awcache</a> <a href="#awswarm">awswarm</a> <a href="#awpool">awpool</a> <a href="#aitherkvcache">aitherkvcache</a> <a href="#awrtifact">awrtifact</a> <a href="#awtunnel">awtunnel</a> <a href="#awwall">awwall</a></p></article>
+  <article class="card set"><h3>Retrieval you trained yourself<em> &middot; some pieces missing</em></h3><p class="tag">The searching tools are only as good as the vectors under them. awembed trains the embedder on your corpus and proves it on held-out directories; awgraph, awfind and awm then search, rank and remember over vectors that know your code instead of someone else's. awdk agents consume all of it as tools. awdata carries the labelled corpora the proving is done against -- the half that usually never ships, and the half that decides the answer: the same compression measured -0.006 macro-F1 on source files and -0.10 on real Reddit comments.</p><p class="members"><a href="#awembed">awembed</a> <a href="#awdata">awdata</a> <a href="#awgraph">awgraph</a> <a href="#awfind">awfind</a> <a href="#awm">awm</a> <a href="#awdk">awdk</a></p></article>
 </div>
 <h2>Runtimes</h2>
 <div class="grid">
@@ -64,12 +66,33 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Load one page and get an answer from a model that never left the tab.</p>
     <pre>npm i @aitherium/portal-kit</pre>
   </article>
+  <article id="awbrain" class="card pending">
+    <h3><span>awbrain</span><em> · not published yet</em></h3>
+    <p class="tag">Your history as a wiki of linked markdown — claims pinned to the evidence.</p>
+    <p class="why">Every AI memory system sells you a black box: sessions vanish into a vendor cloud, and "it remembers" means "the vendor's model was prompted with a blob". Memory should be files you can read, claims you can check against the session or file that produced them, and retrieval that never dumps your whole history into a prompt.</p>
+    <p class="adopt"><strong>Start here:</strong> Point it at a folder of notes or sessions; ask a question your context never held.</p>
+    <pre>pip install git+https://github.com/Aitherium/awbrain.git</pre>
+  </article>
+  <article id="awcache" class="card pending">
+    <h3><span>awcache</span><em> · planned</em></h3>
+    <p class="tag">Let a second node skip its prefill because a first node already paid for it.</p>
+    <p class="why">Two nodes serving the same model both pay full prefill for the same document, and two DIFFERENT models cannot share a cache at all. Measured 2026-08-31 on this fleet, KV accumulates at 0.515 Mbps -- a 5,061-token cache moves in 0.42 s over 1 Gbps against 819 s to recompute -- so bandwidth is not the constraint; discovery (who has this prefix warm?) and trust (is this map safe to load?) are. The failure mode of a WRONG cache is the worst one in inference: no error, fluent, confidently-wrong text.</p>
+    <p class="adopt"><strong>Start here:</strong> Serve one prompt prefix from one node and have a second node skip its prefill by fetching the cache by content digest.</p>
+    <pre>pip install awcache</pre>
+  </article>
   <article id="awdk" class="card">
     <h3><a href="https://aitherium.github.io/awdk/">awdk</a><em></em></h3>
     <p class="tag">Build AI agent fleets — 3 lines, any backend, local or cloud.</p>
     <p class="why">Running one agent is easy and running fifty is a different job: budgets, retries, which model, whose machine. Most frameworks make you adopt their whole world to find out.</p>
     <p class="adopt"><strong>Start here:</strong> Point it at a backend you already pay for and run one agent loop.</p>
     <pre>pip install awdk</pre>
+  </article>
+  <article id="awgym" class="card">
+    <h3><a href="https://aitherium.github.io/awgym/">awgym</a><em></em></h3>
+    <p class="tag">An ARC training gym — a game a world model can watch, and six roles that play through it.</p>
+    <p class="why">A world model is only as good as the play it watches. Solver runs stream past, checkpoints get trained on whatever happened to be recorded, and nobody can answer "did the model actually get better at predicting the next grid?" against transitions it has never seen.</p>
+    <p class="adopt"><strong>Start here:</strong> Play one ARC game end-to-end with the world model watching every transition, then ask it to predict the next grid and watch the surprise score fall.</p>
+    <pre>pip install awgym</pre>
   </article>
   <article id="awnet" class="card">
     <h3><a href="https://aitherium.github.io/awnet/">awnet</a><em></em></h3>
@@ -91,6 +114,13 @@ and ignore the rest.</p>
     <p class="why">The monorepo's hosted runners are billing-dead and its self-hosted pool is CPU-bound, while the public mirrors run free hosted CI that only ever executes their own sync and publish lanes. The capacity is real and not pooled: nothing routes monorepo public-safe work to it.</p>
     <p class="adopt"><strong>Start here:</strong> Dispatch one public-safe job to a public mirror's free runner and watch it execute.</p>
     <pre>planned -- no package yet (boundary rule set: .AITHERIUM/PUBLIC-RUNNER-BOUNDARY.md)</pre>
+  </article>
+  <article id="awrouter" class="card pending">
+    <h3><span>awrouter</span><em> · planned</em></h3>
+    <p class="tag">OpenRouter for your own fleet: pick a model backend by cost/latency/ capability, fail over, fit the context window, stream. Standalone, OpenAI-compatible, no Aither-specifics required to be valuable.</p>
+    <p class="why">Every LLM call in the platform routes through MicroScheduler (:8150) -- but the routing logic (backend discovery, failover, tier maps, context fitting, streaming) is buried inside a 19,535-line service with 107 monorepo imports. A stranger cannot run it: it demands the internal CA, services.yaml discovery, secrets at :8111, the fleet's model inventory. The routing plane is valuable standalone and entangled by accident of packaging, not by design.</p>
+    <p class="adopt"><strong>Start here:</strong> Point it at your backends (vLLM / llama.cpp / any OpenAI-compatible endpoint); ask it which backend should serve model X right now, or to stream a completion with failover and context fitting.</p>
+    <pre>not on PyPI yet; extraction from AitherMicroScheduler.py + LLMGateway.py planned</pre>
   </article>
   <article id="awrun" class="card">
     <h3><a href="https://aitherium.github.io/awrun/">awrun</a><em></em></h3>
@@ -144,12 +174,33 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Drive one page and get back what is on it in a form worth reasoning about.</p>
     <pre>pip install awbrowse</pre>
   </article>
+  <article id="awclassify" class="card pending">
+    <h3><span>awclassify</span><em> · not published yet</em></h3>
+    <p class="tag">Classify any document -- what it is, who may read it, who it is for, what it is about.</p>
+    <p class="why">A corpus nobody has classified cannot be published safely or retrieved well: the one internal page in a public mirror is found by a stranger, and the question that needed a design note gets a changelog. Classification must be a standalone step any pipeline can call, not a judgement buried in a model prompt.</p>
+    <p class="adopt"><strong>Start here:</strong> Run it on one file and read what it is, who may see it and what it is about.</p>
+    <pre>pip install git+https://github.com/Aitherium/awclassify.git</pre>
+  </article>
+  <article id="awdelphi" class="card">
+    <h3><a href="https://aitherium.github.io/awdelphi/">awdelphi</a><em></em></h3>
+    <p class="tag">Anonymous multi-round expert panels — a converged answer with a trace.</p>
+    <p class="why">A single expert opinion is one opinion; a panel that reads each other's names converges on the loudest voice, not the best argument. Delphi panels need anonymous rounds, aggregate feedback, and an honest stop rule.</p>
+    <p class="adopt"><strong>Start here:</strong> Run a multi-round anonymous expert panel on a question and get a converged answer with a trace.</p>
+    <pre>pip install git+https://github.com/Aitherium/awdelphi.git</pre>
+  </article>
   <article id="awdit" class="card">
     <h3><a href="https://aitherium.github.io/awdit/">awdit</a><em></em></h3>
     <p class="tag">An append-only audit trail whose gaps are DETECTABLE.</p>
     <p class="why">An audit log you can silently delete from is decoration. Most are. The property that matters is not "it records" but "a missing record is visible".</p>
     <p class="adopt"><strong>Start here:</strong> Write one sensitive action to it and then try to remove the record.</p>
     <pre>pip install git+https://github.com/Aitherium/awdit.git</pre>
+  </article>
+  <article id="awembed" class="card pending">
+    <h3><span>awembed</span><em> · not published yet</em></h3>
+    <p class="tag">Train an embedding model that knows your corpus, and prove it beats the big one.</p>
+    <p class="why">Every agent stack searches your code with an embedding model trained on someone else's. It is right about two thirds of the time on a corpus it never saw, and nothing in the stack measures that. Distilling a small student on your own corpus -- the big model's margins plus your labels -- beats the big model, and the eval that proves it is the part people skip.</p>
+    <p class="adopt"><strong>Start here:</strong> Point it at one repo and get a 0.6B embedder that ranks your directories better than the 7B one it learned from, with the eval that proves it.</p>
+    <pre>pip install awembed</pre>
   </article>
   <article id="awevolve" class="card pending">
     <h3><span>awevolve</span><em> · not published yet</em></h3>
@@ -164,6 +215,13 @@ and ignore the rest.</p>
     <p class="why">An agent with no search guesses from training data; an agent handed a raw web API gets ten blue links and burns its context reading them.</p>
     <p class="adopt"><strong>Start here:</strong> Ask one question and get ranked answers back instead of a page of results.</p>
     <pre>pip install awfind</pre>
+  </article>
+  <article id="awfocus" class="card">
+    <h3><a href="https://aitherium.github.io/awfocus/">awfocus</a><em></em></h3>
+    <p class="tag">See, search and steer every Claude session from one command.</p>
+    <p class="why">Every session is a tab; nothing answers "which session is doing what, where did I say X, how do I tell that session to do Y" without hunting.</p>
+    <p class="adopt"><strong>Start here:</strong> List your live sessions, search their transcripts, and focus or message the one you want.</p>
+    <pre>pip install awfocus</pre>
   </article>
   <article id="awgit" class="card">
     <h3><a href="https://aitherium.github.io/awgit/">awgit</a><em></em></h3>
@@ -298,6 +356,13 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Wake something on a schedule, let it do one thing, and put it back to sleep.</p>
     <pre>pip install awrise</pre>
   </article>
+  <article id="awrtifact" class="card">
+    <h3><a href="https://aitherium.github.io/awrtifact/">awrtifact</a><em></em></h3>
+    <p class="tag">Deliberately chunk artifacts into GitHub release assets — the productized aitherkvcache mirror lane.</p>
+    <p class="why">Big artifacts (model weights, datasets, builds) exceed GitHub's 2 GiB release-asset cap, so mirrors end up as bespoke scripts with hardcoded manifests that go stale — the fleet's orchestrator served a pre-v18 build for days while the v18 file sat in a release the worker did not know.</p>
+    <p class="adopt"><strong>Start here:</strong> Store one artifact as a versioned GitHub release and fetch it back byte-verified — `awrtifact mirror <URL|FILE> --release TAG`.</p>
+    <pre>pip install awrtifact</pre>
+  </article>
   <article id="awscreen" class="card pending">
     <h3><span>awscreen</span><em> · not published yet</em></h3>
     <p class="tag">See this machine — what is on screen, and where to click it.</p>
@@ -332,6 +397,13 @@ and ignore the rest.</p>
     <p class="why">A companion that never changes is a toy, and one whose growth you cannot see or edit is a black box. Most "AI pet" products are a chat window with a sprite pasted on top -- nothing you taught it persists, and nothing about how it grew is checkable.</p>
     <p class="adopt"><strong>Start here:</strong> Hatch a companion, teach it something, and watch what it becomes.</p>
     <pre>pip install awsprite</pre>
+  </article>
+  <article id="awstorage" class="card pending">
+    <h3><span>awstorage</span><em> · planned</em></h3>
+    <p class="tag">Every drive on every node, indexed, classified and diffed -- so you can see what you own before you delete it.</p>
+    <p class="why">Storage sprawls faster than anyone can look at it. Caches, dead builds, duplicate model weights and orphaned volumes accumulate across drives and nodes, and the only tool is an ad-hoc du that answers one question once and is forgotten. Deleting without an inventory destroys the wrong thing; not deleting fills the disk that holds Postgres.</p>
+    <p class="adopt"><strong>Start here:</strong> Scan one drive and read a ranked inventory of what fills it, with each tree marked re-fetchable or not.</p>
+    <pre>planned -- source at AitherOS/packages/awstorage; publishes as `pip install awstorage` once the mirror lane exists</pre>
   </article>
   <article id="awswarm" class="card pending">
     <h3><span>awswarm</span><em> · planned</em></h3>
@@ -398,6 +470,13 @@ and ignore the rest.</p>
     <p class="why">Ops knowledge lives in people's shell history, so the same recovery gets improvised differently every time it is needed.</p>
     <p class="adopt"><strong>Start here:</strong> Run one numbered script and read what it says it did.</p>
     <pre>git clone https://github.com/Aitherium/AitherZero</pre>
+  </article>
+  <article id="awdata" class="card pending">
+    <h3><span>awdata</span><em> · planned</em></h3>
+    <p class="tag">Open labelled corpora you can train and measure against, with the code that built them.</p>
+    <p class="why">Every embedding and classifier claim needs a corpus, and the corpus is the part that never ships. Papers cite datasets behind logins, repos carry a loader for data nobody has, and a result measured on the wrong domain looks identical to one measured on the right domain until somebody re-runs it. Measured 2026-09-02: a compression result that held on source files (-0.006 macro-F1, within noise) cost -0.10 on real Reddit comments -- same metric, same code, opposite decision.</p>
+    <p class="adopt"><strong>Start here:</strong> Clone it, run one rehydrate command, and score your model on real labelled text today.</p>
+    <pre>git clone https://github.com/Aitherium/awdata</pre>
   </article>
   <article id="awknowledge" class="card">
     <h3><a href="https://aitherium.github.io/awknowledge/">awknowledge</a><em></em></h3>
