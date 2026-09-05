@@ -307,6 +307,13 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Hand it a failure and get back ranked candidate causes, each with the one observation that would rule it in or out.</p>
     <pre>pip install awprism</pre>
   </article>
+  <article id="awprove" class="card pending">
+    <h3><span>awprove</span><em> · not published yet</em></h3>
+    <p class="tag">Drive a page as the real user, check what rendered, and get a test that goes red if it stops being true.</p>
+    <p class="why">Every failure that enrages a user answers 200: a lock screen shown to someone already signed in, an empty knowledge base, a chat panel that says "backend unavailable". A route probe, a healthcheck and a test suite all pass while the product is unusable, because none of them looks at what actually rendered. And the one-off script that finally catches it is thrown away, so the same class regresses a week later with nothing watching.</p>
+    <p class="adopt"><strong>Start here:</strong> Write one journey as a real user takes it, name the truths that must hold on the page, and get back a PASS/FAIL plus a gate that pins each truth.</p>
+    <pre>pip install awprove</pre>
+  </article>
   <article id="awreason" class="card">
     <h3><a href="https://aitherium.github.io/awreason/">awreason</a><em></em></h3>
     <p class="tag">A portable reasoning client — sessions, phases, thoughts, and the chain that produced the answer.</p>
