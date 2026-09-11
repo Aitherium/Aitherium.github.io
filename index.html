@@ -42,6 +42,7 @@ adopt and no order to learn them in — find the problem you actually have, take
 and ignore the rest.</p>
 <h2>Sets &mdash; suggested builds</h2>
 <div class="grid">
+  <article class="card set"><h3>The studio<em> &middot; some pieces missing</em></h3><p class="tag">What a creative turn needs, on hardware the operator already owns: a way to find things, a way to read a page, a way to research with citations, and a way to actually render and master the result. Named because these kept being proposed as ONE product, and the measurement said they are three INPUT surfaces and one OUTPUT surface -- which composes and does not merge. Every member is adoptable alone; the stack is a suggestion.</p><p class="members"><a href="#awforge">awforge</a> <a href="#awfind">awfind</a> <a href="#awbrowse">awbrowse</a> <a href="#awresearch">awresearch</a> <a href="#awm">awm</a></p></article>
   <article class="card set"><h3>The bare agent VM<em> &middot; some pieces missing</em></h3><p class="tag">awnix already carries the capabilities; adding an agent is three lines in a Dockerfile, and your skills and credentials layer on top of that. The point of the order is that the guarantees live in the base, so swapping the agent keeps them.</p><p class="members"><a href="#awnix">awnix</a> <a href="#awdk">awdk</a> <a href="#awskills">awskills</a> <a href="#awkno">awkno</a> <a href="#awsettings">awsettings</a></p></article>
   <article class="card set"><h3>Senses<em> &middot; works today</em></h3><p class="tag">What an agent needs to perceive things outside its own process. Search and pages are the two it has; voice, vision and the screen in front of it are the three it does not, and they are named here so they stop being rediscovered as absences.</p><p class="members"><a href="#awfind">awfind</a> <a href="#awbrowse">awbrowse</a> <a href="#awvoice">awvoice</a> <a href="#awvision">awvision</a> <a href="#awscreen">awscreen</a> <a href="#awdk">awdk</a></p></article>
   <article class="card set"><h3>Avatar ensemble<em> &middot; not yet</em></h3><p class="tag">Spawn more than one Persona-driven avatar at once, bind each to a distinct awdk agent persona (its own Library/pack, its own model), render them together in one shared scene, and let them hold a live concurrent conversation with each other and the owner -- steered from awsh as the cockpit. Registered 2026-08-24 per EC003: "give an avatar a face and a mind, then let several of them talk" cannot be said without naming the companion, the agent runtime and the shell that steers it, so this is a stack over existing bricks, not a new brick (same reasoning as `awsprite`, which this stack composes with directly).</p><p class="members"><a href="#awdk">awdk</a> <a href="#awsh">awsh</a> <a href="#awvoice">awvoice</a> <a href="#awvision">awvision</a> <a href="#awsprite">awsprite</a> <a href="#awdesk">awdesk</a></p></article>
@@ -66,7 +67,7 @@ and ignore the rest.</p>
     <p class="tag">One file you run, and the machine has a local AI stack.</p>
     <p class="why">Every part of the stack ships on its own lane -- a shell on npm, two runtimes on PyPI, a desktop app on GitHub Releases, an extension in a browser store -- so a person who wants the STACK has to find six things, install them in the right order and make them agree on ports and models. Measured 2026-09-10: every one of those lanes was live and the thing that joins them was published nowhere.</p>
     <p class="adopt"><strong>Start here:</strong> Run one file on a fresh box and open the URL it prints.</p>
-    <pre>see the repo — tag `aitheros-v*` builds three binaries</pre>
+    <pre>see the repo — one binary per OS from the `aitheros-v*` release</pre>
   </article>
   <article id="awbonsai" class="card pending">
     <h3><span>awbonsai</span><em> · planned</em></h3>
@@ -96,8 +97,8 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Run it on a box with no Python and curl its /health.</p>
     <pre>see the repo — built by awdk/packaging/build_executable.py --narrow</pre>
   </article>
-  <article id="awdesk" class="card pending">
-    <h3><span>awdesk</span><em> · not published yet</em></h3>
+  <article id="awdesk" class="card">
+    <h3><a href="https://aitherium.github.io/awdesk/">awdesk</a><em></em></h3>
     <p class="tag">Aither World Desk -- the desktop body of AitherOS Online: tray, avatars, decision cards, the Living Desktop as an overlay.</p>
     <p class="why">Every surface an agent has on a laptop lives in a browser tab that can be closed, minimized or forgotten. The desk is the one that stays: an always-on presence that can interrupt you with a decision card, embody an agent as an avatar, and hold the Living Desktop over your real desktop.</p>
     <p class="adopt"><strong>Start here:</strong> Run it, and the next decision card an agent raises pops on your desktop instead of scrolling past in a log.</p>
@@ -266,6 +267,13 @@ and ignore the rest.</p>
     <p class="why">Every session is a tab; nothing answers "which session is doing what, where did I say X, how do I tell that session to do Y" without hunting.</p>
     <p class="adopt"><strong>Start here:</strong> List your live sessions, search their transcripts, and focus or message the one you want.</p>
     <pre>pip install awfocus</pre>
+  </article>
+  <article id="awforge" class="card pending">
+    <h3><span>awforge</span><em> · planned</em></h3>
+    <p class="tag">A render pipeline you drive from an agent — grade, master, animate, train.</p>
+    <p class="why">Creative work is the last thing most people will hand to somebody else's machine, and the first thing every creative SaaS requires. The pipeline is not the hard part -- grading, mastering, avatar export and LoRA training are all solved -- the hard part is that reaching them means a GUI a human sits in front of, so an agent cannot help and the footage has to travel.</p>
+    <p class="adopt"><strong>Start here:</strong> Grade one clip on your own GPU and get the master back, without opening an app.</p>
+    <pre>pip install awforge</pre>
   </article>
   <article id="awgit" class="card">
     <h3><a href="https://aitherium.github.io/awgit/">awgit</a><em></em></h3>
