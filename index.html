@@ -408,8 +408,8 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Have one agent post a finding to a channel a human can also read.</p>
     <pre>pip install awrelay</pre>
   </article>
-  <article id="awrena" class="card pending">
-    <h3><span>awrena</span><em> · not published yet</em></h3>
+  <article id="awrena" class="card">
+    <h3><a href="https://aitherium.github.io/awrena/">awrena</a><em></em></h3>
     <p class="tag">Put two agents head to head and get a verdict you can check.</p>
     <p class="why">Everyone claims their agent is better and nobody can settle it. The comparisons that exist are a screenshot of two chats, or a leaderboard whose numbers arrived from somewhere nobody can name -- so "which of these is actually better at this" stays an argument. And the moment a result is worth something, the vote is worth gaming: an audience score with no check on who is voting is a bot flood with extra steps, and a verdict nobody signed can be edited afterwards by whoever owns the database.</p>
     <p class="adopt"><strong>Start here:</strong> Run one judged head-to-head between two agents and read the scored verdict.</p>
@@ -436,8 +436,8 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Snapshot the coding sessions open on this machine, then reopen exactly those after a reboot, each in its own terminal tab.</p>
     <pre>in-tree at .PRODUCTS/.AITHERRESUME (no public repo yet; pending publish)</pre>
   </article>
-  <article id="awrise" class="card pending">
-    <h3><span>awrise</span><em> · not published yet</em></h3>
+  <article id="awrise" class="card">
+    <h3><a href="https://aitherium.github.io/awrise/">awrise</a><em></em></h3>
     <p class="tag">Wake an agent on a schedule, let it do one thing, and put it back to sleep.</p>
     <p class="why">A scheduled agent fails as a SILENCE. A wake that never fired because the host was down, a wake that overlapped the run before it and corrupted shared state, and a wake that hung forever holding its slot are INDISTINGUISHABLE from outside: in every case nothing happened and nothing said so. Cron has no memory -- a missed minute is simply gone -- so "not due yet" and "due, and never ran" read identically, and the operator finds out days later by noticing absent output rather than by being told.</p>
     <p class="adopt"><strong>Start here:</strong> Wake something on a schedule, let it do one thing, and put it back to sleep.</p>
@@ -457,8 +457,8 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Start a world from a pack and take one turn that the continuity checker can refuse.</p>
     <pre>builds in-tree (.PRODUCTS/.SAGA/saga_engine) -- not on PyPI yet</pre>
   </article>
-  <article id="awscreen" class="card pending">
-    <h3><span>awscreen</span><em> · not published yet</em></h3>
+  <article id="awscreen" class="card">
+    <h3><a href="https://aitherium.github.io/awscreen/">awscreen</a><em></em></h3>
     <p class="tag">See this machine — what is on screen, and where to click it.</p>
     <p class="why">Automating a desktop means naming things that have no names. Coordinates rot on the next resize, selectors do not exist outside a browser, and the one thing that does not change is what a human would see and point at.</p>
     <p class="adopt"><strong>Start here:</strong> Find the thing you want to click by describing what it looks like.</p>
@@ -541,22 +541,22 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Expose one local port to one remote caller and take it away again.</p>
     <pre>pip install git+https://github.com/Aitherium/awtunnel.git</pre>
   </article>
-  <article id="awvision" class="card pending">
-    <h3><span>awvision</span><em> · not published yet</em></h3>
+  <article id="awvision" class="card">
+    <h3><a href="https://aitherium.github.io/awvision/">awvision</a><em></em></h3>
     <p class="tag">See an image — describe it, ask it a question, compare two.</p>
     <p class="why">An agent handed a screenshot, a scan or a photo has nothing to do with it. The information is right there and the agent is the one participant in the conversation that cannot look at it.</p>
     <p class="adopt"><strong>Start here:</strong> Ask a question about an image and get an answer.</p>
     <pre>pip install awvision</pre>
   </article>
-  <article id="awvoice" class="card pending">
-    <h3><span>awvoice</span><em> · not published yet</em></h3>
+  <article id="awvoice" class="card">
+    <h3><a href="https://aitherium.github.io/awvoice/">awvoice</a><em></em></h3>
     <p class="tag">Hear and speak — transcribe audio, synthesize a voice.</p>
     <p class="why">An agent that can only read text is deaf and mute. Every route to fixing that today is a vendor SDK that wants the audio uploaded, an API key, and a per-minute bill -- which rules it out for exactly the recordings people most want transcribed.</p>
     <p class="adopt"><strong>Start here:</strong> Turn speech into text and text into speech, on a service you host.</p>
     <pre>pip install awvoice</pre>
   </article>
-  <article id="awwall" class="card pending">
-    <h3><span>awwall</span><em> · not published yet</em></h3>
+  <article id="awwall" class="card">
+    <h3><a href="https://aitherium.github.io/awwall/">awwall</a><em></em></h3>
     <p class="tag">Say what a workload may reach, and watch everything else fail closed.</p>
     <p class="why">Every other gate asks about the CALLER — who they are, what role they hold, whether they are human. Nothing asks what a workload is allowed to REACH. So a service quietly dials whatever its config says, and when that config is stale the failure is a DNS or connect error naming a host with no relationship to the problem — the symptom points at an innocent service. Measured on our own fleet 2026-08-23: 11 registry entries pointed at hosts that did not exist while the real container was running, and every one of those failures named the wrong subsystem.</p>
     <p class="adopt"><strong>Start here:</strong> Block one outbound host for one workload and watch the call fail closed with the rule that denied it.</p>
