@@ -111,8 +111,8 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Point it at a backend you already pay for and run one agent loop.</p>
     <pre>pip install awdk</pre>
   </article>
-  <article id="awflow" class="card pending">
-    <h3><span>awflow</span><em> · not published yet</em></h3>
+  <article id="awflow" class="card">
+    <h3><a href="https://aitherium.github.io/awflow/">awflow</a><em></em></h3>
     <p class="tag">A deterministic workflow runtime — chain agent calls with journal replay and budget control.</p>
     <p class="why">Workflows need deterministic orchestration with journaled execution so every call, every branch decision, and every result can be captured and replayed from any point. Agents running a workflow need to see the same progression whether they are in the middle of a live run or resuming from an earlier checkpoint.</p>
     <p class="adopt"><strong>Start here:</strong> Chain parallel and sequential agent calls with deterministic ordering, a persistent journal, and hard budget enforcement. Replay from the journal at any breakpoint.</p>
@@ -191,12 +191,12 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Ask a human a question from a script, and keep working on their answer.</p>
     <pre>pip install awask</pre>
   </article>
-  <article id="awavatar" class="card pending">
-    <h3><span>awavatar</span><em> · planned</em></h3>
+  <article id="awavatar" class="card">
+    <h3><a href="https://aitherium.github.io/awavatar/">awavatar</a><em></em></h3>
     <p class="tag">One character spec in, a rigged, animated, multi-style avatar pack out.</p>
     <p class="why">A generated 3D character is five artifacts from five tools (mesh, rig, clips, VRM, style renders) with no shared contract, so every host re-derives what it may load, and the bakes end up .gitignored with no canonical home -- measured 2026-09-05 on the CoC engine, where every Anny body and every clip pack is absent from disk while the code that drives them is committed.</p>
     <p class="adopt"><strong>Start here:</strong> Validate one character_spec.json and one character_pack/ against their schemas and refuse the pack if any file's hash, licence or rig audit is missing.</p>
-    <pre>builds in-tree (AitherOS/packages/awavatar) -- not on PyPI yet; `pip install awavatar` 404s today</pre>
+    <pre>pip install git+https://github.com/Aitherium/awavatar</pre>
   </article>
   <article id="awbac" class="card">
     <h3><a href="https://aitherium.github.io/awbac/">awbac</a><em></em></h3>
@@ -273,7 +273,7 @@ and ignore the rest.</p>
     <p class="tag">A render pipeline you drive from an agent — grade, master, animate, train.</p>
     <p class="why">Creative work is the last thing most people will hand to somebody else's machine, and the first thing every creative SaaS requires. The pipeline is not the hard part -- grading, mastering, avatar export and LoRA training are all solved -- the hard part is that reaching them means a GUI a human sits in front of, so an agent cannot help and the footage has to travel.</p>
     <p class="adopt"><strong>Start here:</strong> Grade one clip on your own GPU and get the master back, without opening an app.</p>
-    <pre>pip install awforge</pre>
+    <pre>builds in-tree (AitherOS/packages/awforge) -- no PyPI package yet; published when it is</pre>
   </article>
   <article id="awgit" class="card">
     <h3><a href="https://aitherium.github.io/awgit/">awgit</a><em></em></h3>
