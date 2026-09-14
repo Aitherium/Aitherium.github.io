@@ -69,15 +69,15 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Run one file on a fresh box and open the URL it prints.</p>
     <pre>see the repo — one binary per OS from the `aitheros-v*` release</pre>
   </article>
-  <article id="awbonsai" class="card pending">
-    <h3><span>awbonsai</span><em> · planned</em></h3>
+  <article id="awbonsai" class="card">
+    <h3><a href="https://github.com/Aitherium/awbonsai">awbonsai</a><em> · no docs site yet</em></h3>
     <p class="tag">Run a real model in the visitor's own browser — no server round trip, no upload.</p>
     <p class="why">Every in-browser LLM demo either phones home for the real answer or downloads a few hundred MB unasked. Getting BOTH right -- genuinely local inference, and a consent gate that runs BEFORE the fetch instead of after -- is the part nobody ships, so most "runs in your browser" claims are marketing for a server call.</p>
     <p class="adopt"><strong>Start here:</strong> Load one page and get an answer from a model that never left the tab.</p>
-    <pre>builds in-tree (AitherOS/apps/packages/awbonsai) -- not on npm yet; `npm i @aitherium/portal-kit` 404s today</pre>
+    <pre>git clone https://github.com/Aitherium/awbonsai</pre>
   </article>
-  <article id="awbrain" class="card pending">
-    <h3><span>awbrain</span><em> · not published yet</em></h3>
+  <article id="awbrain" class="card">
+    <h3><a href="https://github.com/Aitherium/awbrain">awbrain</a><em> · no docs site yet</em></h3>
     <p class="tag">Your history as a wiki of linked markdown — claims pinned to the evidence.</p>
     <p class="why">Every AI memory system sells you a black box: sessions vanish into a vendor cloud, and "it remembers" means "the vendor's model was prompted with a blob". Memory should be files you can read, claims you can check against the session or file that produced them, and retrieval that never dumps your whole history into a prompt.</p>
     <p class="adopt"><strong>Start here:</strong> Point it at a folder of notes or sessions; ask a question your context never held.</p>
@@ -116,7 +116,7 @@ and ignore the rest.</p>
     <p class="tag">A deterministic workflow runtime — chain agent calls with journal replay and budget control.</p>
     <p class="why">Workflows need deterministic orchestration with journaled execution so every call, every branch decision, and every result can be captured and replayed from any point. Agents running a workflow need to see the same progression whether they are in the middle of a live run or resuming from an earlier checkpoint.</p>
     <p class="adopt"><strong>Start here:</strong> Chain parallel and sequential agent calls with deterministic ordering, a persistent journal, and hard budget enforcement. Replay from the journal at any breakpoint.</p>
-    <pre>pip install awflow</pre>
+    <pre>pip install aitherium-awflow</pre>
   </article>
   <article id="awgym" class="card">
     <h3><a href="https://aitherium.github.io/awgym/">awgym</a><em></em></h3>
@@ -130,7 +130,7 @@ and ignore the rest.</p>
     <p class="tag">The agentic web — agents host a mesh, and agents join one.</p>
     <p class="why">Agents are islands. Every deployment reinvents how a peer is found, addressed and trusted, so two agents on two machines cost more to introduce than either cost to build — and the answers (port forwards, a VPN per pair, public IPs, a broker somebody has to run) all become permanent maintenance.</p>
     <p class="adopt"><strong>Start here:</strong> Host a mesh on one machine and join it from another.</p>
-    <pre>pip install git+https://github.com/Aitherium/awnet.git</pre>
+    <pre>pip install awnet</pre>
   </article>
   <article id="awnode" class="card">
     <h3><a href="https://aitherium.github.io/awnode/">awnode</a><em></em></h3>
@@ -146,12 +146,12 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Dispatch one public-safe job to a public mirror's free runner and watch it execute.</p>
     <pre>planned -- no package yet (boundary rule set: .AITHERIUM/PUBLIC-RUNNER-BOUNDARY.md)</pre>
   </article>
-  <article id="awrouter" class="card pending">
-    <h3><span>awrouter</span><em> · planned</em></h3>
+  <article id="awrouter" class="card">
+    <h3><a href="https://github.com/Aitherium/awrouter">awrouter</a><em> · no docs site yet</em></h3>
     <p class="tag">OpenRouter for your own fleet: pick a model backend by cost/latency/ capability, fail over, fit the context window, stream. Standalone, OpenAI-compatible, no Aither-specifics required to be valuable.</p>
     <p class="why">Every LLM call in the platform routes through MicroScheduler (:8150) -- but the routing logic (backend discovery, failover, tier maps, context fitting, streaming) is buried inside a 19,535-line service with 107 monorepo imports. A stranger cannot run it: it demands the internal CA, services.yaml discovery, secrets at :8111, the fleet's model inventory. The routing plane is valuable standalone and entangled by accident of packaging, not by design.</p>
     <p class="adopt"><strong>Start here:</strong> Point it at your backends (vLLM / llama.cpp / any OpenAI-compatible endpoint); ask it which backend should serve model X right now, or to stream a completion with failover and context fitting.</p>
-    <pre>not on PyPI yet; extraction from AitherMicroScheduler.py + LLMGateway.py planned</pre>
+    <pre>git clone https://github.com/Aitherium/awrouter</pre>
   </article>
   <article id="awrun" class="card">
     <h3><a href="https://aitherium.github.io/awrun/">awrun</a><em></em></h3>
@@ -203,14 +203,14 @@ and ignore the rest.</p>
     <p class="tag">Role-based access control that fails closed and explains itself.</p>
     <p class="why">Most authz answers "no" without saying why, so every denial becomes a debugging session — and the ones that fail OPEN never announce themselves at all.</p>
     <p class="adopt"><strong>Start here:</strong> Gate one endpoint and read the explanation it gives for a denial.</p>
-    <pre>pip install git+https://github.com/Aitherium/awbac.git</pre>
+    <pre>pip install awbac</pre>
   </article>
-  <article id="awbeads" class="card pending">
-    <h3><span>awbeads</span><em> · not published yet</em></h3>
+  <article id="awbeads" class="card">
+    <h3><a href="https://github.com/Aitherium/awbeads">awbeads</a><em> · no docs site yet</em></h3>
     <p class="tag">A spatial canvas for a page — arrange things, connect them, and keep the arrangement.</p>
     <p class="why">Every product eventually grows a screen where things are placed rather than listed — a board, a map, a graph of what connects to what. That screen is almost always re-implemented per product, and the arrangement lives in component state, so it dies on reload and cannot be exported, reviewed, or moved to another surface. Measured on this tree 2026-08-24, the same hand-vendored tarball appears in three separate product frontends because there was no registered brick to depend on.</p>
     <p class="adopt"><strong>Start here:</strong> Drop a canvas into one page, arrange two things on it, reload, and find them where you left them.</p>
-    <pre>builds in-tree (AitherOS/apps/packages/bead-space) -- not on npm yet; `npm i @aitheros/bead-space` 404s today</pre>
+    <pre>git clone https://github.com/Aitherium/awbeads</pre>
   </article>
   <article id="awbrowse" class="card">
     <h3><a href="https://aitherium.github.io/awbrowse/">awbrowse</a><em></em></h3>
@@ -219,8 +219,8 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Drive one page and get back what is on it in a form worth reasoning about.</p>
     <pre>pip install awbrowse</pre>
   </article>
-  <article id="awclassify" class="card pending">
-    <h3><span>awclassify</span><em> · not published yet</em></h3>
+  <article id="awclassify" class="card">
+    <h3><a href="https://github.com/Aitherium/awclassify">awclassify</a><em> · no docs site yet</em></h3>
     <p class="tag">Classify any document -- what it is, who may read it, who it is for, what it is about.</p>
     <p class="why">A corpus nobody has classified cannot be published safely or retrieved well: the one internal page in a public mirror is found by a stranger, and the question that needed a design note gets a changelog. Classification must be a standalone step any pipeline can call, not a judgement buried in a model prompt.</p>
     <p class="adopt"><strong>Start here:</strong> Run it on one file and read what it is, who may see it and what it is about.</p>
@@ -231,14 +231,14 @@ and ignore the rest.</p>
     <p class="tag">Anonymous multi-round expert panels — a converged answer with a trace.</p>
     <p class="why">A single expert opinion is one opinion; a panel that reads each other's names converges on the loudest voice, not the best argument. Delphi panels need anonymous rounds, aggregate feedback, and an honest stop rule.</p>
     <p class="adopt"><strong>Start here:</strong> Run a multi-round anonymous expert panel on a question and get a converged answer with a trace.</p>
-    <pre>pip install git+https://github.com/Aitherium/awdelphi.git</pre>
+    <pre>pip install awdelphi</pre>
   </article>
   <article id="awdit" class="card">
     <h3><a href="https://aitherium.github.io/awdit/">awdit</a><em></em></h3>
     <p class="tag">An append-only audit trail whose gaps are DETECTABLE.</p>
     <p class="why">An audit log you can silently delete from is decoration. Most are. The property that matters is not "it records" but "a missing record is visible".</p>
     <p class="adopt"><strong>Start here:</strong> Write one sensitive action to it and then try to remove the record.</p>
-    <pre>pip install git+https://github.com/Aitherium/awdit.git</pre>
+    <pre>pip install awdit</pre>
   </article>
   <article id="awembed" class="card">
     <h3><a href="https://aitherium.github.io/awembed/">awembed</a><em></em></h3>
@@ -247,8 +247,8 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Point it at one repo and get a 0.6B embedder that ranks your directories better than the 7B one it learned from, with the eval that proves it.</p>
     <pre>pip install awembed</pre>
   </article>
-  <article id="awevolve" class="card pending">
-    <h3><span>awevolve</span><em> · not published yet</em></h3>
+  <article id="awevolve" class="card">
+    <h3><a href="https://github.com/Aitherium/awevolve">awevolve</a><em> · no docs site yet</em></h3>
     <p class="tag">Point an agent at a file and a command that scores it, and let it improve.</p>
     <p class="why">Automated improvement loops fail silently and look identical while doing it. A run that explored honestly and found nothing produces the same logs, the same records and the same stop reason as a run that changed nothing at all -- there is no exception to catch and no failing request, so the loop keeps running and a human periodically concludes the search space is just hard. And the loops that DO work are usually one-shot generators: the model is asked for a candidate, handed no history, and never allowed to test its own idea before committing it.</p>
     <p class="adopt"><strong>Start here:</strong> Point it at a file and a command that scores that file, and watch an agent improve it -- keeping every version and the score it earned.</p>
@@ -294,7 +294,7 @@ and ignore the rest.</p>
     <p class="tag">Who is this caller? A directory and session store that fails honestly.</p>
     <p class="why">Deactivation that takes effect "eventually" is not deactivation, and a store that cannot be read reports zero users — which every caller reads as "nobody is authorised" or, worse, as an empty directory to helpfully repopulate.</p>
     <p class="adopt"><strong>Start here:</strong> Deactivate one session and watch it stop working immediately.</p>
-    <pre>pip install git+https://github.com/Aitherium/awiam.git</pre>
+    <pre>pip install awiam</pre>
   </article>
   <article id="awiris" class="card pending">
     <h3><span>awiris</span><em> · planned</em></h3>
@@ -303,12 +303,12 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Hand it three reference images and get one style card back.</p>
     <pre>builds in-tree (AitherOS/agents/Iris) -- not on PyPI yet</pre>
   </article>
-  <article id="awkit" class="card pending">
-    <h3><span>awkit</span><em> · not published yet</em></h3>
+  <article id="awkit" class="card">
+    <h3><a href="https://github.com/Aitherium/awkit">awkit</a><em> · no docs site yet</em></h3>
     <p class="tag">Render an agent panel from a tool result — one component, any React app.</p>
     <p class="why">Every agent surface re-implements the same panel by hand, so each one rots separately: a catalogue lists an app the renderer cannot draw, a tab is declared with an id no component answers to, and nothing compares the two. Measured 2026-08-19 on ONE tenant: 18 apps listed and 0 deployed, and 2 of 6 declared panels were ids with no component — they rendered NOTHING, with no error, no boundary and no log line, which is indistinguishable from a feature nobody wanted.</p>
     <p class="adopt"><strong>Start here:</strong> Point it at one MCP tool result and get a panel you can put in your own page.</p>
-    <pre>see the repo — not yet on npm</pre>
+    <pre>git clone https://github.com/Aitherium/awkit</pre>
   </article>
   <article id="awkno" class="card">
     <h3><a href="https://aitherium.github.io/awkno/">awkno</a><em></em></h3>
@@ -392,7 +392,7 @@ and ignore the rest.</p>
     <p class="tag">Labelled snapshots with an all-or-nothing restore.</p>
     <p class="why">A restore that half-succeeds is worse than one that fails, because you now have a state that never existed.</p>
     <p class="adopt"><strong>Start here:</strong> Snapshot one directory, break it, restore it, diff it.</p>
-    <pre>pip install git+https://github.com/Aitherium/awrecover.git</pre>
+    <pre>pip install awrecover</pre>
   </article>
   <article id="awrecurse" class="card">
     <h3><a href="https://aitherium.github.io/awrecurse/">awrecurse</a><em></em></h3>
@@ -422,12 +422,19 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Give an agent a live session it can keep poking at, so the next question is asked of the object instead of of its own memory.</p>
     <pre>pip install awrepl</pre>
   </article>
+  <article id="awreport" class="card">
+    <h3><a href="https://github.com/Aitherium/awreport">awreport</a><em> · no docs site yet</em></h3>
+    <p class="tag">File a bug report that has already scrubbed your secrets and collapsed the duplicate.</p>
+    <p class="why">A bug report is the artifact most likely to carry a credential -- logs, a config dump, an env var someone exported to reproduce the fault -- and the person writing it is already frustrated and will not read it twice. So the secret ships, or the report never gets filed at all.</p>
+    <p class="adopt"><strong>Start here:</strong> Turn a failure into a filed, redacted GitHub issue that collapses into the duplicate when one exists.</p>
+    <pre>builds in-tree (AitherOS/packages/awreport) -- not on PyPI yet; `pip install awreport` 404s today</pre>
+  </article>
   <article id="awresearch" class="card">
     <h3><a href="https://aitherium.github.io/awresearch/">awresearch</a><em></em></h3>
     <p class="tag">Ask a research question, get a cited report you can check.</p>
     <p class="why">An agent asked to research something returns a fluent report whose citations were never read. The failure is not a refusal and not an error — it is a plausible document, which is the most expensive possible output, because checking it costs more than writing it did.</p>
     <p class="adopt"><strong>Start here:</strong> Ask one question and get back a report where every claim carries the source it came from.</p>
-    <pre>pip install git+https://github.com/Aitherium/awresearch.git</pre>
+    <pre>pip install awresearch</pre>
   </article>
   <article id="awresume" class="card pending">
     <h3><span>awresume</span><em> · planned</em></h3>
@@ -500,14 +507,14 @@ and ignore the rest.</p>
     <pre>builds in-tree (AitherOS/lib/companion/AitherSprite.py) -- not on PyPI yet; `pip install awsprite` 404s today</pre>
   </article>
   <article id="awstorage" class="card">
-    <h3><a href="https://github.com/Aitherium/awstorage">awstorage</a><em> · no docs site yet</em></h3>
+    <h3><a href="https://aitherium.github.io/awstorage/">awstorage</a><em></em></h3>
     <p class="tag">Every drive on every node, indexed, classified and diffed -- so you can see what you own before you delete it.</p>
     <p class="why">Storage sprawls faster than anyone can look at it. Caches, dead builds, duplicate model weights and orphaned volumes accumulate across drives and nodes, and the only tool is an ad-hoc du that answers one question once and is forgotten. Deleting without an inventory destroys the wrong thing; not deleting fills the disk that holds Postgres.</p>
     <p class="adopt"><strong>Start here:</strong> Scan one drive and read a ranked inventory of what fills it, with each tree marked re-fetchable or not.</p>
     <pre>pip install awstorage</pre>
   </article>
-  <article id="awswarm" class="card pending">
-    <h3><span>awswarm</span><em> · planned</em></h3>
+  <article id="awswarm" class="card">
+    <h3><a href="https://github.com/Aitherium/awswarm">awswarm</a><em> · no docs site yet</em></h3>
     <p class="tag">Run one model too big for any single GPU across a pool of small ones.</p>
     <p class="why">A frontier MoE checkpoint (Kimi K3, ~1.56TB) fits no consumer card, and "rent a bigger box" stops being an option past a certain size. Splitting a model finely enough to run on heterogeneous, unreliable consumer GPUs -- some too small to hold even one full layer -- is a placement and scheduling problem with no shipped general answer. The money-losing failure mode is retrying a fleet acquisition that was never going to complete, because nothing scored the odds before spending on it.</p>
     <p class="adopt"><strong>Start here:</strong> Feed it one layer's shape and a pool of heterogeneous GPU specs and get back a sub-layer placement plan, plus the probability that plan actually assembles.</p>
@@ -525,21 +532,21 @@ and ignore the rest.</p>
     <p class="tag">Turn any tax PDF -- returns, W-2, 1099, statements, even scans -- into structured data you can check.</p>
     <p class="why">Your own tax data gets locked inside one vendor's encrypted format, and a filed return or a mailed W-2 is a PDF nobody's code can read -- half of them are scans with no text at all. Getting your own numbers back out means re-typing them or re-buying the app that sealed them.</p>
     <p class="adopt"><strong>Start here:</strong> Point it at a tax PDF and get every figure out as structured JSON, scanned forms included.</p>
-    <pre>git clone https://github.com/Aitherium/awtax</pre>
+    <pre>pip install awtax</pre>
   </article>
   <article id="awtoll" class="card">
     <h3><a href="https://aitherium.github.io/awtoll/">awtoll</a><em></em></h3>
     <p class="tag">What every tool call costs you in context, measured from your own transcripts.</p>
     <p class="why">Every agent stack claims its search/graph/memory tool is cheaper than grepping and re-reading files. Nobody measures it. The claim lives in a README or a code comment, measured once during development and gated by nothing — so a tool can regress into costing MORE than what it replaced and every signal stays green, because a tool that returns less looks identical to a tool that saves you something.</p>
     <p class="adopt"><strong>Start here:</strong> Point it at your agent transcripts and see what your ten most-used commands cost.</p>
-    <pre>pip install git+https://github.com/Aitherium/awtoll.git</pre>
+    <pre>pip install awtoll</pre>
   </article>
   <article id="awtunnel" class="card">
     <h3><a href="https://aitherium.github.io/awtunnel/">awtunnel</a><em></em></h3>
     <p class="tag">Reach a service that has no public address.</p>
     <p class="why">Everything an agent runs is behind NAT on somebody's laptop, and every workaround (a port forward, a public IP, a broker somebody maintains) becomes permanent.</p>
     <p class="adopt"><strong>Start here:</strong> Expose one local port to one remote caller and take it away again.</p>
-    <pre>pip install git+https://github.com/Aitherium/awtunnel.git</pre>
+    <pre>pip install awtunnel</pre>
   </article>
   <article id="awvision" class="card">
     <h3><a href="https://aitherium.github.io/awvision/">awvision</a><em></em></h3>
@@ -601,7 +608,7 @@ and ignore the rest.</p>
     <pre>read it — https://aitherium.github.io/awknowledge/</pre>
   </article>
   <article id="awpack" class="card">
-    <h3><a href="https://github.com/Aitherium/awpack">awpack</a><em> · no docs site yet</em></h3>
+    <h3><a href="https://aitherium.github.io/awpack/">awpack</a><em></em></h3>
     <p class="tag">First-party agent packs — the ones we build, versioned and installable on their own.</p>
     <p class="why">A pack bundled into the SDK inherits the SDK's licence and the SDK's release cadence. That is backwards in both directions: a proprietary pack blocks the SDK's public publish (measured — the adk sync gate aborts on exactly this and names it), and a good pack cannot ship a fix without an SDK release. Packs and the runtime that loads them are different products with different audiences.</p>
     <p class="adopt"><strong>Start here:</strong> Install one pack and run it. Each carries its own manifest, licence and version, so taking one costs you nothing else.</p>
