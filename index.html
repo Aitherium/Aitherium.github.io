@@ -59,6 +59,11 @@ and ignore the rest.</p>
   <article class="card set"><h3>Retrieval you trained yourself<em> &middot; some pieces missing</em></h3><p class="tag">The searching tools are only as good as the vectors under them. awembed trains the embedder on your corpus and proves it on held-out directories; awgraph, awfind and awm then search, rank and remember over vectors that know your code instead of someone else's. awdk agents consume all of it as tools. awdata carries the labelled corpora the proving is done against -- the half that usually never ships, and the half that decides the answer: the same compression measured -0.006 macro-F1 on source files and -0.10 on real Reddit comments.</p><p class="members"><a href="#awembed">awembed</a> <a href="#awdata">awdata</a> <a href="#awgraph">awgraph</a> <a href="#awfind">awfind</a> <a href="#awm">awm</a> <a href="#awdk">awdk</a></p></article>
   <article class="card set"><h3>Dark Matters Living World<em> &middot; not yet</em></h3><p class="tag">Procedurally generate a playable, multiplayer 3D world -- zones, quests, NPCs, creatures, their bodies, rigs, clips and style renders -- from Saga narrative and Prometheus balance, into a World of ClaudeCraft-derived realm and the CoC story engine at once, with the same character carried into awdesk and a Space.</p><p class="members"><a href="#awavatar">awavatar</a> <a href="#awdk">awdk</a> <a href="#awsprite">awsprite</a> <a href="#awrtifact">awrtifact</a> <a href="#awrun">awrun</a></p></article>
   <article class="card set"><h3>The Creator Stack — Saga + Media Forge + Iris on your own machine<em> &middot; some pieces missing</em></h3><p class="tag">One world that runs, not a text box that continues — with a story graph, typed mechanics, a continuity checker, MCTS branch explorer, simulation backend, and persistent memory. One creative studio with 357 routes and 137 named ops — character rigs, animation, LoRA, comics, VN, production loops with human gates — all agent-callable. One visual artist that plans, enhances, calls the studio in a real loop, evaluates and refines. Run it all on your box with awdk + awnode + Bonsai, or on the cloud with the same key. Sold as credits and subscriptions; created work published to the marketplace with revenue share.</p><p class="members"><a href="#awsaga">awsaga</a> <a href="#mediaforge">mediaforge</a> <a href="#awiris">awiris</a> <a href="#awsprite">awsprite</a> <a href="#awdesk">awdesk</a> <a href="#awbonsai">awbonsai</a> <a href="#awdk">awdk</a> <a href="#awnode">awnode</a> <a href="#AitherConnect">AitherConnect</a> <a href="#awrtifact">awrtifact</a></p></article>
+  <article class="card set"><h3>Set and forget -- the clock, the queue, and the record<em> &middot; some pieces missing</em></h3><p class="tag">What a scheduled agent needs so that "it ran" is a fact and not a hope: a host clock that wakes it (awrise), a durable queue it hands work to (awrun), a line a human can read when a wake goes wrong (awrelay), a card when a wake needs a decision (awask), and the agent that gets woken (awdk). Named 2026-09-18 (plan .AITHEROS/39) because every member exists and every one was proposed as the place the schedule should live; the measurement said the clock is the OS's and the brick's job is the memory.</p><p class="members"><a href="#awrise">awrise</a> <a href="#awrun">awrun</a> <a href="#awrelay">awrelay</a> <a href="#awask">awask</a> <a href="#awdk">awdk</a></p></article>
+  <article class="card set"><h3>The scheduler, open -- route, queue, clock<em> &middot; some pieces missing</em></h3><p class="tag">MicroScheduler for someone else's agents, as three bricks a stranger adopts alone: awrouter decides which backend serves model X right now (the STATELESS routing plane extracted from AitherMicroScheduler.py -- 19,535 lines / 107 imports, never lifted), awrun is the durable priority queue, awrise is the clock that wakes work and records what happened. awnode is the local gateway an app points at instead of a vendor URL; awdk is the loop that runs on top. The stateful platform half (budgets, heartbeats, throttling, agents) stays inside the fleet and CONSUMES these. Registered 2026-09-19 because the owner asked 'how are we open-sourcing MicroScheduler' and the answer was already three registered bricks that no stack named together.</p><p class="members"><a href="#awrouter">awrouter</a> <a href="#awrun">awrun</a> <a href="#awrise">awrise</a> <a href="#awnode">awnode</a> <a href="#awdk">awdk</a></p></article>
+  <article class="card set"><h3>A scheduler that learns -- pillars 2, 3 and 6 for wakes<em> &middot; some pieces missing</em></h3><p class="tag">Every wake becomes evidence: on start, awm recall hands the job its own history (what failed last, what fixed it); before an expensive wake fires, awpredict reads the ledger as an environment and says whether it will time out again; on finish, the row is remembered, and awevolve may tune interval/timeout under AVO006 (the scorer is never the mutable file). Registered 2026-09-19 at planned: fleet-gates timed out twice in its first day and both were predictable from row one; nothing was watching.</p><p class="members"><a href="#awrise">awrise</a> <a href="#awm">awm</a> <a href="#awpredict">awpredict</a> <a href="#awdecide">awdecide</a> <a href="#awembed">awembed</a> <a href="#awevolve">awevolve</a> <a href="#awdk">awdk</a></p></article>
+  <article class="card set"><h3>Train what you run -- harvest, train, score, keep-or-revert, on a wake<em> &middot; some pieces missing</em></h3><p class="tag">The closed learning loop (pillar 6) scheduled by the thing it improves. Every utterance->intent->tool->outcome and every ledger row (prediction vs what happened) is harvested (AitherHarvest /import/batch -- 5,151 lines / 32 imports, so a SINK on awrise, never a brick); the trainer fine-tunes the intent router and the decide door on it (AitherTrainer, 4,902 / 56, a consumer whose training routines become wakes); awlab scores it on a leaderboard the loop cannot edit; awevolve keeps or reverts (AitherEvolution's client) under AVO006; the result lands back in awdk intent.py and awrise's timeouts and intervals. Registered 2026-09-19, partial: every seam exists in-fleet, none is wired to a wake, and awlab is not yet a package.</p><p class="members"><a href="#awrise">awrise</a> <a href="#awdata">awdata</a> <a href="#awlab">awlab</a> <a href="#awevolve">awevolve</a> <a href="#awdecide">awdecide</a> <a href="#awdk">awdk</a></p></article>
+  <article class="card set"><h3>Mine what you ran -- transcripts in, packs and outcomes out<em> &middot; some pieces missing</em></h3><p class="tag">The owner's ask, 2026-09-20: mine Claude Code and other agent terminal sessions automatically and turn what they contain into agent packs, skill packs, tool packs, RL outcomes, world-model and awpredict training, AitherCNS state and ARC-solver evidence. awmine reads the transcripts (it is the miner AitherHarvest never had for this source -- measured that day: 954 transcripts changed, zero mined); awtoll prices them; awm keeps the lessons; awdata holds the labelled corpora; awdecide is taught every tool outcome; awskills and the awdk toolpacks are where a repeated procedure becomes a pack; awrise is the wake that runs it on a schedule and records that it ran. The fleet's AitherHarvest, Trainer, Evolution and CNS are CONSUMERS of what awmine emits, never the miner.</p><p class="members"><a href="#awmine">awmine</a> <a href="#awtoll">awtoll</a> <a href="#awm">awm</a> <a href="#awdata">awdata</a> <a href="#awdecide">awdecide</a> <a href="#awskills">awskills</a> <a href="#awdk">awdk</a> <a href="#awrise">awrise</a></p></article>
 </div>
 <h2>Runtimes</h2>
 <div class="grid">
@@ -95,7 +100,7 @@ and ignore the rest.</p>
     <p class="tag">Let a second node skip its prefill because a first node already paid for it.</p>
     <p class="why">Two nodes serving the same model both pay full prefill for the same document, and two DIFFERENT models cannot share a cache at all. Measured 2026-08-31 on this fleet, KV accumulates at 0.515 Mbps -- a 5,061-token cache moves in 0.42 s over 1 Gbps against 819 s to recompute -- so bandwidth is not the constraint; discovery (who has this prefix warm?) and trust (is this map safe to load?) are. The failure mode of a WRONG cache is the worst one in inference: no error, fluent, confidently-wrong text.</p>
     <p class="adopt"><strong>Start here:</strong> Serve one prompt prefix from one node and have a second node skip its prefill by fetching the cache by content digest.</p>
-    <pre>builds in-tree (AitherOS/packages/awcache) -- not on PyPI yet; `pip install awcache` 404s today</pre>
+    <pre>builds in-tree -- not on PyPI yet; `pip install awcache` 404s today</pre>
   </article>
   <article id="awdaemons" class="card pending">
     <h3><span>awdaemons</span><em> · not published yet</em></h3>
@@ -158,7 +163,7 @@ and ignore the rest.</p>
     <p class="tag">OpenRouter for your own fleet: pick a model backend by cost/latency/ capability, fail over, fit the context window, stream. Standalone, OpenAI-compatible, no Aither-specifics required to be valuable.</p>
     <p class="why">Every LLM call in the platform routes through MicroScheduler (:8150) -- but the routing logic (backend discovery, failover, tier maps, context fitting, streaming) is buried inside a 19,535-line service with 107 monorepo imports. A stranger cannot run it: it demands the internal CA, services.yaml discovery, secrets at :8111, the fleet's model inventory. The routing plane is valuable standalone and entangled by accident of packaging, not by design.</p>
     <p class="adopt"><strong>Start here:</strong> Point it at your backends (vLLM / llama.cpp / any OpenAI-compatible endpoint); ask it which backend should serve model X right now, or to stream a completion with failover and context fitting.</p>
-    <pre>git clone https://github.com/Aitherium/awrouter</pre>
+    <pre>pip install awrouter</pre>
   </article>
   <article id="awrun" class="card">
     <h3><a href="https://aitherium.github.io/awrun/">awrun</a><em></em></h3>
@@ -238,7 +243,14 @@ and ignore the rest.</p>
     <p class="tag">One typed-decision contract -- choice / score / bool with a probability -- over a ladder of backends you already run (rules, tiny local models, an LLM's logprobs), fail-closed, with a Brier ledger that resolves every decision against its outcome.</p>
     <p class="why">Software makes the same bounded decision millions of times and asks a text model each time, then parses prose. Hosted "decision models" fix the shape but send the program state off-box, emit a probability that is never resolved against what happened, and cannot say what happens next if you act on it. A decision is a function; the loop it sits in is the product.</p>
     <p class="adopt"><strong>Start here:</strong> Ask one typed question of one state and read back a decision, a probability, and decided=False when nothing earned it.</p>
-    <pre>planned -- in the monorepo: pip install -e AitherOS/packages/awdecide (no public mirror or sync lane yet; ratchet R1-R2 in .PLANS/system-one-vs-aither-world-2026-09-18.md)</pre>
+    <pre>pip install awdecide</pre>
+  </article>
+  <article id="awdeck" class="card pending">
+    <h3><span>awdeck</span><em> · planned</em></h3>
+    <p class="tag">An outline becomes a narrated video -- and the file says which voice really spoke it.</p>
+    <p class="why">A rendered video looks identical whether a neural voice plane narrated it or a 2010-era desktop speech synthesiser did, so the artifact cannot be audited by looking at it. Measured 2026-09-19: one long-job transport failure was read as "the fleet is down", the render silently fell back to Windows SAPI, and the only thing that caught it was the owner listening to six minutes of it. Separately, the voice service accepts a `voice` parameter and serves en-GB-SoniaNeural whatever you ask for, so even the non-degraded path was not the voice chosen.</p>
+    <p class="adopt"><strong>Start here:</strong> Turn a JSON outline into a narrated MP4, and read back which voice actually spoke it.</p>
+    <pre>builds in-tree (pip install -e .); not on PyPI yet</pre>
   </article>
   <article id="awdelphi" class="card">
     <h3><a href="https://aitherium.github.io/awdelphi/">awdelphi</a><em></em></h3>
@@ -266,7 +278,7 @@ and ignore the rest.</p>
     <p class="tag">Point an agent at a file and a command that scores it, and let it improve.</p>
     <p class="why">Automated improvement loops fail silently and look identical while doing it. A run that explored honestly and found nothing produces the same logs, the same records and the same stop reason as a run that changed nothing at all -- there is no exception to catch and no failing request, so the loop keeps running and a human periodically concludes the search space is just hard. And the loops that DO work are usually one-shot generators: the model is asked for a candidate, handed no history, and never allowed to test its own idea before committing it.</p>
     <p class="adopt"><strong>Start here:</strong> Point it at a file and a command that scores that file, and watch an agent improve it -- keeping every version and the score it earned.</p>
-    <pre>pip install git+https://github.com/Aitherium/awevolve.git</pre>
+    <pre>pip install awevolve</pre>
   </article>
   <article id="awfind" class="card">
     <h3><a href="https://aitherium.github.io/awfind/">awfind</a><em></em></h3>
@@ -287,7 +299,7 @@ and ignore the rest.</p>
     <p class="tag">A render pipeline you drive from an agent — grade, master, animate, train.</p>
     <p class="why">Creative work is the last thing most people will hand to somebody else's machine, and the first thing every creative SaaS requires. The pipeline is not the hard part -- grading, mastering, avatar export and LoRA training are all solved -- the hard part is that reaching them means a GUI a human sits in front of, so an agent cannot help and the footage has to travel.</p>
     <p class="adopt"><strong>Start here:</strong> Grade one clip on your own GPU and get the master back, without opening an app.</p>
-    <pre>builds in-tree (AitherOS/packages/awforge) -- no PyPI package yet; published when it is</pre>
+    <pre>builds in-tree -- no PyPI package yet; published when it is</pre>
   </article>
   <article id="awgit" class="card">
     <h3><a href="https://aitherium.github.io/awgit/">awgit</a><em></em></h3>
@@ -331,12 +343,19 @@ and ignore the rest.</p>
     <p class="adopt"><strong>Start here:</strong> Ask it what a brick does and get the answer with your network cable out.</p>
     <pre>pip install awkno</pre>
   </article>
+  <article id="awlab" class="card pending">
+    <h3><span>awlab</span><em> · planned</em></h3>
+    <p class="tag">Run one experiment, keep the score, and let a loop decide against it.</p>
+    <p class="why">Every self-improving loop needs a number it cannot edit. Without a scorer that lives apart from the thing being changed, the cheapest way to win is to change the report -- and every downstream signal agrees it improved.</p>
+    <p class="adopt"><strong>Start here:</strong> Register one experiment with one scoring command, run it twice, and read the leaderboard.</p>
+    <pre>planned -- no package yet (AitherLab.py is 751 lines / 6 imports; the lift is the build)</pre>
+  </article>
   <article id="awlog" class="card pending">
     <h3><span>awlog</span><em> · planned</em></h3>
     <p class="tag">Ask your logs what is actually failing, instead of grepping them.</p>
     <p class="why">Log data is almost never missing. It is written diligently, durably, in structured form -- and then nothing indexes it, so the only way to ask a question is to grep gigabytes by hand and hope you guess the right string. A directory past a few hundred megabytes is functionally write-only: every producer works, every file is current, and nobody can answer "what broke on Tuesday". The failure has no error and no alert, because nothing failed -- something merely never got read.</p>
     <p class="adopt"><strong>Start here:</strong> Point it at a directory of log files and ask what is failing most.</p>
-    <pre>python AitherOS/dev/tools/awlog.py --help</pre>
+    <pre>ships with the AitherOS install; run `awlog --help`</pre>
   </article>
   <article id="awm" class="card">
     <h3><a href="https://aitherium.github.io/awm/">awm</a><em></em></h3>
@@ -351,6 +370,13 @@ and ignore the rest.</p>
     <p class="why">An agent that cannot send email cannot finish most real errands: it drafts the invitation, the receipt, the reply, and then hands a human a block of text to paste somewhere. The usual fix is a transactional provider, which means a domain, DNS records, a paid account and a warm-up period before the first message — an afternoon of setup to send one email from a mailbox you already own. Receiving is worse: almost nothing gives an agent an inbox, so agents are write-only and cannot close a loop that a person answers by replying.</p>
     <p class="adopt"><strong>Start here:</strong> Send one email from an agent using a mailbox you already own, in about a minute.</p>
     <pre>pip install awmail</pre>
+  </article>
+  <article id="awmine" class="card">
+    <h3><a href="https://github.com/Aitherium/awmine">awmine</a><em> · no docs site yet</em></h3>
+    <p class="tag">Mine what your agents did -- outcomes, lessons and procedures out of the transcripts they left behind.</p>
+    <p class="why">Every agent session leaves a transcript, and almost every transcript is thrown away. The correction a human made at turn 40, the retry that finally worked, the six-command sequence three sessions each re-derived -- all of it sits in JSONL nobody reads, while the next session starts from zero.</p>
+    <p class="adopt"><strong>Start here:</strong> Point it at one transcript directory and read back what those sessions learned, with the line each lesson came from.</p>
+    <pre>pip install git+https://github.com/Aitherium/awmine.git</pre>
   </article>
   <article id="awmod" class="card pending">
     <h3><span>awmod</span><em> · planned</em></h3>
@@ -392,7 +418,7 @@ and ignore the rest.</p>
     <p class="tag">Drive a page as the real user, check what rendered, and get a test that goes red if it stops being true.</p>
     <p class="why">Every failure that enrages a user answers 200: a lock screen shown to someone already signed in, an empty knowledge base, a chat panel that says "backend unavailable". A route probe, a healthcheck and a test suite all pass while the product is unusable, because none of them looks at what actually rendered. And the one-off script that finally catches it is thrown away, so the same class regresses a week later with nothing watching.</p>
     <p class="adopt"><strong>Start here:</strong> Write one journey as a real user takes it, name the truths that must hold on the page, and get back a PASS/FAIL plus a gate that pins each truth.</p>
-    <pre>builds in-tree (AitherOS/packages/awprove) -- not on PyPI yet; `pip install awprove` 404s today</pre>
+    <pre>builds in-tree -- not on PyPI yet; `pip install awprove` 404s today</pre>
   </article>
   <article id="awreason" class="card">
     <h3><a href="https://aitherium.github.io/awreason/">awreason</a><em></em></h3>
@@ -518,7 +544,7 @@ and ignore the rest.</p>
     <p class="tag">Hatch a companion that grows only from what you teach it, then take it home.</p>
     <p class="why">A companion that never changes is a toy, and one whose growth you cannot see or edit is a black box. Most "AI pet" products are a chat window with a sprite pasted on top -- nothing you taught it persists, and nothing about how it grew is checkable.</p>
     <p class="adopt"><strong>Start here:</strong> Hatch a companion, teach it something, and watch what it becomes.</p>
-    <pre>builds in-tree (AitherOS/lib/companion/AitherSprite.py) -- not on PyPI yet; `pip install awsprite` 404s today</pre>
+    <pre>builds in-tree -- not on PyPI yet; `pip install awsprite` 404s today</pre>
   </article>
   <article id="awstorage" class="card">
     <h3><a href="https://aitherium.github.io/awstorage/">awstorage</a><em></em></h3>
@@ -532,7 +558,7 @@ and ignore the rest.</p>
     <p class="tag">Run one model too big for any single GPU across a pool of small ones.</p>
     <p class="why">A frontier MoE checkpoint (Kimi K3, ~1.56TB) fits no consumer card, and "rent a bigger box" stops being an option past a certain size. Splitting a model finely enough to run on heterogeneous, unreliable consumer GPUs -- some too small to hold even one full layer -- is a placement and scheduling problem with no shipped general answer. The money-losing failure mode is retrying a fleet acquisition that was never going to complete, because nothing scored the odds before spending on it.</p>
     <p class="adopt"><strong>Start here:</strong> Feed it one layer's shape and a pool of heterogeneous GPU specs and get back a sub-layer placement plan, plus the probability that plan actually assembles.</p>
-    <pre>pip install git+https://github.com/Aitherium/awswarm.git</pre>
+    <pre>pip install awswarm</pre>
   </article>
   <article id="awsync" class="card pending">
     <h3><span>awsync</span><em> &middot; merged into AitherConnect</em></h3>
@@ -588,7 +614,7 @@ and ignore the rest.</p>
     <p class="tag">GobboNet campaigns with a real agent brain — scoped memory, graph recall.</p>
     <p class="why">Long roleplay campaigns decay: the model loops, forgets what each character knows, and the only fix is a human curating notes by hand. Per-NPC knowledge scoping is exactly the memory-boundary problem agents already have.</p>
     <p class="adopt"><strong>Start here:</strong> Run one GobboNet campaign where the harness, not the human, keeps the notes.</p>
-    <pre>pip install git+https://github.com/Aitherium/gawbbonet</pre>
+    <pre>pip install gawbbonet</pre>
   </article>
   <article id="mediaforge" class="card pending">
     <h3><span>mediaforge</span><em> · not published yet</em></h3>
