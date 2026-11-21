@@ -1,0 +1,924 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="2279" viewBox="0 0 1040 2279" role="img" aria-label="awharness: 98 bricks in 8 layers" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+<title>awharness: 98 bricks in 8 layers</title>
+<rect width="1040" height="2279" fill="#0d1117"/>
+<text x="20" y="38" font-size="24" font-weight="700" fill="#e6edf3">awharness</text>
+<text x="20" y="60" font-size="14" fill="#9da7b1">The super agent harness · Aither World Harness · 98 bricks in 8 layers, each installable on its own</text>
+<rect x="20" y="73" width="26" height="14" rx="3" fill="#0d1117" stroke="#58a6ff" stroke-width="2"/>
+<rect x="20" y="75" width="4" height="10" fill="#58a6ff"/>
+<text x="54" y="84" font-size="11" fill="#9da7b1">composed by awharness (11)</text>
+<circle cx="243" cy="80" r="3.5" fill="#3fb950"/>
+<text x="252" y="84" font-size="11" fill="#9da7b1">public (71)</text>
+<circle cx="371" cy="80" r="3.5" fill="#d29922"/>
+<text x="380" y="84" font-size="11" fill="#9da7b1">not published (7)</text>
+<circle cx="499" cy="80" r="3.5" fill="#8b949e"/>
+<text x="508" y="84" font-size="11" fill="#9da7b1">planned (19)</text>
+<rect x="622" y="73" width="26" height="14" rx="3" fill="#0d1117" stroke="#6e7681" stroke-dasharray="4 3"/>
+<text x="656" y="84" font-size="11" fill="#9da7b1">dashed = no public repo yet</text>
+<text x="1020" y="38" font-size="11" text-anchor="end" fill="#9da7b1">3 siblings: a brick wears the colour of each one that composes it</text>
+<g id="family">
+<g id="group-awharness"><title>awharness — Aither World Harness: One name for the kit, the shell and the bricks an agent works with, taken together. It is a harness that sits above other harnesses: the shell drives Claude Code, Codex and the rest as real products, and the bricks give every one of them the same memory, jobs, leases, permits and tools.</title>
+<rect x="20" y="104" width="328" height="127" rx="8" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+<rect x="20" y="112" width="4" height="111" fill="#58a6ff"/>
+<text x="36" y="125" font-size="15" font-weight="700" fill="#e6edf3">awharness</text>
+<text x="336" y="125" font-size="11" text-anchor="end" fill="#9da7b1">Aither World Harness</text>
+<text x="36" y="143" font-size="11" fill="#e6edf3">The super agent harness</text>
+<text x="36" y="163" font-size="10" fill="#9da7b1">bricks (11): awdk · awsh · awskills · awm · awgraph ·</text>
+<text x="36" y="176" font-size="10" fill="#9da7b1">awrun · awrise · awgit · awpermit · awrelay · awnode</text>
+</g>
+<g id="group-awmodel"><title>awmodel — Aither World Model: The pieces that predict what an environment does next and score how wrong the prediction was. An agent run by the harness asks it before acting; a world run by the engine is one of the things it is asked about.</title>
+<rect x="356" y="104" width="328" height="127" rx="8" fill="#161b22" stroke="#a371f7" stroke-width="2"/>
+<rect x="356" y="112" width="4" height="111" fill="#a371f7"/>
+<text x="372" y="125" font-size="15" font-weight="700" fill="#e6edf3">awmodel</text>
+<text x="672" y="125" font-size="11" text-anchor="end" fill="#9da7b1">Aither World Model</text>
+<text x="372" y="143" font-size="11" fill="#e6edf3">Predict what the world does next</text>
+<text x="372" y="163" font-size="10" fill="#9da7b1">bricks (3): awpredict · awgym · awm</text>
+<text x="372" y="193" font-size="10" font-style="italic" fill="#9da7b1">not bricks (5): WorldModel · system-world-model ·</text>
+<text x="372" y="206" font-size="10" font-style="italic" fill="#9da7b1">LatentPredictor · LearnedWorldModel ·</text>
+<text x="372" y="219" font-size="10" font-style="italic" fill="#9da7b1">gym-world-model-tools</text>
+</g>
+<g id="group-awengine"><title>awengine — Aither World Engine: The pieces that run a world: a story takes a turn a checker can refuse, a simulation advances by a tick, and the platform&#x27;s own senses are rolled forward as a dream. The harness runs the agents that live in these worlds; the model is what predicts them.</title>
+<rect x="692" y="104" width="328" height="127" rx="8" fill="#161b22" stroke="#f0883e" stroke-width="2"/>
+<rect x="692" y="112" width="4" height="111" fill="#f0883e"/>
+<text x="708" y="125" font-size="15" font-weight="700" fill="#e6edf3">awengine</text>
+<text x="1008" y="125" font-size="11" text-anchor="end" fill="#9da7b1">Aither World Engine</text>
+<text x="708" y="143" font-size="11" fill="#e6edf3">Run worlds, and imagine what comes next in them</text>
+<text x="708" y="163" font-size="10" fill="#9da7b1">bricks (1): awsaga</text>
+<text x="708" y="193" font-size="10" font-style="italic" fill="#9da7b1">not bricks (4): AitherSaga · Prometheus · AitherCNS ·</text>
+<text x="708" y="206" font-size="10" font-style="italic" fill="#9da7b1">Prospector</text>
+</g>
+</g>
+<g id="products">
+<g id="product-awtab"><title>awtab — Aither World Tab, a product: One browser tab runs a 1-bit language model on the visitor&#x27;s GPU through WebGPU, a tool-calling agent loop and an on-device embedder. There is no inference server: the model, the tools and the search all run inside the tab.</title>
+<rect x="20" y="243" width="1000" height="86" rx="8" fill="#161b22" stroke="#39c5cf" stroke-width="2" stroke-dasharray="8 4"/>
+<rect x="20" y="251" width="4" height="70" fill="#39c5cf"/>
+<text x="36" y="264" font-size="15" font-weight="700" fill="#e6edf3">awtab</text>
+<text x="1008" y="264" font-size="11" text-anchor="end" fill="#9da7b1">product · Aither World Tab</text>
+<text x="36" y="282" font-size="11" fill="#e6edf3">A whole agent in one browser tab</text>
+<text x="36" y="300" font-size="10" fill="#39c5cf">try it: aitherium.com/gobbonet/chat.html</text>
+<text x="36" y="317" font-size="10" fill="#9da7b1">bricks (1): awkit — not bricks (4): webml-runtime · tab-tool-loop · tab-embedder · gobbonet-chat</text>
+</g>
+</g>
+<g id="layer-harness">
+<rect x="20" y="341" width="1000" height="210" rx="8" fill="#161b22" stroke="#30363d"/>
+<text x="34" y="369" font-size="15" font-weight="700" fill="#e6edf3">Harness</text>
+<text x="34" y="389" font-size="11" fill="#9da7b1">Build an agent, run it,</text>
+<text x="34" y="404" font-size="11" fill="#9da7b1">and drive other agent</text>
+<text x="34" y="419" font-size="11" fill="#9da7b1">harnesses.</text>
+<text x="34" y="539" font-size="10" fill="#9da7b1">11 bricks</text>
+<a href="https://github.com/Aitherium/awsh" target="_blank"><g id="brick-awsh"><title>awsh — Your terminal answers you — type a question where a command would go. (public); composed by awharness</title>
+<rect x="196" y="351" width="200" height="58" rx="6" fill="#0d1117" stroke="#58a6ff" stroke-width="2"/>
+<rect x="196" y="357" width="4" height="46" fill="#58a6ff"/>
+<text x="208" y="370" font-size="13" font-weight="700" fill="#e6edf3">awsh</text>
+<circle cx="384" cy="366" r="3.5" fill="#3fb950"/>
+<text x="376" y="369" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="208" y="385" font-size="10" fill="#9da7b1">Your terminal answers you — type a</text>
+<text x="208" y="398" font-size="10" fill="#9da7b1">question where a command would go.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awdk" target="_blank"><g id="brick-awdk"><title>awdk — Build AI agent fleets — 3 lines, any backend, local or cloud. (public); composed by awharness</title>
+<rect x="404" y="351" width="200" height="58" rx="6" fill="#0d1117" stroke="#58a6ff" stroke-width="2"/>
+<rect x="404" y="357" width="4" height="46" fill="#58a6ff"/>
+<text x="416" y="370" font-size="13" font-weight="700" fill="#e6edf3">awdk</text>
+<circle cx="592" cy="366" r="3.5" fill="#3fb950"/>
+<text x="584" y="369" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="385" font-size="10" fill="#9da7b1">Build AI agent fleets — 3 lines,</text>
+<text x="416" y="398" font-size="10" fill="#9da7b1">any backend, local or cloud.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awskills" target="_blank"><g id="brick-awskills"><title>awskills — Portable agent skills — self-contained procedures an agent loads on demand. (public); composed by awharness</title>
+<rect x="612" y="351" width="200" height="58" rx="6" fill="#0d1117" stroke="#58a6ff" stroke-width="2"/>
+<rect x="612" y="357" width="4" height="46" fill="#58a6ff"/>
+<text x="624" y="370" font-size="13" font-weight="700" fill="#e6edf3">awskills</text>
+<circle cx="800" cy="366" r="3.5" fill="#3fb950"/>
+<text x="792" y="369" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="624" y="385" font-size="10" fill="#9da7b1">Portable agent skills —</text>
+<text x="624" y="398" font-size="10" fill="#9da7b1">self-contained procedures an agent…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awpack" target="_blank"><g id="brick-awpack"><title>awpack — First-party agent packs — the ones we build, versioned and installable on their own. (public)</title>
+<rect x="820" y="351" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="832" y="370" font-size="13" font-weight="700" fill="#e6edf3">awpack</text>
+<circle cx="1008" cy="366" r="3.5" fill="#3fb950"/>
+<text x="1000" y="369" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="832" y="385" font-size="10" fill="#9da7b1">First-party agent packs — the ones</text>
+<text x="832" y="398" font-size="10" fill="#9da7b1">we build, versioned and installabl…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awflow" target="_blank"><g id="brick-awflow"><title>awflow — A deterministic workflow runtime — chain agent calls with journal replay and budget control. (public)</title>
+<rect x="196" y="417" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="208" y="436" font-size="13" font-weight="700" fill="#e6edf3">awflow</text>
+<circle cx="384" cy="432" r="3.5" fill="#3fb950"/>
+<text x="376" y="435" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="208" y="451" font-size="10" fill="#9da7b1">A deterministic workflow runtime —</text>
+<text x="208" y="464" font-size="10" fill="#9da7b1">chain agent calls with journal…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awrepl" target="_blank"><g id="brick-awrepl"><title>awrepl — A REPL an agent can actually use — state that survives between turns. (public)</title>
+<rect x="404" y="417" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="416" y="436" font-size="13" font-weight="700" fill="#e6edf3">awrepl</text>
+<circle cx="592" cy="432" r="3.5" fill="#3fb950"/>
+<text x="584" y="435" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="451" font-size="10" fill="#9da7b1">A REPL an agent can actually use —</text>
+<text x="416" y="464" font-size="10" fill="#9da7b1">state that survives between turns.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awsettings" target="_blank"><g id="brick-awsettings"><title>awsettings — Your agent&#x27;s permissions and config, following you to the next machine. (public)</title>
+<rect x="612" y="417" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="624" y="436" font-size="13" font-weight="700" fill="#e6edf3">awsettings</text>
+<circle cx="800" cy="432" r="3.5" fill="#3fb950"/>
+<text x="792" y="435" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="624" y="451" font-size="10" fill="#9da7b1">Your agent&#x27;s permissions and</text>
+<text x="624" y="464" font-size="10" fill="#9da7b1">config, following you to the next…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awfocus" target="_blank"><g id="brick-awfocus"><title>awfocus — See, search and steer every Claude session from one command. (public)</title>
+<rect x="820" y="417" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="832" y="436" font-size="13" font-weight="700" fill="#e6edf3">awfocus</text>
+<circle cx="1008" cy="432" r="3.5" fill="#3fb950"/>
+<text x="1000" y="435" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="832" y="451" font-size="10" fill="#9da7b1">See, search and steer every Claude</text>
+<text x="832" y="464" font-size="10" fill="#9da7b1">session from one command.</text>
+</g></a>
+<g id="brick-awresume"><title>awresume — The coding sessions you had open, reopened after the reboot. (planned)</title>
+<rect x="196" y="483" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="208" y="502" font-size="13" font-weight="700" fill="#9da7b1">awresume</text>
+<circle cx="384" cy="498" r="3.5" fill="#8b949e"/>
+<text x="376" y="501" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="208" y="517" font-size="10" fill="#9da7b1">The coding sessions you had open,</text>
+<text x="208" y="530" font-size="10" fill="#9da7b1">reopened after the reboot.</text>
+</g>
+<g id="brick-awmod"><title>awmod — Wire the agent harness you already use into a fleet you already run. (planned)</title>
+<rect x="404" y="483" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="416" y="502" font-size="13" font-weight="700" fill="#9da7b1">awmod</text>
+<circle cx="592" cy="498" r="3.5" fill="#8b949e"/>
+<text x="584" y="501" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="416" y="517" font-size="10" fill="#9da7b1">Wire the agent harness you already</text>
+<text x="416" y="530" font-size="10" fill="#9da7b1">use into a fleet you already run.</text>
+</g>
+<g id="brick-awcap"><title>awcap — Describe a capability once; call it the same way from CLI, Python, MCP and relay. (planned)</title>
+<rect x="612" y="483" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="624" y="502" font-size="13" font-weight="700" fill="#9da7b1">awcap</text>
+<circle cx="800" cy="498" r="3.5" fill="#8b949e"/>
+<text x="792" y="501" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="624" y="517" font-size="10" fill="#9da7b1">Describe a capability once; call it</text>
+<text x="624" y="530" font-size="10" fill="#9da7b1">the same way from CLI, Python, MCP…</text>
+</g>
+</g>
+<g id="layer-memory">
+<rect x="20" y="563" width="1000" height="210" rx="8" fill="#161b22" stroke="#30363d"/>
+<text x="34" y="591" font-size="15" font-weight="700" fill="#e6edf3">Memory and</text>
+<text x="34" y="610" font-size="15" font-weight="700" fill="#e6edf3">knowledge</text>
+<text x="34" y="630" font-size="11" fill="#9da7b1">What an agent remembers,</text>
+<text x="34" y="645" font-size="11" fill="#9da7b1">and what it can look up.</text>
+<text x="34" y="761" font-size="10" fill="#9da7b1">11 bricks</text>
+<a href="https://github.com/Aitherium/awm" target="_blank"><g id="brick-awm"><title>awm — A portable, scoped agent memory. (public); composed by awharness, awmodel</title>
+<rect x="196" y="573" width="200" height="58" rx="6" fill="#0d1117" stroke="#58a6ff" stroke-width="2"/>
+<rect x="196" y="579" width="4" height="46" fill="#58a6ff"/>
+<rect x="201" y="579" width="4" height="46" fill="#a371f7"/>
+<text x="213" y="592" font-size="13" font-weight="700" fill="#e6edf3">awm</text>
+<circle cx="384" cy="588" r="3.5" fill="#3fb950"/>
+<text x="376" y="591" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="208" y="607" font-size="10" fill="#9da7b1">A portable, scoped agent memory.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awgraph" target="_blank"><g id="brick-awgraph"><title>awgraph — A semantic code graph for agents — AST + tree-sitter, call graphs. (public); composed by awharness</title>
+<rect x="404" y="573" width="200" height="58" rx="6" fill="#0d1117" stroke="#58a6ff" stroke-width="2"/>
+<rect x="404" y="579" width="4" height="46" fill="#58a6ff"/>
+<text x="416" y="592" font-size="13" font-weight="700" fill="#e6edf3">awgraph</text>
+<circle cx="592" cy="588" r="3.5" fill="#3fb950"/>
+<text x="584" y="591" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="607" font-size="10" fill="#9da7b1">A semantic code graph for agents —</text>
+<text x="416" y="620" font-size="10" fill="#9da7b1">AST + tree-sitter, call graphs.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awbrain" target="_blank"><g id="brick-awbrain"><title>awbrain — Your history as a wiki of linked markdown — claims pinned to the evidence. (public)</title>
+<rect x="612" y="573" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="624" y="592" font-size="13" font-weight="700" fill="#e6edf3">awbrain</text>
+<circle cx="800" cy="588" r="3.5" fill="#3fb950"/>
+<text x="792" y="591" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="624" y="607" font-size="10" fill="#9da7b1">Your history as a wiki of linked</text>
+<text x="624" y="620" font-size="10" fill="#9da7b1">markdown — claims pinned to the…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awknowledge" target="_blank"><g id="brick-awknowledge"><title>awknowledge — How to run a coding agent so the result survives — the laws, with evidence. (public)</title>
+<rect x="820" y="573" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="832" y="592" font-size="13" font-weight="700" fill="#e6edf3">awknowledge</text>
+<circle cx="1008" cy="588" r="3.5" fill="#3fb950"/>
+<text x="1000" y="591" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="832" y="607" font-size="10" fill="#9da7b1">How to run a coding agent so the</text>
+<text x="832" y="620" font-size="10" fill="#9da7b1">result survives — the laws, with…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awkno" target="_blank"><g id="brick-awkno"><title>awkno — The man page for the Aither World — every brick, stack and law, offline. (public)</title>
+<rect x="196" y="639" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="208" y="658" font-size="13" font-weight="700" fill="#e6edf3">awkno</text>
+<circle cx="384" cy="654" r="3.5" fill="#3fb950"/>
+<text x="376" y="657" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="208" y="673" font-size="10" fill="#9da7b1">The man page for the Aither World —</text>
+<text x="208" y="686" font-size="10" fill="#9da7b1">every brick, stack and law…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awembed" target="_blank"><g id="brick-awembed"><title>awembed — Train an embedding model that knows your corpus, and prove it beats the big one. (public)</title>
+<rect x="404" y="639" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="416" y="658" font-size="13" font-weight="700" fill="#e6edf3">awembed</text>
+<circle cx="592" cy="654" r="3.5" fill="#3fb950"/>
+<text x="584" y="657" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="673" font-size="10" fill="#9da7b1">Train an embedding model that knows</text>
+<text x="416" y="686" font-size="10" fill="#9da7b1">your corpus, and prove it beats th…</text>
+</g></a>
+<g id="brick-awdata"><title>awdata — Open labelled corpora you can train and measure against, with the code that built them. (planned)</title>
+<rect x="612" y="639" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="624" y="658" font-size="13" font-weight="700" fill="#9da7b1">awdata</text>
+<circle cx="800" cy="654" r="3.5" fill="#8b949e"/>
+<text x="792" y="657" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="624" y="673" font-size="10" fill="#9da7b1">Open labelled corpora you can train</text>
+<text x="624" y="686" font-size="10" fill="#9da7b1">and measure against, with the code…</text>
+</g>
+<a href="https://github.com/Aitherium/awmine" target="_blank"><g id="brick-awmine"><title>awmine — Mine what your agents did — outcomes, lessons and procedures out of the transcripts they left behind. (public)</title>
+<rect x="820" y="639" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="832" y="658" font-size="13" font-weight="700" fill="#e6edf3">awmine</text>
+<circle cx="1008" cy="654" r="3.5" fill="#3fb950"/>
+<text x="1000" y="657" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="832" y="673" font-size="10" fill="#9da7b1">Mine what your agents did —</text>
+<text x="832" y="686" font-size="10" fill="#9da7b1">outcomes, lessons and procedures…</text>
+</g></a>
+<g id="brick-awindex"><title>awindex — A curated, git-backed map of the internet — .aither keywords and trust you can check. (not published)</title>
+<rect x="196" y="705" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="208" y="724" font-size="13" font-weight="700" fill="#9da7b1">awindex</text>
+<circle cx="384" cy="720" r="3.5" fill="#d29922"/>
+<text x="376" y="723" font-size="9" text-anchor="end" fill="#9da7b1">not published</text>
+<text x="208" y="739" font-size="10" fill="#9da7b1">A curated, git-backed map of the</text>
+<text x="208" y="752" font-size="10" fill="#9da7b1">internet — .aither keywords and…</text>
+</g>
+<a href="https://github.com/Aitherium/awfind" target="_blank"><g id="brick-awfind"><title>awfind — A portable search client — query, results, ranking. (public)</title>
+<rect x="404" y="705" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="416" y="724" font-size="13" font-weight="700" fill="#e6edf3">awfind</text>
+<circle cx="592" cy="720" r="3.5" fill="#3fb950"/>
+<text x="584" y="723" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="739" font-size="10" fill="#9da7b1">A portable search client — query,</text>
+<text x="416" y="752" font-size="10" fill="#9da7b1">results, ranking.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awresearch" target="_blank"><g id="brick-awresearch"><title>awresearch — Ask a research question, get a cited report you can check. (public)</title>
+<rect x="612" y="705" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="624" y="724" font-size="13" font-weight="700" fill="#e6edf3">awresearch</text>
+<circle cx="800" cy="720" r="3.5" fill="#3fb950"/>
+<text x="792" y="723" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="624" y="739" font-size="10" fill="#9da7b1">Ask a research question, get a</text>
+<text x="624" y="752" font-size="10" fill="#9da7b1">cited report you can check.</text>
+</g></a>
+</g>
+<g id="layer-reasoning">
+<rect x="20" y="785" width="1000" height="210" rx="8" fill="#161b22" stroke="#30363d"/>
+<text x="34" y="813" font-size="15" font-weight="700" fill="#e6edf3">Reasoning and</text>
+<text x="34" y="832" font-size="15" font-weight="700" fill="#e6edf3">learning</text>
+<text x="34" y="852" font-size="11" fill="#9da7b1">Think a hard question</text>
+<text x="34" y="867" font-size="11" fill="#9da7b1">through, decide, and</text>
+<text x="34" y="882" font-size="11" fill="#9da7b1">improve from the result.</text>
+<text x="34" y="983" font-size="10" fill="#9da7b1">12 bricks</text>
+<a href="https://github.com/Aitherium/awpredict" target="_blank"><g id="brick-awpredict"><title>awpredict — Predict what your environment does next, and how surprised you were. (public); composed by awmodel</title>
+<rect x="196" y="795" width="200" height="58" rx="6" fill="#0d1117" stroke="#a371f7" stroke-width="2"/>
+<rect x="196" y="801" width="4" height="46" fill="#a371f7"/>
+<text x="208" y="814" font-size="13" font-weight="700" fill="#e6edf3">awpredict</text>
+<circle cx="384" cy="810" r="3.5" fill="#3fb950"/>
+<text x="376" y="813" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="208" y="829" font-size="10" fill="#9da7b1">Predict what your environment does</text>
+<text x="208" y="842" font-size="10" fill="#9da7b1">next, and how surprised you were.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awgym" target="_blank"><g id="brick-awgym"><title>awgym — An ARC training gym — a game a world model can watch, and six roles that play through it. (public); composed by awmodel</title>
+<rect x="404" y="795" width="200" height="58" rx="6" fill="#0d1117" stroke="#a371f7" stroke-width="2"/>
+<rect x="404" y="801" width="4" height="46" fill="#a371f7"/>
+<text x="416" y="814" font-size="13" font-weight="700" fill="#e6edf3">awgym</text>
+<circle cx="592" cy="810" r="3.5" fill="#3fb950"/>
+<text x="584" y="813" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="829" font-size="10" fill="#9da7b1">An ARC training gym — a game a</text>
+<text x="416" y="842" font-size="10" fill="#9da7b1">world model can watch, and six…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awreason" target="_blank"><g id="brick-awreason"><title>awreason — A portable reasoning client — sessions, phases, thoughts, and the chain that produced the answer. (public)</title>
+<rect x="612" y="795" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="624" y="814" font-size="13" font-weight="700" fill="#e6edf3">awreason</text>
+<circle cx="800" cy="810" r="3.5" fill="#3fb950"/>
+<text x="792" y="813" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="624" y="829" font-size="10" fill="#9da7b1">A portable reasoning client —</text>
+<text x="624" y="842" font-size="10" fill="#9da7b1">sessions, phases, thoughts, and th…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awrecurse" target="_blank"><g id="brick-awrecurse"><title>awrecurse — Answer a question over a context far larger than the window — recursively, with the trace kept. (public)</title>
+<rect x="820" y="795" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="832" y="814" font-size="13" font-weight="700" fill="#e6edf3">awrecurse</text>
+<circle cx="1008" cy="810" r="3.5" fill="#3fb950"/>
+<text x="1000" y="813" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="832" y="829" font-size="10" fill="#9da7b1">Answer a question over a context</text>
+<text x="832" y="842" font-size="10" fill="#9da7b1">far larger than the window…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awprism" target="_blank"><g id="brick-awprism"><title>awprism — Turn a failure into ranked hypotheses — and say what would confirm each one. (public)</title>
+<rect x="196" y="861" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="208" y="880" font-size="13" font-weight="700" fill="#e6edf3">awprism</text>
+<circle cx="384" cy="876" r="3.5" fill="#3fb950"/>
+<text x="376" y="879" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="208" y="895" font-size="10" fill="#9da7b1">Turn a failure into ranked</text>
+<text x="208" y="908" font-size="10" fill="#9da7b1">hypotheses — and say what would…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awdecide" target="_blank"><g id="brick-awdecide"><title>awdecide — One typed-decision contract — choice / score / bool with a probability — over a ladder of backends you already run (rules, tiny local models, an LLM&#x27;s logprobs), fail-closed, with a Brier ledger that resolves every decision against its outcome. (public)</title>
+<rect x="404" y="861" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="416" y="880" font-size="13" font-weight="700" fill="#e6edf3">awdecide</text>
+<circle cx="592" cy="876" r="3.5" fill="#3fb950"/>
+<text x="584" y="879" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="895" font-size="10" fill="#9da7b1">One typed-decision contract —</text>
+<text x="416" y="908" font-size="10" fill="#9da7b1">choice / score / bool with a…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awdelphi" target="_blank"><g id="brick-awdelphi"><title>awdelphi — Anonymous multi-round expert panels — a converged answer with a trace. (public)</title>
+<rect x="612" y="861" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="624" y="880" font-size="13" font-weight="700" fill="#e6edf3">awdelphi</text>
+<circle cx="800" cy="876" r="3.5" fill="#3fb950"/>
+<text x="792" y="879" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="624" y="895" font-size="10" fill="#9da7b1">Anonymous multi-round expert panels</text>
+<text x="624" y="908" font-size="10" fill="#9da7b1">— a converged answer with a trace.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awevolve" target="_blank"><g id="brick-awevolve"><title>awevolve — Point an agent at a file and a command that scores it, and let it improve. (public)</title>
+<rect x="820" y="861" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="832" y="880" font-size="13" font-weight="700" fill="#e6edf3">awevolve</text>
+<circle cx="1008" cy="876" r="3.5" fill="#3fb950"/>
+<text x="1000" y="879" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="832" y="895" font-size="10" fill="#9da7b1">Point an agent at a file and a</text>
+<text x="832" y="908" font-size="10" fill="#9da7b1">command that scores it, and let it…</text>
+</g></a>
+<g id="brick-awlab"><title>awlab — Run one experiment, keep the score, and let a loop decide against it. (planned)</title>
+<rect x="196" y="927" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="208" y="946" font-size="13" font-weight="700" fill="#9da7b1">awlab</text>
+<circle cx="384" cy="942" r="3.5" fill="#8b949e"/>
+<text x="376" y="945" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="208" y="961" font-size="10" fill="#9da7b1">Run one experiment, keep the score,</text>
+<text x="208" y="974" font-size="10" fill="#9da7b1">and let a loop decide against it.</text>
+</g>
+<a href="https://github.com/Aitherium/awrena" target="_blank"><g id="brick-awrena"><title>awrena — Put two agents head to head and get a verdict you can check. (public)</title>
+<rect x="404" y="927" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="416" y="946" font-size="13" font-weight="700" fill="#e6edf3">awrena</text>
+<circle cx="592" cy="942" r="3.5" fill="#3fb950"/>
+<text x="584" y="945" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="961" font-size="10" fill="#9da7b1">Put two agents head to head and get</text>
+<text x="416" y="974" font-size="10" fill="#9da7b1">a verdict you can check.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awclassify" target="_blank"><g id="brick-awclassify"><title>awclassify — Classify any document — what it is, who may read it, who it is for, what it is about. (public)</title>
+<rect x="612" y="927" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="624" y="946" font-size="13" font-weight="700" fill="#e6edf3">awclassify</text>
+<circle cx="800" cy="942" r="3.5" fill="#3fb950"/>
+<text x="792" y="945" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="624" y="961" font-size="10" fill="#9da7b1">Classify any document — what it is,</text>
+<text x="624" y="974" font-size="10" fill="#9da7b1">who may read it, who it is for…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awtoll" target="_blank"><g id="brick-awtoll"><title>awtoll — What every tool call costs you in context, measured from your own transcripts. (public)</title>
+<rect x="820" y="927" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="832" y="946" font-size="13" font-weight="700" fill="#e6edf3">awtoll</text>
+<circle cx="1008" cy="942" r="3.5" fill="#3fb950"/>
+<text x="1000" y="945" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="832" y="961" font-size="10" fill="#9da7b1">What every tool call costs you in</text>
+<text x="832" y="974" font-size="10" fill="#9da7b1">context, measured from your own…</text>
+</g></a>
+</g>
+<g id="layer-work">
+<rect x="20" y="1007" width="1000" height="276" rx="8" fill="#161b22" stroke="#30363d"/>
+<text x="34" y="1035" font-size="15" font-weight="700" fill="#e6edf3">Work</text>
+<text x="34" y="1055" font-size="11" fill="#9da7b1">Jobs, schedules, version</text>
+<text x="34" y="1070" font-size="11" fill="#9da7b1">control and the files work</text>
+<text x="34" y="1085" font-size="11" fill="#9da7b1">leaves behind.</text>
+<text x="34" y="1271" font-size="10" fill="#9da7b1">14 bricks</text>
+<a href="https://github.com/Aitherium/awrun" target="_blank"><g id="brick-awrun"><title>awrun — A priority-aware queue and dispatcher for agentic runs and ad-hoc CI builds. It also judges whether the runner pool is big enough for the queue it is draining, and can ask a host to grow it — reserving capacity is zero-sum, so a saturated pool needs more of it, not a different share of it. (public); composed by awharness</title>
+<rect x="196" y="1017" width="200" height="58" rx="6" fill="#0d1117" stroke="#58a6ff" stroke-width="2"/>
+<rect x="196" y="1023" width="4" height="46" fill="#58a6ff"/>
+<text x="208" y="1036" font-size="13" font-weight="700" fill="#e6edf3">awrun</text>
+<circle cx="384" cy="1032" r="3.5" fill="#3fb950"/>
+<text x="376" y="1035" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="208" y="1051" font-size="10" fill="#9da7b1">A priority-aware queue and</text>
+<text x="208" y="1064" font-size="10" fill="#9da7b1">dispatcher for agentic runs and…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awrise" target="_blank"><g id="brick-awrise"><title>awrise — Wake an agent on a schedule, let it do one thing, and put it back to sleep. (public); composed by awharness</title>
+<rect x="404" y="1017" width="200" height="58" rx="6" fill="#0d1117" stroke="#58a6ff" stroke-width="2"/>
+<rect x="404" y="1023" width="4" height="46" fill="#58a6ff"/>
+<text x="416" y="1036" font-size="13" font-weight="700" fill="#e6edf3">awrise</text>
+<circle cx="592" cy="1032" r="3.5" fill="#3fb950"/>
+<text x="584" y="1035" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="1051" font-size="10" fill="#9da7b1">Wake an agent on a schedule, let it</text>
+<text x="416" y="1064" font-size="10" fill="#9da7b1">do one thing, and put it back to…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awgit" target="_blank"><g id="brick-awgit"><title>awgit — Semantic version control on top of git — edit-ops and leases. (public); composed by awharness</title>
+<rect x="612" y="1017" width="200" height="58" rx="6" fill="#0d1117" stroke="#58a6ff" stroke-width="2"/>
+<rect x="612" y="1023" width="4" height="46" fill="#58a6ff"/>
+<text x="624" y="1036" font-size="13" font-weight="700" fill="#e6edf3">awgit</text>
+<circle cx="800" cy="1032" r="3.5" fill="#3fb950"/>
+<text x="792" y="1035" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="624" y="1051" font-size="10" fill="#9da7b1">Semantic version control on top of</text>
+<text x="624" y="1064" font-size="10" fill="#9da7b1">git — edit-ops and leases.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awpool" target="_blank"><g id="brick-awpool"><title>awpool — The free half of the elastic work pool: dispatches public-safe work onto the free GitHub-hosted runners of the public aw* mirrors, so their idle CI minutes become compute. awrun remains the paid/self-hosted lane; this is its free twin. (public)</title>
+<rect x="820" y="1017" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="832" y="1036" font-size="13" font-weight="700" fill="#e6edf3">awpool</text>
+<circle cx="1008" cy="1032" r="3.5" fill="#3fb950"/>
+<text x="1000" y="1035" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="832" y="1051" font-size="10" fill="#9da7b1">The free half of the elastic work</text>
+<text x="832" y="1064" font-size="10" fill="#9da7b1">pool: dispatches public-safe work…</text>
+</g></a>
+<g id="brick-awedgerunner"><title>awedgerunner — Run agent and CI work on edge runners nobody has to rack — a volunteer&#x27;s idle GPU, a phone on your own mesh, an edge worker, a free or spot CI runner — under a lease with a hard budget cap, a named payer and an expiry. (not published)</title>
+<rect x="196" y="1083" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="208" y="1102" font-size="13" font-weight="700" fill="#9da7b1">awedgerunner</text>
+<circle cx="384" cy="1098" r="3.5" fill="#d29922"/>
+<text x="376" y="1101" font-size="9" text-anchor="end" fill="#9da7b1">not published</text>
+<text x="208" y="1117" font-size="10" fill="#9da7b1">Run agent and CI work on edge</text>
+<text x="208" y="1130" font-size="10" fill="#9da7b1">runners nobody has to rack — a…</text>
+</g>
+<a href="https://github.com/Aitherium/awrecover" target="_blank"><g id="brick-awrecover"><title>awrecover — Labelled snapshots with an all-or-nothing restore. (public)</title>
+<rect x="404" y="1083" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="416" y="1102" font-size="13" font-weight="700" fill="#e6edf3">awrecover</text>
+<circle cx="592" cy="1098" r="3.5" fill="#3fb950"/>
+<text x="584" y="1101" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="1117" font-size="10" fill="#9da7b1">Labelled snapshots with an</text>
+<text x="416" y="1130" font-size="10" fill="#9da7b1">all-or-nothing restore.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awstorage" target="_blank"><g id="brick-awstorage"><title>awstorage — Every drive on every node, indexed, classified and diffed — so you can see what you own before you delete it. (public)</title>
+<rect x="612" y="1083" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="624" y="1102" font-size="13" font-weight="700" fill="#e6edf3">awstorage</text>
+<circle cx="800" cy="1098" r="3.5" fill="#3fb950"/>
+<text x="792" y="1101" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="624" y="1117" font-size="10" fill="#9da7b1">Every drive on every node, indexed,</text>
+<text x="624" y="1130" font-size="10" fill="#9da7b1">classified and diffed — so you can…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awrtifact" target="_blank"><g id="brick-awrtifact"><title>awrtifact — Deliberately chunk artifacts into GitHub release assets — the productized aitherkvcache mirror lane. (public)</title>
+<rect x="820" y="1083" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="832" y="1102" font-size="13" font-weight="700" fill="#e6edf3">awrtifact</text>
+<circle cx="1008" cy="1098" r="3.5" fill="#3fb950"/>
+<text x="1000" y="1101" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="832" y="1117" font-size="10" fill="#9da7b1">Deliberately chunk artifacts into</text>
+<text x="832" y="1130" font-size="10" fill="#9da7b1">GitHub release assets — the…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awshare" target="_blank"><g id="brick-awshare"><title>awshare — Publish an artifact and fetch it back verified. (public)</title>
+<rect x="196" y="1149" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="208" y="1168" font-size="13" font-weight="700" fill="#e6edf3">awshare</text>
+<circle cx="384" cy="1164" r="3.5" fill="#3fb950"/>
+<text x="376" y="1167" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="208" y="1183" font-size="10" fill="#9da7b1">Publish an artifact and fetch it</text>
+<text x="208" y="1196" font-size="10" fill="#9da7b1">back verified.</text>
+</g></a>
+<g id="brick-awsync"><title>awsync — Keep one client in step with a platform — and never confuse &quot;cannot tell&quot; with &quot;fine&quot;. (merged)</title>
+<rect x="404" y="1149" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="416" y="1168" font-size="13" font-weight="700" fill="#9da7b1">awsync</text>
+<circle cx="592" cy="1164" r="3.5" fill="#8b949e"/>
+<text x="584" y="1167" font-size="9" text-anchor="end" fill="#9da7b1">merged</text>
+<text x="416" y="1183" font-size="10" fill="#9da7b1">Keep one client in step with a</text>
+<text x="416" y="1196" font-size="10" fill="#9da7b1">platform — and never confuse…</text>
+</g>
+<a href="https://github.com/Aitherium/awreport" target="_blank"><g id="brick-awreport"><title>awreport — File a bug report that has already scrubbed your secrets and collapsed the duplicate. (public)</title>
+<rect x="612" y="1149" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="624" y="1168" font-size="13" font-weight="700" fill="#e6edf3">awreport</text>
+<circle cx="800" cy="1164" r="3.5" fill="#3fb950"/>
+<text x="792" y="1167" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="624" y="1183" font-size="10" fill="#9da7b1">File a bug report that has already</text>
+<text x="624" y="1196" font-size="10" fill="#9da7b1">scrubbed your secrets and collapse…</text>
+</g></a>
+<g id="brick-awlog"><title>awlog — Ask your logs what is actually failing, instead of grepping them. (planned)</title>
+<rect x="820" y="1149" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="832" y="1168" font-size="13" font-weight="700" fill="#9da7b1">awlog</text>
+<circle cx="1008" cy="1164" r="3.5" fill="#8b949e"/>
+<text x="1000" y="1167" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="832" y="1183" font-size="10" fill="#9da7b1">Ask your logs what is actually</text>
+<text x="832" y="1196" font-size="10" fill="#9da7b1">failing, instead of grepping them.</text>
+</g>
+<a href="https://github.com/Aitherium/awtax" target="_blank"><g id="brick-awtax"><title>awtax — Turn any tax PDF — returns, W-2, 1099, statements, even scans — into structured data you can check. (public)</title>
+<rect x="196" y="1215" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="208" y="1234" font-size="13" font-weight="700" fill="#e6edf3">awtax</text>
+<circle cx="384" cy="1230" r="3.5" fill="#3fb950"/>
+<text x="376" y="1233" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="208" y="1249" font-size="10" fill="#9da7b1">Turn any tax PDF — returns, W-2,</text>
+<text x="208" y="1262" font-size="10" fill="#9da7b1">1099, statements, even scans — int…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awsuite" target="_blank"><g id="brick-awsuite"><title>awsuite — Your Google Workspace as agent tools, and no write happens without a yes. (public)</title>
+<rect x="404" y="1215" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="416" y="1234" font-size="13" font-weight="700" fill="#e6edf3">awsuite</text>
+<circle cx="592" cy="1230" r="3.5" fill="#3fb950"/>
+<text x="584" y="1233" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="1249" font-size="10" fill="#9da7b1">Your Google Workspace as agent</text>
+<text x="416" y="1262" font-size="10" fill="#9da7b1">tools, and no write happens withou…</text>
+</g></a>
+</g>
+<g id="layer-trust">
+<rect x="20" y="1295" width="1000" height="210" rx="8" fill="#161b22" stroke="#30363d"/>
+<text x="34" y="1323" font-size="15" font-weight="700" fill="#e6edf3">Trust</text>
+<text x="34" y="1343" font-size="11" fill="#9da7b1">Who is calling, what they</text>
+<text x="34" y="1358" font-size="11" fill="#9da7b1">may do, and the record of</text>
+<text x="34" y="1373" font-size="11" fill="#9da7b1">what they did.</text>
+<text x="34" y="1493" font-size="10" fill="#9da7b1">11 bricks</text>
+<a href="https://github.com/Aitherium/awpermit" target="_blank"><g id="brick-awpermit"><title>awpermit — Let an agent through your door with a scope, a spend cap, and someone accountable. (public); composed by awharness</title>
+<rect x="196" y="1305" width="200" height="58" rx="6" fill="#0d1117" stroke="#58a6ff" stroke-width="2"/>
+<rect x="196" y="1311" width="4" height="46" fill="#58a6ff"/>
+<text x="208" y="1324" font-size="13" font-weight="700" fill="#e6edf3">awpermit</text>
+<circle cx="384" cy="1320" r="3.5" fill="#3fb950"/>
+<text x="376" y="1323" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="208" y="1339" font-size="10" fill="#9da7b1">Let an agent through your door with</text>
+<text x="208" y="1352" font-size="10" fill="#9da7b1">a scope, a spend cap, and someone…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awnest" target="_blank"><g id="brick-awnest"><title>awnest — Prove there is a human before you let them into the nest. (public)</title>
+<rect x="404" y="1305" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="416" y="1324" font-size="13" font-weight="700" fill="#e6edf3">awnest</text>
+<circle cx="592" cy="1320" r="3.5" fill="#3fb950"/>
+<text x="584" y="1323" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="1339" font-size="10" fill="#9da7b1">Prove there is a human before you</text>
+<text x="416" y="1352" font-size="10" fill="#9da7b1">let them into the nest.</text>
+</g></a>
+<g id="brick-awprove"><title>awprove — Drive a page as the real user, check what rendered, and get a test that goes red if it stops being true. (not published)</title>
+<rect x="612" y="1305" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="624" y="1324" font-size="13" font-weight="700" fill="#9da7b1">awprove</text>
+<circle cx="800" cy="1320" r="3.5" fill="#d29922"/>
+<text x="792" y="1323" font-size="9" text-anchor="end" fill="#9da7b1">not published</text>
+<text x="624" y="1339" font-size="10" fill="#9da7b1">Drive a page as the real user,</text>
+<text x="624" y="1352" font-size="10" fill="#9da7b1">check what rendered, and get a tes…</text>
+</g>
+<a href="https://github.com/Aitherium/awseal" target="_blank"><g id="brick-awseal"><title>awseal — Sign an artifact so a stranger can verify it. (public)</title>
+<rect x="820" y="1305" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="832" y="1324" font-size="13" font-weight="700" fill="#e6edf3">awseal</text>
+<circle cx="1008" cy="1320" r="3.5" fill="#3fb950"/>
+<text x="1000" y="1323" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="832" y="1339" font-size="10" fill="#9da7b1">Sign an artifact so a stranger can</text>
+<text x="832" y="1352" font-size="10" fill="#9da7b1">verify it.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awdit" target="_blank"><g id="brick-awdit"><title>awdit — An append-only audit trail whose gaps are DETECTABLE. (public)</title>
+<rect x="196" y="1371" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="208" y="1390" font-size="13" font-weight="700" fill="#e6edf3">awdit</text>
+<circle cx="384" cy="1386" r="3.5" fill="#3fb950"/>
+<text x="376" y="1389" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="208" y="1405" font-size="10" fill="#9da7b1">An append-only audit trail whose</text>
+<text x="208" y="1418" font-size="10" fill="#9da7b1">gaps are DETECTABLE.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awbac" target="_blank"><g id="brick-awbac"><title>awbac — Role-based access control that fails closed and explains itself. (public)</title>
+<rect x="404" y="1371" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="416" y="1390" font-size="13" font-weight="700" fill="#e6edf3">awbac</text>
+<circle cx="592" cy="1386" r="3.5" fill="#3fb950"/>
+<text x="584" y="1389" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="1405" font-size="10" fill="#9da7b1">Role-based access control that</text>
+<text x="416" y="1418" font-size="10" fill="#9da7b1">fails closed and explains itself.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awiam" target="_blank"><g id="brick-awiam"><title>awiam — Who is this caller? A directory and session store that fails honestly. (public)</title>
+<rect x="612" y="1371" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="624" y="1390" font-size="13" font-weight="700" fill="#e6edf3">awiam</text>
+<circle cx="800" cy="1386" r="3.5" fill="#3fb950"/>
+<text x="792" y="1389" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="624" y="1405" font-size="10" fill="#9da7b1">Who is this caller? A directory and</text>
+<text x="624" y="1418" font-size="10" fill="#9da7b1">session store that fails honestly.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awwall" target="_blank"><g id="brick-awwall"><title>awwall — Say what a workload may reach, and watch everything else fail closed. (public)</title>
+<rect x="820" y="1371" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="832" y="1390" font-size="13" font-weight="700" fill="#e6edf3">awwall</text>
+<circle cx="1008" cy="1386" r="3.5" fill="#3fb950"/>
+<text x="1000" y="1389" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="832" y="1405" font-size="10" fill="#9da7b1">Say what a workload may reach, and</text>
+<text x="832" y="1418" font-size="10" fill="#9da7b1">watch everything else fail closed.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awnboard" target="_blank"><g id="brick-awnboard"><title>awnboard — A front gate you can put in front of anything, and hand someone the key to. (public)</title>
+<rect x="196" y="1437" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="208" y="1456" font-size="13" font-weight="700" fill="#e6edf3">awnboard</text>
+<circle cx="384" cy="1452" r="3.5" fill="#3fb950"/>
+<text x="376" y="1455" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="208" y="1471" font-size="10" fill="#9da7b1">A front gate you can put in front</text>
+<text x="208" y="1484" font-size="10" fill="#9da7b1">of anything, and hand someone the…</text>
+</g></a>
+<g id="brick-awscope"><title>awscope — One scope graph for work and home, where crossing between them takes consent. (planned)</title>
+<rect x="404" y="1437" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="416" y="1456" font-size="13" font-weight="700" fill="#9da7b1">awscope</text>
+<circle cx="592" cy="1452" r="3.5" fill="#8b949e"/>
+<text x="584" y="1455" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="416" y="1471" font-size="10" fill="#9da7b1">One scope graph for work and home,</text>
+<text x="416" y="1484" font-size="10" fill="#9da7b1">where crossing between them takes…</text>
+</g>
+<g id="brick-awgov"><title>awgov — One policy decision for every agent tool call — allow, deny with the lane to use, or needs-owner. (planned)</title>
+<rect x="612" y="1437" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="624" y="1456" font-size="13" font-weight="700" fill="#9da7b1">awgov</text>
+<circle cx="800" cy="1452" r="3.5" fill="#8b949e"/>
+<text x="792" y="1455" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="624" y="1471" font-size="10" fill="#9da7b1">One policy decision for every agent</text>
+<text x="624" y="1484" font-size="10" fill="#9da7b1">tool call — allow, deny with the…</text>
+</g>
+</g>
+<g id="layer-reach">
+<rect x="20" y="1517" width="1000" height="210" rx="8" fill="#161b22" stroke="#30363d"/>
+<text x="34" y="1545" font-size="15" font-weight="700" fill="#e6edf3">Reach</text>
+<text x="34" y="1565" font-size="11" fill="#9da7b1">Messages, people, devices</text>
+<text x="34" y="1580" font-size="11" fill="#9da7b1">and the network between</text>
+<text x="34" y="1595" font-size="11" fill="#9da7b1">them.</text>
+<text x="34" y="1715" font-size="10" fill="#9da7b1">12 bricks</text>
+<a href="https://github.com/Aitherium/awrelay" target="_blank"><g id="brick-awrelay"><title>awrelay — Portable agent messaging — findings, alerts, coordination. (public); composed by awharness</title>
+<rect x="196" y="1527" width="200" height="58" rx="6" fill="#0d1117" stroke="#58a6ff" stroke-width="2"/>
+<rect x="196" y="1533" width="4" height="46" fill="#58a6ff"/>
+<text x="208" y="1546" font-size="13" font-weight="700" fill="#e6edf3">awrelay</text>
+<circle cx="384" cy="1542" r="3.5" fill="#3fb950"/>
+<text x="376" y="1545" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="208" y="1561" font-size="10" fill="#9da7b1">Portable agent messaging —</text>
+<text x="208" y="1574" font-size="10" fill="#9da7b1">findings, alerts, coordination.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awask" target="_blank"><g id="brick-awask"><title>awask — Your agent asks you a question — and acts on your answer. (public)</title>
+<rect x="404" y="1527" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="416" y="1546" font-size="13" font-weight="700" fill="#e6edf3">awask</text>
+<circle cx="592" cy="1542" r="3.5" fill="#3fb950"/>
+<text x="584" y="1545" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="1561" font-size="10" fill="#9da7b1">Your agent asks you a question —</text>
+<text x="416" y="1574" font-size="10" fill="#9da7b1">and acts on your answer.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awmail" target="_blank"><g id="brick-awmail"><title>awmail — Give an agent an email address — send, and actually receive. (public)</title>
+<rect x="612" y="1527" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="624" y="1546" font-size="13" font-weight="700" fill="#e6edf3">awmail</text>
+<circle cx="800" cy="1542" r="3.5" fill="#3fb950"/>
+<text x="792" y="1545" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="624" y="1561" font-size="10" fill="#9da7b1">Give an agent an email address —</text>
+<text x="624" y="1574" font-size="10" fill="#9da7b1">send, and actually receive.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awdiscord" target="_blank"><g id="brick-awdiscord"><title>awdiscord — Put any agent on Discord as a real bot, with an operator in the loop. (public)</title>
+<rect x="820" y="1527" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="832" y="1546" font-size="13" font-weight="700" fill="#e6edf3">awdiscord</text>
+<circle cx="1008" cy="1542" r="3.5" fill="#3fb950"/>
+<text x="1000" y="1545" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="832" y="1561" font-size="10" fill="#9da7b1">Put any agent on Discord as a real</text>
+<text x="832" y="1574" font-size="10" fill="#9da7b1">bot, with an operator in the loop.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awdesk" target="_blank"><g id="brick-awdesk"><title>awdesk — Aither World Desk — the desktop body of AitherOS Online: tray, avatars, decision cards, the Living Desktop as an overlay. (public)</title>
+<rect x="196" y="1593" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="208" y="1612" font-size="13" font-weight="700" fill="#e6edf3">awdesk</text>
+<circle cx="384" cy="1608" r="3.5" fill="#3fb950"/>
+<text x="376" y="1611" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="208" y="1627" font-size="10" fill="#9da7b1">Aither World Desk — the desktop</text>
+<text x="208" y="1640" font-size="10" fill="#9da7b1">body of AitherOS Online: tray…</text>
+</g></a>
+<a href="https://github.com/Aitherium/AitherConnect" target="_blank"><g id="brick-AitherConnect"><title>AitherConnect — Browser extension — federated AI search, page context, and the Living OS overlay. (public)</title>
+<rect x="404" y="1593" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="416" y="1612" font-size="13" font-weight="700" fill="#e6edf3">AitherConnect</text>
+<circle cx="592" cy="1608" r="3.5" fill="#3fb950"/>
+<text x="584" y="1611" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="1627" font-size="10" fill="#9da7b1">Browser extension — federated AI</text>
+<text x="416" y="1640" font-size="10" fill="#9da7b1">search, page context, and the…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awtunnel" target="_blank"><g id="brick-awtunnel"><title>awtunnel — Reach a service that has no public address. (public)</title>
+<rect x="612" y="1593" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="624" y="1612" font-size="13" font-weight="700" fill="#e6edf3">awtunnel</text>
+<circle cx="800" cy="1608" r="3.5" fill="#3fb950"/>
+<text x="792" y="1611" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="624" y="1627" font-size="10" fill="#9da7b1">Reach a service that has no public</text>
+<text x="624" y="1640" font-size="10" fill="#9da7b1">address.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awnet" target="_blank"><g id="brick-awnet"><title>awnet — The agentic web — agents host a mesh, and agents join one. (public)</title>
+<rect x="820" y="1593" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="832" y="1612" font-size="13" font-weight="700" fill="#e6edf3">awnet</text>
+<circle cx="1008" cy="1608" r="3.5" fill="#3fb950"/>
+<text x="1000" y="1611" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="832" y="1627" font-size="10" fill="#9da7b1">The agentic web — agents host a</text>
+<text x="832" y="1640" font-size="10" fill="#9da7b1">mesh, and agents join one.</text>
+</g></a>
+<g id="brick-awspaces"><title>awspaces — A place, not a page: every human gets a Space — a hand-made page, files and a companion agent that is theirs — and Spaces link to Spaces. Early-2000s internet (Neocities, Newgrounds, Neopets, RuneScape) with local-first AI underneath. (planned)</title>
+<rect x="196" y="1659" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="208" y="1678" font-size="13" font-weight="700" fill="#9da7b1">awspaces</text>
+<circle cx="384" cy="1674" r="3.5" fill="#8b949e"/>
+<text x="376" y="1677" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="208" y="1693" font-size="10" fill="#9da7b1">A place, not a page: every human</text>
+<text x="208" y="1706" font-size="10" fill="#9da7b1">gets a Space — a hand-made page…</text>
+</g>
+<g id="brick-awplay"><title>awplay — Stream a game from your own handheld or PC to your phone, over your own network. (planned)</title>
+<rect x="404" y="1659" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="416" y="1678" font-size="13" font-weight="700" fill="#9da7b1">awplay</text>
+<circle cx="592" cy="1674" r="3.5" fill="#8b949e"/>
+<text x="584" y="1677" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="416" y="1693" font-size="10" fill="#9da7b1">Stream a game from your own</text>
+<text x="416" y="1706" font-size="10" fill="#9da7b1">handheld or PC to your phone, over…</text>
+</g>
+<g id="brick-awcrowd"><title>awcrowd — Ask your crowd, keep every answer, and ask the answers a question. (planned)</title>
+<rect x="612" y="1659" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="624" y="1678" font-size="13" font-weight="700" fill="#9da7b1">awcrowd</text>
+<circle cx="800" cy="1674" r="3.5" fill="#8b949e"/>
+<text x="792" y="1677" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="624" y="1693" font-size="10" fill="#9da7b1">Ask your crowd, keep every answer,</text>
+<text x="624" y="1706" font-size="10" fill="#9da7b1">and ask the answers a question.</text>
+</g>
+<g id="brick-awgather"><title>awgather — Community events that live in your calendar and your Discord at once. (planned)</title>
+<rect x="820" y="1659" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="832" y="1678" font-size="13" font-weight="700" fill="#9da7b1">awgather</text>
+<circle cx="1008" cy="1674" r="3.5" fill="#8b949e"/>
+<text x="1000" y="1677" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="832" y="1693" font-size="10" fill="#9da7b1">Community events that live in your</text>
+<text x="832" y="1706" font-size="10" fill="#9da7b1">calendar and your Discord at once.</text>
+</g>
+</g>
+<g id="layer-senses">
+<rect x="20" y="1739" width="1000" height="276" rx="8" fill="#161b22" stroke="#30363d"/>
+<text x="34" y="1767" font-size="15" font-weight="700" fill="#e6edf3">Senses and media</text>
+<text x="34" y="1787" font-size="11" fill="#9da7b1">See, hear, browse, render</text>
+<text x="34" y="1802" font-size="11" fill="#9da7b1">and show.</text>
+<text x="34" y="2003" font-size="10" fill="#9da7b1">16 bricks</text>
+<g id="brick-awsaga"><title>awsaga — Start a world from a pack and take one turn the continuity checker can refuse. (planned); composed by awengine</title>
+<rect x="196" y="1749" width="200" height="58" rx="6" fill="#0d1117" stroke="#f0883e" stroke-width="2" stroke-dasharray="4 3"/>
+<rect x="196" y="1755" width="4" height="46" fill="#f0883e"/>
+<text x="208" y="1768" font-size="13" font-weight="700" fill="#9da7b1">awsaga</text>
+<circle cx="384" cy="1764" r="3.5" fill="#8b949e"/>
+<text x="376" y="1767" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="208" y="1783" font-size="10" fill="#9da7b1">Start a world from a pack and take</text>
+<text x="208" y="1796" font-size="10" fill="#9da7b1">one turn the continuity checker ca…</text>
+</g>
+<a href="https://github.com/Aitherium/awbrowse" target="_blank"><g id="brick-awbrowse"><title>awbrowse — A portable browser client — navigate, console, network, DOM, screenshot. (public)</title>
+<rect x="404" y="1749" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="416" y="1768" font-size="13" font-weight="700" fill="#e6edf3">awbrowse</text>
+<circle cx="592" cy="1764" r="3.5" fill="#3fb950"/>
+<text x="584" y="1767" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="1783" font-size="10" fill="#9da7b1">A portable browser client —</text>
+<text x="416" y="1796" font-size="10" fill="#9da7b1">navigate, console, network, DOM…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awvoice" target="_blank"><g id="brick-awvoice"><title>awvoice — Hear and speak — transcribe audio, synthesize a voice. (public)</title>
+<rect x="612" y="1749" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="624" y="1768" font-size="13" font-weight="700" fill="#e6edf3">awvoice</text>
+<circle cx="800" cy="1764" r="3.5" fill="#3fb950"/>
+<text x="792" y="1767" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="624" y="1783" font-size="10" fill="#9da7b1">Hear and speak — transcribe audio,</text>
+<text x="624" y="1796" font-size="10" fill="#9da7b1">synthesize a voice.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awvision" target="_blank"><g id="brick-awvision"><title>awvision — See an image — describe it, ask it a question, compare two. (public)</title>
+<rect x="820" y="1749" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="832" y="1768" font-size="13" font-weight="700" fill="#e6edf3">awvision</text>
+<circle cx="1008" cy="1764" r="3.5" fill="#3fb950"/>
+<text x="1000" y="1767" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="832" y="1783" font-size="10" fill="#9da7b1">See an image — describe it, ask it</text>
+<text x="832" y="1796" font-size="10" fill="#9da7b1">a question, compare two.</text>
+</g></a>
+<a href="https://github.com/Aitherium/awscreen" target="_blank"><g id="brick-awscreen"><title>awscreen — See this machine — what is on screen, and where to click it. (public)</title>
+<rect x="196" y="1815" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="208" y="1834" font-size="13" font-weight="700" fill="#e6edf3">awscreen</text>
+<circle cx="384" cy="1830" r="3.5" fill="#3fb950"/>
+<text x="376" y="1833" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="208" y="1849" font-size="10" fill="#9da7b1">See this machine — what is on</text>
+<text x="208" y="1862" font-size="10" fill="#9da7b1">screen, and where to click it.</text>
+</g></a>
+<g id="brick-awcams"><title>awcams — Private camera recording and one-line event summaries, on storage you own. (not published)</title>
+<rect x="404" y="1815" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="416" y="1834" font-size="13" font-weight="700" fill="#9da7b1">awcams</text>
+<circle cx="592" cy="1830" r="3.5" fill="#d29922"/>
+<text x="584" y="1833" font-size="9" text-anchor="end" fill="#9da7b1">not published</text>
+<text x="416" y="1849" font-size="10" fill="#9da7b1">Private camera recording and</text>
+<text x="416" y="1862" font-size="10" fill="#9da7b1">one-line event summaries, on…</text>
+</g>
+<a href="https://github.com/Aitherium/awkit" target="_blank"><g id="brick-awkit"><title>awkit — Render an agent panel from a tool result — one component, any React app. (public)</title>
+<rect x="612" y="1815" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="624" y="1834" font-size="13" font-weight="700" fill="#e6edf3">awkit</text>
+<circle cx="800" cy="1830" r="3.5" fill="#3fb950"/>
+<text x="792" y="1833" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="624" y="1849" font-size="10" fill="#9da7b1">Render an agent panel from a tool</text>
+<text x="624" y="1862" font-size="10" fill="#9da7b1">result — one component, any React…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awbeads" target="_blank"><g id="brick-awbeads"><title>awbeads — A spatial canvas for a page — arrange things, connect them, and keep the arrangement. (public)</title>
+<rect x="820" y="1815" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="832" y="1834" font-size="13" font-weight="700" fill="#e6edf3">awbeads</text>
+<circle cx="1008" cy="1830" r="3.5" fill="#3fb950"/>
+<text x="1000" y="1833" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="832" y="1849" font-size="10" fill="#9da7b1">A spatial canvas for a page —</text>
+<text x="832" y="1862" font-size="10" fill="#9da7b1">arrange things, connect them, and…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awsprite" target="_blank"><g id="brick-awsprite"><title>awsprite — Hatch a companion that grows only from what you teach it, then take it home. (public)</title>
+<rect x="196" y="1881" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="208" y="1900" font-size="13" font-weight="700" fill="#e6edf3">awsprite</text>
+<circle cx="384" cy="1896" r="3.5" fill="#3fb950"/>
+<text x="376" y="1899" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="208" y="1915" font-size="10" fill="#9da7b1">Hatch a companion that grows only</text>
+<text x="208" y="1928" font-size="10" fill="#9da7b1">from what you teach it, then take…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awavatar" target="_blank"><g id="brick-awavatar"><title>awavatar — One character spec in, a rigged, animated, multi-style avatar pack out. (public)</title>
+<rect x="404" y="1881" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="416" y="1900" font-size="13" font-weight="700" fill="#e6edf3">awavatar</text>
+<circle cx="592" cy="1896" r="3.5" fill="#3fb950"/>
+<text x="584" y="1899" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="1915" font-size="10" fill="#9da7b1">One character spec in, a rigged,</text>
+<text x="416" y="1928" font-size="10" fill="#9da7b1">animated, multi-style avatar pack…</text>
+</g></a>
+<g id="brick-awdeck"><title>awdeck — An outline becomes a narrated video — and the file says which voice really spoke it. (planned)</title>
+<rect x="612" y="1881" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="624" y="1900" font-size="13" font-weight="700" fill="#9da7b1">awdeck</text>
+<circle cx="800" cy="1896" r="3.5" fill="#8b949e"/>
+<text x="792" y="1899" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="624" y="1915" font-size="10" fill="#9da7b1">An outline becomes a narrated video</text>
+<text x="624" y="1928" font-size="10" fill="#9da7b1">— and the file says which voice…</text>
+</g>
+<g id="brick-awforge"><title>awforge — A render pipeline you drive from an agent — grade, master, animate, train. (planned)</title>
+<rect x="820" y="1881" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="832" y="1900" font-size="13" font-weight="700" fill="#9da7b1">awforge</text>
+<circle cx="1008" cy="1896" r="3.5" fill="#8b949e"/>
+<text x="1000" y="1899" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="832" y="1915" font-size="10" fill="#9da7b1">A render pipeline you drive from an</text>
+<text x="832" y="1928" font-size="10" fill="#9da7b1">agent — grade, master, animate…</text>
+</g>
+<g id="brick-mediaforge"><title>mediaforge — The creative studio — search the boards, render scenes, keep the character. (not published)</title>
+<rect x="196" y="1947" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="208" y="1966" font-size="13" font-weight="700" fill="#9da7b1">mediaforge</text>
+<circle cx="384" cy="1962" r="3.5" fill="#d29922"/>
+<text x="376" y="1965" font-size="9" text-anchor="end" fill="#9da7b1">not published</text>
+<text x="208" y="1981" font-size="10" fill="#9da7b1">The creative studio — search the</text>
+<text x="208" y="1994" font-size="10" fill="#9da7b1">boards, render scenes, keep the…</text>
+</g>
+<g id="brick-awiris"><title>awiris — Hand it three reference images and get one style card and one critique back. (planned)</title>
+<rect x="404" y="1947" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="416" y="1966" font-size="13" font-weight="700" fill="#9da7b1">awiris</text>
+<circle cx="592" cy="1962" r="3.5" fill="#8b949e"/>
+<text x="584" y="1965" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="416" y="1981" font-size="10" fill="#9da7b1">Hand it three reference images and</text>
+<text x="416" y="1994" font-size="10" fill="#9da7b1">get one style card and one critiqu…</text>
+</g>
+<a href="https://github.com/Aitherium/gawbbonet" target="_blank"><g id="brick-gawbbonet"><title>gawbbonet — GobboNet campaigns with a real agent brain — scoped memory, graph recall. (public)</title>
+<rect x="612" y="1947" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="624" y="1966" font-size="13" font-weight="700" fill="#e6edf3">gawbbonet</text>
+<circle cx="800" cy="1962" r="3.5" fill="#3fb950"/>
+<text x="792" y="1965" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="624" y="1981" font-size="10" fill="#9da7b1">GobboNet campaigns with a real</text>
+<text x="624" y="1994" font-size="10" fill="#9da7b1">agent brain — scoped memory, graph…</text>
+</g></a>
+<g id="brick-awexpress"><title>awexpress — One expression pack of stickers, emoji, captions and sounds, compiled for every app. (planned)</title>
+<rect x="820" y="1947" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="832" y="1966" font-size="13" font-weight="700" fill="#9da7b1">awexpress</text>
+<circle cx="1008" cy="1962" r="3.5" fill="#8b949e"/>
+<text x="1000" y="1965" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="832" y="1981" font-size="10" fill="#9da7b1">One expression pack of stickers,</text>
+<text x="832" y="1994" font-size="10" fill="#9da7b1">emoji, captions and sounds…</text>
+</g>
+</g>
+<g id="layer-substrate">
+<rect x="20" y="2027" width="1000" height="210" rx="8" fill="#161b22" stroke="#30363d"/>
+<text x="34" y="2055" font-size="15" font-weight="700" fill="#e6edf3">Substrate</text>
+<text x="34" y="2075" font-size="11" fill="#9da7b1">The OS, the gateway and</text>
+<text x="34" y="2090" font-size="11" fill="#9da7b1">the model serving</text>
+<text x="34" y="2105" font-size="11" fill="#9da7b1">everything above runs on.</text>
+<text x="34" y="2225" font-size="10" fill="#9da7b1">11 bricks</text>
+<a href="https://github.com/Aitherium/awnode" target="_blank"><g id="brick-awnode"><title>awnode — A lightweight local gateway — bridges your apps to the AI backends you chose. (public); composed by awharness</title>
+<rect x="196" y="2037" width="200" height="58" rx="6" fill="#0d1117" stroke="#58a6ff" stroke-width="2"/>
+<rect x="196" y="2043" width="4" height="46" fill="#58a6ff"/>
+<text x="208" y="2056" font-size="13" font-weight="700" fill="#e6edf3">awnode</text>
+<circle cx="384" cy="2052" r="3.5" fill="#3fb950"/>
+<text x="376" y="2055" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="208" y="2071" font-size="10" fill="#9da7b1">A lightweight local gateway —</text>
+<text x="208" y="2084" font-size="10" fill="#9da7b1">bridges your apps to the AI…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awnix" target="_blank"><g id="brick-awnix"><title>awnix — A Linux you can hand to an agent — immutable base, capabilities included. (public)</title>
+<rect x="404" y="2037" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="416" y="2056" font-size="13" font-weight="700" fill="#e6edf3">awnix</text>
+<circle cx="592" cy="2052" r="3.5" fill="#3fb950"/>
+<text x="584" y="2055" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="2071" font-size="10" fill="#9da7b1">A Linux you can hand to an agent —</text>
+<text x="416" y="2084" font-size="10" fill="#9da7b1">immutable base, capabilities…</text>
+</g></a>
+<g id="brick-aitheros"><title>aitheros — One file you run, and the machine has a local AI stack. (not published)</title>
+<rect x="612" y="2037" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="624" y="2056" font-size="13" font-weight="700" fill="#9da7b1">aitheros</text>
+<circle cx="800" cy="2052" r="3.5" fill="#d29922"/>
+<text x="792" y="2055" font-size="9" text-anchor="end" fill="#9da7b1">not published</text>
+<text x="624" y="2071" font-size="10" fill="#9da7b1">One file you run, and the machine</text>
+<text x="624" y="2084" font-size="10" fill="#9da7b1">has a local AI stack.</text>
+</g>
+<g id="brick-awdaemons"><title>awdaemons — The AitherOS daemons as one file — no Python, no signing, no install. (not published)</title>
+<rect x="820" y="2037" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="832" y="2056" font-size="13" font-weight="700" fill="#9da7b1">awdaemons</text>
+<circle cx="1008" cy="2052" r="3.5" fill="#d29922"/>
+<text x="1000" y="2055" font-size="9" text-anchor="end" fill="#9da7b1">not published</text>
+<text x="832" y="2071" font-size="10" fill="#9da7b1">The AitherOS daemons as one file —</text>
+<text x="832" y="2084" font-size="10" fill="#9da7b1">no Python, no signing, no install.</text>
+</g>
+<a href="https://github.com/Aitherium/awrouter" target="_blank"><g id="brick-awrouter"><title>awrouter — OpenRouter for your own fleet: pick a model backend by cost/latency/ capability, fail over, fit the context window, stream. Standalone, OpenAI-compatible, no Aither-specifics required to be valuable. (public)</title>
+<rect x="196" y="2103" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="208" y="2122" font-size="13" font-weight="700" fill="#e6edf3">awrouter</text>
+<circle cx="384" cy="2118" r="3.5" fill="#3fb950"/>
+<text x="376" y="2121" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="208" y="2137" font-size="10" fill="#9da7b1">OpenRouter for your own fleet: pick</text>
+<text x="208" y="2150" font-size="10" fill="#9da7b1">a model backend by cost/latency/…</text>
+</g></a>
+<a href="https://github.com/Aitherium/awswarm" target="_blank"><g id="brick-awswarm"><title>awswarm — Run one model too big for any single GPU across a pool of small ones. (public)</title>
+<rect x="404" y="2103" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="416" y="2122" font-size="13" font-weight="700" fill="#e6edf3">awswarm</text>
+<circle cx="592" cy="2118" r="3.5" fill="#3fb950"/>
+<text x="584" y="2121" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="2137" font-size="10" fill="#9da7b1">Run one model too big for any</text>
+<text x="416" y="2150" font-size="10" fill="#9da7b1">single GPU across a pool of small…</text>
+</g></a>
+<g id="brick-awcache"><title>awcache — Let a second node skip its prefill because a first node already paid for it. (planned)</title>
+<rect x="612" y="2103" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="624" y="2122" font-size="13" font-weight="700" fill="#9da7b1">awcache</text>
+<circle cx="800" cy="2118" r="3.5" fill="#8b949e"/>
+<text x="792" y="2121" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="624" y="2137" font-size="10" fill="#9da7b1">Let a second node skip its prefill</text>
+<text x="624" y="2150" font-size="10" fill="#9da7b1">because a first node already paid…</text>
+</g>
+<a href="https://github.com/Aitherium/awbonsai" target="_blank"><g id="brick-awbonsai"><title>awbonsai — Run a real model in the visitor&#x27;s own browser — no server round trip, no upload. (public)</title>
+<rect x="820" y="2103" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="832" y="2122" font-size="13" font-weight="700" fill="#e6edf3">awbonsai</text>
+<circle cx="1008" cy="2118" r="3.5" fill="#3fb950"/>
+<text x="1000" y="2121" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="832" y="2137" font-size="10" fill="#9da7b1">Run a real model in the visitor&#x27;s</text>
+<text x="832" y="2150" font-size="10" fill="#9da7b1">own browser — no server round trip…</text>
+</g></a>
+<g id="brick-awasp"><title>awasp — Stream a multi-gigabyte model onto a device that cannot hold it all at once. (planned)</title>
+<rect x="196" y="2169" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="208" y="2188" font-size="13" font-weight="700" fill="#9da7b1">awasp</text>
+<circle cx="384" cy="2184" r="3.5" fill="#8b949e"/>
+<text x="376" y="2187" font-size="9" text-anchor="end" fill="#9da7b1">planned</text>
+<text x="208" y="2203" font-size="10" fill="#9da7b1">Stream a multi-gigabyte model onto</text>
+<text x="208" y="2216" font-size="10" fill="#9da7b1">a device that cannot hold it all a…</text>
+</g>
+<a href="https://github.com/Aitherium/aitherkvcache" target="_blank"><g id="brick-aitherkvcache"><title>aitherkvcache — Near-optimal KV cache quantization for LLM inference — sub-byte compression. (public)</title>
+<rect x="404" y="2169" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="416" y="2188" font-size="13" font-weight="700" fill="#e6edf3">aitherkvcache</text>
+<circle cx="592" cy="2184" r="3.5" fill="#3fb950"/>
+<text x="584" y="2187" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="416" y="2203" font-size="10" fill="#9da7b1">Near-optimal KV cache quantization</text>
+<text x="416" y="2216" font-size="10" fill="#9da7b1">for LLM inference — sub-byte…</text>
+</g></a>
+<a href="https://github.com/Aitherium/AitherZero" target="_blank"><g id="brick-AitherZero"><title>AitherZero — PowerShell 7+ automation framework — numbered, self-describing scripts. (public)</title>
+<rect x="612" y="2169" width="200" height="58" rx="6" fill="#0d1117" stroke="#6e7681" stroke-width="1"/>
+<text x="624" y="2188" font-size="13" font-weight="700" fill="#e6edf3">AitherZero</text>
+<circle cx="800" cy="2184" r="3.5" fill="#3fb950"/>
+<text x="792" y="2187" font-size="9" text-anchor="end" fill="#9da7b1">public</text>
+<text x="624" y="2203" font-size="10" fill="#9da7b1">PowerShell 7+ automation framework</text>
+<text x="624" y="2216" font-size="10" fill="#9da7b1">— numbered, self-describing…</text>
+</g></a>
+</g>
+<text x="20" y="2269" font-size="10" fill="#9da7b1">Generated from ecosystem.yaml by gen_brick_map.py. Do not edit; change the registry.</text>
+</svg>
