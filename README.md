@@ -7,6 +7,83 @@ brick in the world. Nothing here is hand-written: the page is
 generated from one registry, so a brick cannot be on this map and
 missing from a sibling's README, or the other way round.
 
+## The bricks, in layers
+
+**`awharness`** — the super agent harness. One name for the kit, the shell and the bricks an agent works with, taken together. It is a harness that sits above other harnesses: the shell drives Claude Code, Codex and the rest as real products, and the bricks give every one of them the same memory, jobs, leases, permits and tools.
+
+- **Today:** There is no single install. `pip install awdk` and `npm i -g @aitherium/awsh` are two commands, and each other brick installs on its own line. `adk harness parts` reads this list and reports which parts this machine has, at what version, and the install line for each one it lacks.
+- **Planned, not built:** One install command that brings the composed bricks up together, and one process that starts them. Neither exists; nothing by this name is published.
+- **Composed (11, bold below):** `awdk` `awsh` `awskills` `awm` `awgraph` `awrun` `awrise` `awgit` `awpermit` `awrelay` `awnode`
+
+It is one of a family:
+
+| name | reads as | what it does | bricks it composes | members that are not bricks |
+|---|---|---|---|---|
+| **`awharness`** | Aither World Harness | The super agent harness | `awdk` `awsh` `awskills` `awm` `awgraph` `awrun` `awrise` `awgit` `awpermit` `awrelay` `awnode` | — |
+| **`awmodel`** | Aither World Model | Predict what the world does next | `awpredict` `awgym` `awm` | `WorldModel` (service) · `system-world-model` (library) · `LatentPredictor` (library) · `LearnedWorldModel` (library) · `gym-world-model-tools` (tools) |
+| **`awengine`** | Aither World Engine | Run worlds, and imagine what comes next in them | `awsaga` | `AitherSaga` (service) · `Prometheus` (service) · `AitherCNS` (service) · `Prospector` (module) |
+
+**`awmodel`** — The pieces that predict what an environment does next and score how wrong the prediction was. An agent run by the harness asks it before acting; a world run by the engine is one of the things it is asked about.
+
+- **Today:** One installable brick sits at the centre: `awpredict` (a JEPA-style latent predictor and a lighter transition model, with a lookup table to beat). `awgym` is a game it can watch, and `awm` predicts an action's outcome from remembered state. The other parts are code inside the platform, not packages: a belief graph over fleet events, a model of the platform's own services, and two learned predictors used by the planner. They are separate models; nothing joins them into one.
+- **Planned, not built:** One model the parts share, and one command that asks it. Neither exists; nothing by this name is published.
+- **Start here:** `awpredict engines`
+- **`awm` is also composed by another sibling, on purpose:** Memory is composed by the harness, and its `awm_world_state` and `awm_predict` tools encode remembered state and predict an action's outcome from it, which is this grouping's job too.
+- `WorldModel` (service, not a brick): One belief graph over fleet events — entities, relations and what is expected next.
+- `system-world-model` (library, not a brick): A model of the platform itself — which services are about to fail, and what happens if one does.
+- `LatentPredictor` (library, not a brick): A JEPA-style latent predictor that records the transitions that surprised it.
+- `LearnedWorldModel` (library, not a brick): A small neural transition predictor for the planner, with a lookup table until it has seen enough.
+- `gym-world-model-tools` (tools, not a brick): The gym's model as tools — encode a grid, predict the next one, score the surprise, train.
+
+**`awengine`** — The pieces that run a world: a story takes a turn a checker can refuse, a simulation advances by a tick, and the platform's own senses are rolled forward as a dream. The harness runs the agents that live in these worlds; the model is what predicts them.
+
+- **Today:** One brick, `awsaga`, is registered and not yet installable. The rest are fleet services, not packages: AitherSaga keeps story projects and turns, Prometheus is the tick-based world simulation (not the metrics product, which is a different service), AitherCNS fuses the platform's senses into one state and rolls it forward, and Prospector is a failure-forecast head inside AitherCNS. AitherCNS and Prospector are off unless switched on. Each runs on its own; there is no single engine process, and `saga_continuity_check` is a gateway tool, not a command a stranger can install.
+- **Planned, not built:** One engine a world pack starts, with the simulation and the imagination behind one door. Neither exists; nothing by this name is published.
+- **Start here:** `saga_continuity_check`
+- `AitherSaga` (service, not a brick): Story projects, characters, places and turns, with a continuity check.
+- `Prometheus` (service, not a brick): The world simulation — lives, factions, economy and weather, advanced tick by tick.
+- `AitherCNS` (service, not a brick): Fuses the platform's senses into one state and rolls it forward — digest, imagine, dream.
+- `Prospector` (module, not a brick): A failure-forecast head inside AitherCNS — what the fleet's telemetry is imagined to do next.
+
+Products built from these bricks:
+
+| product | reads as | what it is | try it | page |
+|---|---|---|---|---|
+| **`awtab`** | Aither World Tab | A whole agent in one browser tab | [aitherium.com/gobbonet/chat.html](https://aitherium.com/gobbonet/chat.html) | [https://aitherium.com/awtab](https://aitherium.com/awtab) |
+
+**`awtab`** — One browser tab runs a 1-bit language model on the visitor's GPU through WebGPU, a tool-calling agent loop and an on-device embedder. There is no inference server: the model, the tools and the search all run inside the tab.
+
+- **Today:** Live in a WebGPU browser at aitherium.com/gobbonet/chat.html. Two model sizes from PrismML's Bonsai family (1.7B and 4B) download once and the browser caches them; the tools run in a worker inside the tab. It has been measured on one GPU class only.
+- **Planned, not built:** Reloading with no network, the smaller 384-d embedder in the tab, and measurements on more than one class of GPU. None of these is done yet. awtab is a page, not a package: nothing by this name is on npm or PyPI.
+- **Claim, checked 2026-11-13:** As of 13 November 2026 we found no other browser stack that runs a 1-bit model, a tool-calling agent loop and an on-device embedder together in one tab, with no inference server.
+- **Limit:** It needs a browser with WebGPU and a GPU it can use.
+- **Limit:** The first load downloads 248 MB (1.7B) to 572 MB (4B) before the first answer; after that the browser cache serves it.
+- **Limit:** Search downloads its embedder (the 1024-d one) the first time it is used.
+- **Limit:** Measured on one GPU class only, and reloading with no network has not been tested.
+- **Built from:** `awkit`; not bricks: `webml-runtime` (library) · `tab-tool-loop` (library) · `tab-embedder` (module) · `gobbonet-chat` (module)
+- `webml-runtime` (library, not a brick): Runs the 1-bit model on the visitor's GPU through WebGPU. Proprietary, and withheld from the public awkit package.
+- `tab-tool-loop` (library, not a brick): The agent loop in the tab — the model asks for a tool, a worker runs it, the answer goes back to the model.
+- `tab-embedder` (module, not a brick): Turns text into vectors on the visitor's GPU, inside the tab, so search needs no embedding server.
+- `gobbonet-chat` (module, not a brick): The chat page people open, wired to the model, the tools and the embedder in the tab.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="brick-map-dark.svg">
+  <img alt="awharness: 98 bricks in 8 layers — Harness, Memory and knowledge, Reasoning and learning, Work, Trust, Reach, Senses and media, Substrate" src="brick-map-light.svg">
+</picture>
+
+| layer | what it is for | bricks |
+|---|---|---|
+| **Harness** | Build an agent, run it, and drive other agent harnesses. | [**awsh**](https://github.com/Aitherium/awsh) · [**awdk**](https://github.com/Aitherium/awdk) · [**awskills**](https://github.com/Aitherium/awskills) · [awpack](https://github.com/Aitherium/awpack) · [awflow](https://github.com/Aitherium/awflow) · [awrepl](https://github.com/Aitherium/awrepl) · [awsettings](https://github.com/Aitherium/awsettings) · [awfocus](https://github.com/Aitherium/awfocus) · awresume *(planned)* · awmod *(planned)* · awcap *(planned)* |
+| **Memory and knowledge** | What an agent remembers, and what it can look up. | [**awm**](https://github.com/Aitherium/awm) · [**awgraph**](https://github.com/Aitherium/awgraph) · [awbrain](https://github.com/Aitherium/awbrain) · [awknowledge](https://github.com/Aitherium/awknowledge) · [awkno](https://github.com/Aitherium/awkno) · [awembed](https://github.com/Aitherium/awembed) · awdata *(planned)* · [awmine](https://github.com/Aitherium/awmine) · awindex *(not published)* · [awfind](https://github.com/Aitherium/awfind) · [awresearch](https://github.com/Aitherium/awresearch) |
+| **Reasoning and learning** | Think a hard question through, decide, and improve from the result. | [**awpredict**](https://github.com/Aitherium/awpredict) · [**awgym**](https://github.com/Aitherium/awgym) · [awreason](https://github.com/Aitherium/awreason) · [awrecurse](https://github.com/Aitherium/awrecurse) · [awprism](https://github.com/Aitherium/awprism) · [awdecide](https://github.com/Aitherium/awdecide) · [awdelphi](https://github.com/Aitherium/awdelphi) · [awevolve](https://github.com/Aitherium/awevolve) · awlab *(planned)* · [awrena](https://github.com/Aitherium/awrena) · [awclassify](https://github.com/Aitherium/awclassify) · [awtoll](https://github.com/Aitherium/awtoll) |
+| **Work** | Jobs, schedules, version control and the files work leaves behind. | [**awrun**](https://github.com/Aitherium/awrun) · [**awrise**](https://github.com/Aitherium/awrise) · [**awgit**](https://github.com/Aitherium/awgit) · [awpool](https://github.com/Aitherium/awpool) · awedgerunner *(not published)* · [awrecover](https://github.com/Aitherium/awrecover) · [awstorage](https://github.com/Aitherium/awstorage) · [awrtifact](https://github.com/Aitherium/awrtifact) · [awshare](https://github.com/Aitherium/awshare) · awsync *(merged)* · [awreport](https://github.com/Aitherium/awreport) · awlog *(planned)* · [awtax](https://github.com/Aitherium/awtax) · [awsuite](https://github.com/Aitherium/awsuite) |
+| **Trust** | Who is calling, what they may do, and the record of what they did. | [**awpermit**](https://github.com/Aitherium/awpermit) · [awnest](https://github.com/Aitherium/awnest) · awprove *(not published)* · [awseal](https://github.com/Aitherium/awseal) · [awdit](https://github.com/Aitherium/awdit) · [awbac](https://github.com/Aitherium/awbac) · [awiam](https://github.com/Aitherium/awiam) · [awwall](https://github.com/Aitherium/awwall) · [awnboard](https://github.com/Aitherium/awnboard) · awscope *(planned)* · awgov *(planned)* |
+| **Reach** | Messages, people, devices and the network between them. | [**awrelay**](https://github.com/Aitherium/awrelay) · [awask](https://github.com/Aitherium/awask) · [awmail](https://github.com/Aitherium/awmail) · [awdiscord](https://github.com/Aitherium/awdiscord) · [awdesk](https://github.com/Aitherium/awdesk) · [AitherConnect](https://github.com/Aitherium/AitherConnect) · [awtunnel](https://github.com/Aitherium/awtunnel) · [awnet](https://github.com/Aitherium/awnet) · awspaces *(planned)* · awplay *(planned)* · awcrowd *(planned)* · awgather *(planned)* |
+| **Senses and media** | See, hear, browse, render and show. | **awsaga** *(planned)* · [awbrowse](https://github.com/Aitherium/awbrowse) · [awvoice](https://github.com/Aitherium/awvoice) · [awvision](https://github.com/Aitherium/awvision) · [awscreen](https://github.com/Aitherium/awscreen) · awcams *(not published)* · [awkit](https://github.com/Aitherium/awkit) · [awbeads](https://github.com/Aitherium/awbeads) · [awsprite](https://github.com/Aitherium/awsprite) · [awavatar](https://github.com/Aitherium/awavatar) · awdeck *(planned)* · awforge *(planned)* · mediaforge *(not published)* · awiris *(planned)* · [gawbbonet](https://github.com/Aitherium/gawbbonet) · awexpress *(planned)* |
+| **Substrate** | The OS, the gateway and the model serving everything above runs on. | [**awnode**](https://github.com/Aitherium/awnode) · [awnix](https://github.com/Aitherium/awnix) · aitheros *(not published)* · awdaemons *(not published)* · [awrouter](https://github.com/Aitherium/awrouter) · [awswarm](https://github.com/Aitherium/awswarm) · awcache *(planned)* · [awbonsai](https://github.com/Aitherium/awbonsai) · awasp *(planned)* · [aitherkvcache](https://github.com/Aitherium/aitherkvcache) · [AitherZero](https://github.com/Aitherium/AitherZero) |
+
+Every brick with its one-line purpose and status, and a Mermaid version of the map: [brick-map.md](brick-map.md).
+
 ## Take one brick
 
 Each installs on its own, runs offline, and needs no account.
